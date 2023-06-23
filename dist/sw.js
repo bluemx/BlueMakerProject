@@ -79,36 +79,36 @@ define(['./workbox-ac117c94'], (function (workbox) { 'use strict';
    */
   workbox.precacheAndRoute([{
     "url": "about.html",
-    "revision": "3a6f7e23e1838c2004f6e3c2ce2a01a5"
+    "revision": "3bcc3afa3eb32c774aa60fb0ab89a969"
   }, {
-    "url": "assets/_...all_-75ba187e.js",
+    "url": "assets/_...all_-ed77e6c7.js",
     "revision": null
   }, {
-    "url": "assets/_key_-6b7729c6.js",
+    "url": "assets/_key_-e7a32474.js",
     "revision": null
   }, {
-    "url": "assets/_name_-8134062c.js",
+    "url": "assets/_name_-1e36ca77.js",
     "revision": null
   }, {
-    "url": "assets/404-966cb7f3.js",
+    "url": "assets/404-4481a02d.js",
     "revision": null
   }, {
-    "url": "assets/about-95ab4455.js",
+    "url": "assets/about-9ec77eb7.js",
     "revision": null
   }, {
-    "url": "assets/app-9aebb73f.js",
+    "url": "assets/app-969a15e2.js",
     "revision": null
   }, {
     "url": "assets/ar-3116e923.js",
     "revision": null
   }, {
-    "url": "assets/builder-208ee361.js",
+    "url": "assets/builder-137391cb.js",
     "revision": null
   }, {
-    "url": "assets/builder-6253cffa.js",
+    "url": "assets/builder-e533ee2c.js",
     "revision": null
   }, {
-    "url": "assets/dashboard-85e0f8e1.js",
+    "url": "assets/dashboard-34894d19.js",
     "revision": null
   }, {
     "url": "assets/de-ac17cf5a.js",
@@ -123,13 +123,13 @@ define(['./workbox-ac117c94'], (function (workbox) { 'use strict';
     "url": "assets/fr-3deced60.js",
     "revision": null
   }, {
-    "url": "assets/home-aed09c13.js",
+    "url": "assets/home-ebfcad1b.js",
     "revision": null
   }, {
     "url": "assets/id-f4fd9e4f.js",
     "revision": null
   }, {
-    "url": "assets/index-37a28dd6.js",
+    "url": "assets/index-2d9aecaa.js",
     "revision": null
   }, {
     "url": "assets/index-c789deff.css",
@@ -153,7 +153,7 @@ define(['./workbox-ac117c94'], (function (workbox) { 'use strict';
     "url": "assets/pt-BR-df026943.js",
     "revision": null
   }, {
-    "url": "assets/README-1be5604b.js",
+    "url": "assets/README-539d8d2e.js",
     "revision": null
   }, {
     "url": "assets/ru-afb15a13.js",
@@ -171,26 +171,26 @@ define(['./workbox-ac117c94'], (function (workbox) { 'use strict';
     "url": "assets/vi-80491d22.js",
     "revision": null
   }, {
-    "url": "assets/virtual_pwa-register-a1b13b22.js",
+    "url": "assets/virtual_pwa-register-7bfc88d9.js",
     "revision": null
   }, {
-    "url": "assets/workbox-window.prod.es5-08b2315b.js",
+    "url": "assets/workbox-window.prod.es5-a7b12eab.js",
     "revision": null
   }, {
     "url": "assets/zh-CN-253ef87b.js",
     "revision": null
   }, {
     "url": "dashboard.html",
-    "revision": "2c8bd3191cc62230e7f2bdb4e667c52a"
+    "revision": "11797e9009e5448bfb3e009d09df7dc9"
   }, {
     "url": "index.html",
-    "revision": "978e9fa8825a18caceeaa9408b047aef"
+    "revision": "56ee7c3e16ed53e2669c2ca0eee993aa"
   }, {
     "url": "readme.html",
-    "revision": "5efc1f18a923b0a51b0eef061550a746"
+    "revision": "442f541de25018b673375cd4a995f44a"
   }, {
     "url": "riodas.html",
-    "revision": "d7e98c39c4a85226e84bfae3aa206b28"
+    "revision": "bfa9ebd65c1244d014228075234c58cb"
   }, {
     "url": "favicon.svg",
     "revision": "81a0a655d0a408148ad2361b72b9c3c8"
