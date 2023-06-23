@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import favicon from '../favicon.svg'
 defineOptions({
   name: 'DashboardPage',
 })
@@ -9,7 +10,7 @@ const router = useRouter()
 <template>
   <div>
     <div>
-      <img src="favicon.svg" alt="BlueMaker" mx-auto w-6>
+      <img :src="favicon" alt="BlueMaker" mx-auto w-6>
     </div>
     <div my-5>
       {{ user?.profile?.username }}

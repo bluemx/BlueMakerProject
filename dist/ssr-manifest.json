@@ -1,0 +1,506 @@
+{
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/cross-fetch@3.1.6/node_modules/cross-fetch/dist/browser-ponyfill.js?commonjs-module": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js?commonjs-module": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/sortablejs@1.14.0/node_modules/sortablejs/modular/sortable.esm.js?commonjs-proxy": [
+    "/assets/builder-208ee361.js"
+  ],
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js?commonjs-proxy": [
+    "/assets/builder-208ee361.js"
+  ],
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/vuedraggable@4.1.0_vue@3.3.4/node_modules/vuedraggable/dist/vuedraggable.umd.js?commonjs-module": [
+    "/assets/builder-208ee361.js"
+  ],
+  "\u0000commonjsHelpers.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "\u0000plugin-vue:export-helper": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "\u0000vite/modulepreload-polyfill": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "\u0000vite/preload-helper": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "../../../../../@vite-plugin-pages/generated-pages?id=~pages": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "../../../../../@vite-plugin-pages/route-block": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
+    "/assets/virtual_pwa-register-a1b13b22.js"
+  ],
+  "../../../../../@vite-plugin-vue-layouts/generated-layouts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "../../../../../__uno.css": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "assets/app-!~{001}~.js-unocss-hash.css": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "index.html": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "locales/ar.yml": [
+    "/assets/ar-3116e923.js"
+  ],
+  "locales/de.yml": [
+    "/assets/de-ac17cf5a.js"
+  ],
+  "locales/en.yml": [
+    "/assets/en-2ef8769f.js"
+  ],
+  "locales/es.yml": [
+    "/assets/es-44e40f41.js"
+  ],
+  "locales/fr.yml": [
+    "/assets/fr-3deced60.js"
+  ],
+  "locales/id.yml": [
+    "/assets/id-f4fd9e4f.js"
+  ],
+  "locales/it.yml": [
+    "/assets/it-3c0c7e92.js"
+  ],
+  "locales/ja.yml": [
+    "/assets/ja-0025478b.js"
+  ],
+  "locales/ka.yml": [
+    "/assets/ka-4057ec5d.js"
+  ],
+  "locales/ko.yml": [
+    "/assets/ko-8aa88c71.js"
+  ],
+  "locales/pl.yml": [
+    "/assets/pl-0a9960ff.js"
+  ],
+  "locales/pt-BR.yml": [
+    "/assets/pt-BR-df026943.js"
+  ],
+  "locales/ru.yml": [
+    "/assets/ru-afb15a13.js"
+  ],
+  "locales/tr.yml": [
+    "/assets/tr-d2e1ae0a.js"
+  ],
+  "locales/uk.yml": [
+    "/assets/uk-557bb745.js"
+  ],
+  "locales/uz.yml": [
+    "/assets/uz-b8775f75.js"
+  ],
+  "locales/vi.yml": [
+    "/assets/vi-80491d22.js"
+  ],
+  "locales/zh-CN.yml": [
+    "/assets/zh-CN-253ef87b.js"
+  ],
+  "node_modules/.pnpm/@intlify+core-base@9.2.2/node_modules/@intlify/core-base/dist/core-base.esm-bundler.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@intlify+devtools-if@9.2.2/node_modules/@intlify/devtools-if/dist/devtools-if.esm-bundler.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@intlify+message-compiler@9.2.2/node_modules/@intlify/message-compiler/dist/message-compiler.esm-bundler.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@intlify+shared@9.2.2/node_modules/@intlify/shared/dist/shared.esm-bundler.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@intlify+vue-devtools@9.2.2/node_modules/@intlify/vue-devtools/dist/vue-devtools.esm-bundler.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+functions-js@2.1.1/node_modules/@supabase/functions-js/dist/module/FunctionsClient.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+functions-js@2.1.1/node_modules/@supabase/functions-js/dist/module/helper.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+functions-js@2.1.1/node_modules/@supabase/functions-js/dist/module/types.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+gotrue-js@2.28.1/node_modules/@supabase/gotrue-js/dist/module/GoTrueAdminApi.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+gotrue-js@2.28.1/node_modules/@supabase/gotrue-js/dist/module/GoTrueClient.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+gotrue-js@2.28.1/node_modules/@supabase/gotrue-js/dist/module/lib/constants.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+gotrue-js@2.28.1/node_modules/@supabase/gotrue-js/dist/module/lib/errors.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+gotrue-js@2.28.1/node_modules/@supabase/gotrue-js/dist/module/lib/fetch.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+gotrue-js@2.28.1/node_modules/@supabase/gotrue-js/dist/module/lib/helpers.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+gotrue-js@2.28.1/node_modules/@supabase/gotrue-js/dist/module/lib/local-storage.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+gotrue-js@2.28.1/node_modules/@supabase/gotrue-js/dist/module/lib/polyfills.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+gotrue-js@2.28.1/node_modules/@supabase/gotrue-js/dist/module/lib/version.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+postgrest-js@1.7.0/node_modules/@supabase/postgrest-js/dist/module/PostgrestBuilder.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+postgrest-js@1.7.0/node_modules/@supabase/postgrest-js/dist/module/PostgrestClient.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+postgrest-js@1.7.0/node_modules/@supabase/postgrest-js/dist/module/PostgrestFilterBuilder.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+postgrest-js@1.7.0/node_modules/@supabase/postgrest-js/dist/module/PostgrestQueryBuilder.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+postgrest-js@1.7.0/node_modules/@supabase/postgrest-js/dist/module/PostgrestTransformBuilder.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+postgrest-js@1.7.0/node_modules/@supabase/postgrest-js/dist/module/constants.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+postgrest-js@1.7.0/node_modules/@supabase/postgrest-js/dist/module/version.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+realtime-js@2.7.2/node_modules/@supabase/realtime-js/dist/module/RealtimeChannel.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+realtime-js@2.7.2/node_modules/@supabase/realtime-js/dist/module/RealtimeClient.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+realtime-js@2.7.2/node_modules/@supabase/realtime-js/dist/module/RealtimePresence.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+realtime-js@2.7.2/node_modules/@supabase/realtime-js/dist/module/lib/constants.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+realtime-js@2.7.2/node_modules/@supabase/realtime-js/dist/module/lib/push.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+realtime-js@2.7.2/node_modules/@supabase/realtime-js/dist/module/lib/serializer.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+realtime-js@2.7.2/node_modules/@supabase/realtime-js/dist/module/lib/timer.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+realtime-js@2.7.2/node_modules/@supabase/realtime-js/dist/module/lib/transformers.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+realtime-js@2.7.2/node_modules/@supabase/realtime-js/dist/module/lib/version.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+storage-js@2.5.1/node_modules/@supabase/storage-js/dist/module/StorageClient.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+storage-js@2.5.1/node_modules/@supabase/storage-js/dist/module/lib/constants.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+storage-js@2.5.1/node_modules/@supabase/storage-js/dist/module/lib/errors.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+storage-js@2.5.1/node_modules/@supabase/storage-js/dist/module/lib/fetch.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+storage-js@2.5.1/node_modules/@supabase/storage-js/dist/module/lib/helpers.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+storage-js@2.5.1/node_modules/@supabase/storage-js/dist/module/lib/version.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+storage-js@2.5.1/node_modules/@supabase/storage-js/dist/module/packages/StorageBucketApi.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+storage-js@2.5.1/node_modules/@supabase/storage-js/dist/module/packages/StorageFileApi.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+supabase-js@2.24.0/node_modules/@supabase/supabase-js/dist/module/SupabaseClient.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+supabase-js@2.24.0/node_modules/@supabase/supabase-js/dist/module/index.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+supabase-js@2.24.0/node_modules/@supabase/supabase-js/dist/module/lib/SupabaseAuthClient.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+supabase-js@2.24.0/node_modules/@supabase/supabase-js/dist/module/lib/constants.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+supabase-js@2.24.0/node_modules/@supabase/supabase-js/dist/module/lib/fetch.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+supabase-js@2.24.0/node_modules/@supabase/supabase-js/dist/module/lib/helpers.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@supabase+supabase-js@2.24.0/node_modules/@supabase/supabase-js/dist/module/lib/version.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@unhead+dom@1.1.27/node_modules/@unhead/dom/dist/index.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@unhead+shared@1.1.27/node_modules/@unhead/shared/dist/index.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@unhead+vue@1.1.27_vue@3.3.4/node_modules/@unhead/vue/dist/shared/vue.505b826e.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@unocss+reset@0.52.7/node_modules/@unocss/reset/tailwind.css": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/const.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/env.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/index.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/proxy.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/time.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vue+reactivity@3.3.4/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vue+runtime-core@3.3.4/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vue+runtime-dom@3.3.4/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vue+shared@3.3.4/node_modules/@vue/shared/dist/shared.esm-bundler.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vueuse+core@10.1.2_vue@3.3.4/node_modules/@vueuse/core/index.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vueuse+head@1.1.26_vue@3.3.4/node_modules/@vueuse/head/dist/index.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/@vueuse+shared@10.1.2_vue@3.3.4/node_modules/@vueuse/shared/index.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/cross-fetch@3.1.6/node_modules/cross-fetch/dist/browser-ponyfill.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/es5-ext@0.10.62/node_modules/es5-ext/global.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/pinia@2.1.3_typescript@5.1.3_vue@3.3.4/node_modules/pinia/dist/pinia.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/sortablejs@1.14.0/node_modules/sortablejs/modular/sortable.esm.js": [
+    "/assets/builder-208ee361.js"
+  ],
+  "node_modules/.pnpm/unhead@1.1.27/node_modules/unhead/dist/index.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/unocss-ui@0.0.3-alpha.4/node_modules/unocss-ui/dist/style.css": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/unocss-ui@0.0.3-alpha.4/node_modules/unocss-ui/dist/unocss-ui.es.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/vite-ssg@0.22.2_@vueuse+head@1.1.26_critters@0.0.16_vite@4.3.9_vue-router@4.2.2_vue@3.3.4/node_modules/vite-ssg/dist/index.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/vite-ssg@0.22.2_@vueuse+head@1.1.26_critters@0.0.16_vite@4.3.9_vue-router@4.2.2_vue@3.3.4/node_modules/vite-ssg/dist/shared/vite-ssg.5912142e.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/vite-ssg@0.22.2_@vueuse+head@1.1.26_critters@0.0.16_vite@4.3.9_vue-router@4.2.2_vue@3.3.4/node_modules/vite-ssg/dist/shared/vite-ssg.a009fbf1.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/vue-demi@0.14.5_vue@3.3.4/node_modules/vue-demi/lib/index.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/vue-i18n@9.2.2_vue@3.3.4/node_modules/vue-i18n/dist/vue-i18n.runtime.esm-bundler.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/vue-router@4.2.2_vue@3.3.4/node_modules/vue-router/dist/vue-router.mjs": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/vue3-json-editor@1.1.5/node_modules/vue3-json-editor/dist/vue3-json-editor.esm.prod.js": [
+    "/assets/builder-208ee361.js"
+  ],
+  "node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/vuedraggable@4.1.0_vue@3.3.4/node_modules/vuedraggable/dist/vuedraggable.umd.js": [
+    "/assets/builder-208ee361.js"
+  ],
+  "node_modules/.pnpm/websocket@1.0.34/node_modules/websocket/lib/browser.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/websocket@1.0.34/node_modules/websocket/lib/version.js": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/websocket@1.0.34/node_modules/websocket/package.json": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/workbox-window@6.6.0/node_modules/workbox-window/build/workbox-window.prod.es5.mjs": [
+    "/assets/workbox-window.prod.es5-08b2315b.js"
+  ],
+  "src/App.vue": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/App.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/components/AdminAuthorized.vue": [
+    "/assets/dashboard-85e0f8e1.js"
+  ],
+  "src/components/BuilderDocManager.vue": [
+    "/assets/index-37a28dd6.js"
+  ],
+  "src/components/UserAdmin.vue": [
+    "/assets/dashboard-85e0f8e1.js"
+  ],
+  "src/components/UserAuth.vue": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/components/UserLogout.vue": [
+    "/assets/dashboard-85e0f8e1.js"
+  ],
+  "src/components/builderDetails.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/components/builderDetailsAssets.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/components/builderDetailsAssetsList.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/components/builderDetailsAssetsUploader.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/components/builderDetailsBlocks.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/components/builderDetailsCodigo.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/components/builderDetailsContainers.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/components/builderDetailsContainersDraggable.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/components/builderDetailsModulos.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/components/builderDetailsPrompts.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/components/builderMenu.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/composables/dark.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/favicon.svg": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/layouts/404.vue": [
+    "/assets/404-966cb7f3.js"
+  ],
+  "src/layouts/404.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/404-966cb7f3.js"
+  ],
+  "src/layouts/builder.vue": [
+    "/assets/builder-208ee361.js"
+  ],
+  "src/layouts/default.vue": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/layouts/home.vue": [
+    "/assets/home-aed09c13.js"
+  ],
+  "src/main.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/modules/i18n.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/modules/nprogress.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/modules/pinia.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/modules/pwa.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/modules/router.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/modules/supabase.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/modules/unocssui.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/pages/README.md": [
+    "/assets/README-1be5604b.js"
+  ],
+  "src/pages/[...all].vue": [
+    "/assets/_...all_-75ba187e.js"
+  ],
+  "src/pages/[...all].vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/_...all_-75ba187e.js"
+  ],
+  "src/pages/about.md": [
+    "/assets/about-95ab4455.js"
+  ],
+  "src/pages/dashboard.vue": [
+    "/assets/dashboard-85e0f8e1.js"
+  ],
+  "src/pages/dashboard.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/dashboard-85e0f8e1.js"
+  ],
+  "src/pages/hi/[name].vue": [
+    "/assets/_name_-8134062c.js"
+  ],
+  "src/pages/hi/[name].vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/_name_-8134062c.js"
+  ],
+  "src/pages/index.vue": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/pages/index.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/pages/riodas/[key].vue": [
+    "/assets/_key_-6b7729c6.js"
+  ],
+  "src/pages/riodas/index.vue": [
+    "/assets/index-37a28dd6.js"
+  ],
+  "src/stores/builder.ts": [
+    "/assets/builder-6253cffa.js"
+  ],
+  "src/stores/user.ts": [
+    "/assets/favicon-8ecc0abb.svg"
+  ],
+  "src/styles/main.css": [
+    "/assets/favicon-8ecc0abb.svg"
+  ]
+}

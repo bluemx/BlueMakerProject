@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import favicon from '../favicon.svg'
 defineOptions({
   name: 'IndexPage',
 })
+
 const user = useUserStore()
 const name = ref(user.savedName)
 
@@ -17,7 +19,7 @@ const { t } = useI18n()
 <template>
   <div>
     <div text-4xl>
-      <img src="favicon.svg" alt="BlueMaker" mx-auto w-12>
+      <img :src="favicon" alt="BlueMaker" mx-auto w-12>
     </div>
     <p font-bold>
       BlueMaker

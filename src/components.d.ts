@@ -24,7 +24,6 @@ declare module '@vue/runtime-core' {
     BuilderDocManager: typeof import('./components/BuilderDocManager.vue')['default']
     BuilderMain: typeof import('./components/builderMain.vue')['default']
     BuilderMenu: typeof import('./components/builderMenu.vue')['default']
-    copy: typeof import('./components/builderDetailsContainers copy.vue')['default']
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
