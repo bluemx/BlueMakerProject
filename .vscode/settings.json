@@ -1,0 +1,27 @@
+{
+  "cSpell.words": ["Vitesse", "Vite", "unocss", "vitest", "vueuse", "pinia", "demi", "antfu", "iconify", "intlify", "vitejs", "unplugin", "pnpm"],
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": "locales",
+  "i18n-ally.sortKeys": true,
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "editor.formatOnSave": false,
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#97b6df",
+    "titleBar.activeForeground": "#000000",
+    "titleBar.inactiveBackground": "#83b3d3",
+    "titleBar.inactiveForeground": "#000000",
+    "titleBar.border": "#83b3d3",
+    "activityBar.foreground": "#83b3d3",
+    "tab.activeBorder": "#83b3d3",
+    "iLoveWorkSpaceColors": true,
+    "iLoveWorkSpaceRandom": false,
+    "useWorkspaceLite": true
+  }
+}
