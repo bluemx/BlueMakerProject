@@ -45,8 +45,9 @@ function clonedModule(i) {
       item[el] = prop.default
     }
   });
-  item["block"] = i.name
+  item["block"] = props.name
   item["name"] = getRandomCharacters()
+  item["schema"] = props
   return item
 }
 loadModulos()
