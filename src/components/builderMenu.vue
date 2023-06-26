@@ -25,6 +25,9 @@ async function saveDoc(){
   saveToast.value.show('success', 'Documento guardado')
 }
 
+
+
+
 function downloadDoc(){
   builderstore.downloadDoc()
   saveToast.value.show('error', 'No funciona')
@@ -40,6 +43,12 @@ function downloadDoc(){
       </div>
     </template>
     <UToast ref="saveToast" position="bottom" align="left" />
+
+    <div title="Sincronizar" class="mt-auto aspect-square flex cursor-pointer items-center justify-center bg-cyan-5 hover:bg-amber" @click="saveDoc()">
+      <div class="i-solar-refresh-circle-line-duotone" v-if="!saveLoading" />
+      <div class="i-solar-refresh-circle-line-duotone" v-if="saveLoading" />
+    </div>
+
     <div title="Guardar" class="mt-auto aspect-square flex cursor-pointer items-center justify-center bg-cyan-5 hover:bg-amber" @click="saveDoc()">
       <div class="i-solar:diskette-broken" v-if="!saveLoading" />
       <div class="i-solar-diskette-bold animate-spin" v-if="saveLoading" />
