@@ -22,13 +22,13 @@ const router = useRouter()
         RIODAS
       </button>
     </router-link>
-    <button aspect-square w-full bg-slate-1>
+    <button aspect-square w-full bg-slate-1 dark:text-neutral>
       MAILING
     </button>
-    <button aspect-square w-full bg-slate-1>
+    <button aspect-square w-full bg-slate-1 dark:text-neutral>
       SITIO
     </button>
-    <button aspect-square w-full bg-slate-1 />
+    <button aspect-square w-full bg-slate-1 dark:text-neutral />
   </div>
   <div mt-36>
     <UserAdmin v-if="user?.profile?.role == 'admin'" />

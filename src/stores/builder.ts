@@ -7,6 +7,8 @@ export const useBuilderStore = defineStore('builder', () => {
   const files = ref()
   const dockey = ref()
   const menu = ref(null)
+  const modulos = ref()
+  const modulosobj = ref({})
   const newDoc = async (key, content) => {
     const { data, error } = await supabase
       .from('documents')
@@ -15,7 +17,6 @@ export const useBuilderStore = defineStore('builder', () => {
       ])
       .select()
       .single()
-      console.log(data)
     router.push(`/${type.value}/${data.key}`)
   }
   const loadDoc = async (key) => {
@@ -51,6 +52,19 @@ export const useBuilderStore = defineStore('builder', () => {
 
   }
 
+  const loadModulos = async () => {
+    const { data: modulos, error } = await supabase
+    .from('modulos')
+    .select('*')
+    .eq('type', type.value)
+    modulos.value = modulos
+
+    modulos?.forEach(i => {
+      modulosobj.value[i.name] = {...i.schema, icon: i.icon}
+    })
+    return modulos
+  }
+
   const updateAssets = async () => {
     files.value = []
     const { data, error } = await supabase
@@ -67,7 +81,7 @@ export const useBuilderStore = defineStore('builder', () => {
     })
   }
 
-  return { menu, type, doc, dockey, files, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc }
+  return { menu, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos }
 })
 /*
 if (import.meta.hot)

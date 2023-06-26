@@ -3,6 +3,6 @@
 </script>
 
 <template>
-  Rspuesta
-  <textarea id="" name="" cols="30" rows="10" />
+
+  <textarea id="" name="" cols="30" rows="10" w-full m-2 />
 </template>

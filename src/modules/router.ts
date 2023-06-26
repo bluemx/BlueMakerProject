@@ -16,10 +16,11 @@ export const install: UserModule = ({ isClient, router }) => {
       const session = ref()
       const user = useUserStore()
 
-      session.value = await authFn()
-
+      await authFn()
+      next()
+      /*
       if (requiredAuth) {
-        if (user)
+        if (user.auth)
           next()
         else
           next('/')
@@ -27,14 +28,8 @@ export const install: UserModule = ({ isClient, router }) => {
       else {
         next()
       }
-      /*
-      else {
-        if (to.path === '/' && user)
-          next('/dashboard')
-        else
-          next()
-      }
       */
+
     }) // router.beforeEach
   }
 }

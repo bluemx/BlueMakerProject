@@ -30,7 +30,7 @@ async function handleDelete(usr) {
   <div class="mx-auto my-10 max-w-4xl">
     <template v-for="(item, index) in authorized" :key="index">
       <div class="grid grid-cols-2 mb-0.5 bg-slate-1 p-1">
-        <div text-sm>
+        <div text-sm dark:text-dark>
           {{ item.email }}
         </div>
 
@@ -41,7 +41,7 @@ async function handleDelete(usr) {
     </template>
 
     <form class="grid grid-cols-2 bg-slate-1 p-1" @submit.prevent="handleNew">
-      <input v-model="newuser" type="email" placeholder="nuevo" required rounded p-2 text-center text-xs>
+      <input v-model="newuser" type="email" placeholder="nuevo" required rounded p-2 text-center text-xs dark:text-neutral>
       <button class="bg-slate-5 text-xs text-white hover:bg-blue">
         Añadir
       </button>

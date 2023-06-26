@@ -33,9 +33,14 @@ const canCreate = computed(() => {
     if (docsFilter.value[0].key == filter.value)
       res = true
   }
-
   return res
 })
+
+const builderNewDoc = ()  => {
+  console.log(filter.value, props.defaultDoc)
+  builderstore.newDoc(filter.value, props.defaultDoc)
+}
+
 onMounted(() => {
   dialog.value.showModal()
   loadItems()
@@ -45,12 +50,12 @@ onMounted(() => {
 <template>
   <dialog ref="dialog" class="flex flex-col gap-2 bg-slate-100">
     <div class="flex">
-      <input v-model="filter" required flex-grow rounded-tl p-2 text-center type="email" placeholder="ID" @input="onInput">
-      <button :disabled="canCreate" border-1 rounded-tr bg-slate px-6 py-1 text-xs text-white disabled:bg-slate-1 @click="builderstore.newDoc(filter, defaultDoc)">
+      <input v-model="filter" required flex-grow rounded-tl p-2 text-center dark:text-neutral type="email" placeholder="ID" @input="onInput">
+      <button :disabled="canCreate" border-1 rounded-tr bg-slate px-6 py-1 text-xs text-white disabled:bg-slate-1 @click="builderNewDoc">
         Nuevo
       </button>
     </div>
-    <div grid grid-cols-2 my-5 gap-1 md:grid-cols-6>
+    <div grid grid-cols-2 my-5 gap-1 md:grid-cols-6 dark:text-neutral>
       <template v-for="(item, index) in docsFilter">
         <router-link :to="`/${builderstore.type}/${item.key}`" border-1 border-slate rounded p-1 text-center text-xs>
           <button>

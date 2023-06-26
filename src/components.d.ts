@@ -10,6 +10,9 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AdminAuthorized: typeof import('./components/AdminAuthorized.vue')['default']
+    BDModulos_Inputs: typeof import('./components/BDModulos_Inputs.vue')['default']
+    BDModulosDropzones: typeof import('./components/BDModulosDropzones.vue')['default']
+    BDModulosInputs: typeof import('./components/BDModulosInputs.vue')['default']
     BuilderDetails: typeof import('./components/builderDetails.vue')['default']
     BuilderDetailsAssets: typeof import('./components/builderDetailsAssets.vue')['default']
     BuilderDetailsAssetsList: typeof import('./components/builderDetailsAssetsList.vue')['default']

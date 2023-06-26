@@ -32,3 +32,21 @@ html.dark {
 .moduleghost{
   @apply !bg-amber !aspect-auto;
 }
+
+.hasicon svg{
+  max-width: 100% !important;
+  max-height: 100% !important;
+  aspect-ratio: 1/1 !important;
+  @apply aspect-square;
+}
+
+
+::selection{
+  background: #ec4899;
+  color: #fff;
+}
+
+::-moz-selection{
+  background: #ec4899;
+  color: #fff;
+}

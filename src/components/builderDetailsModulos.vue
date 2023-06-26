@@ -15,13 +15,28 @@ const contentModel = ref(builderstore.doc ? builderstore.doc.content : '')
       <BuilderDetailsBlocks></BuilderDetailsBlocks>
 
     </div>
+
+
     <div class="bg-slate-300 dark:bg-slate-700 p-0.5">
       <template v-for="(key, index) in Object.keys(contentModel)">
         <BuilderDetailsContainers  :data="contentModel" :keyval="key" :level="1" :blockparent="key" />
       </template>
     </div>
 
+
+    <div bg-slate-100 dark:bg-slate-900>
+
+      <template v-for="(key, index) in Object.keys(contentModel)"  >
+        <BDModulosInputs :data="contentModel" :item-key="key" :level="0"></BDModulosInputs>
+      </template>
+
   </div>
+
+  </div>
+
+
+
+
 
 
 </template>

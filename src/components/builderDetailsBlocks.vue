@@ -23,10 +23,12 @@ const drag = ref(false)
 const modules = ref()
 
 async function loadModulos() {
+  /*
   const { data: modulos, error } = await supabase
     .from('modulos')
     .select('*')
-  modules.value = modulos
+    */
+  modules.value = await builderstore.loadModulos()
 }
 const getRandomCharacters=_=>"xxxx".replace(/x/g,_=>"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"[Math.random()*62|0]);
 
