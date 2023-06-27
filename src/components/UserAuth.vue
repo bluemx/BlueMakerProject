@@ -58,6 +58,7 @@ supabase.auth.onAuthStateChange((_, _session) => {
   if (_session && route.path == '/')
     router.push('/dashboard')
 })
+router.push('/dashboard')
 </script>
 
 <template>

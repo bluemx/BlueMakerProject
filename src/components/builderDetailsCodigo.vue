@@ -1,11 +1,12 @@
 <script setup>
+/*
 import { Vue3JsonEditor } from 'vue3-json-editor'
 import { storeToRefs } from 'pinia'
 import { Codemirror } from 'vue-codemirror'
 import { json } from '@codemirror/lang-json'
 import { oneDark } from '@codemirror/theme-one-dark'
 
-console.log(json)
+
 const extensions = [json(), oneDark]
 const view = shallowRef()
 const handleReady = (payload) => {
@@ -34,12 +35,14 @@ const jsoncode = ref(JSON.stringify(contentModel.value, null, "\t"))
 watch(() => builderstore.doc.content, (newContent) => {
   contentModel.value = newContent
 })
+*/
 </script>
 
-<template>
+<template> ---
   <!--
     <Vue3JsonEditor v-model="contentModel" class="bg-white" @json-change="onJsonChange" @mode-change="onModeChange" />
   -->
+  <!--
   <codemirror
     v-model="jsoncode"
     placeholder="Code goes here..."
@@ -50,4 +53,5 @@ watch(() => builderstore.doc.content, (newContent) => {
     :tab-size="2"
     :extensions="extensions"
     @ready="handleReady"></codemirror>
+    -->
 </template>
