@@ -31,6 +31,17 @@
             <div col-span-3><USwitch v-model="refData[itemKey]" size="sm" /></div>
           </template>
 
+          <template v-if="itemKey=='symbol'">
+            <label mt-1>Reemplazo:</label>
+            <div col-span-3 mt-1>
+              <UInput v-model="symbolReplaceFN" class="dark:text-neutral w-full" size="sm">
+                <template #append>
+                  <div w-full px-2 cursor-pointer @click="symbolReplaceNew">+</div>
+                </template>
+              </UInput>
+            </div>
+
+          </template>
         </div>
       </template> <!--/ string inputs -->
 
@@ -112,5 +123,13 @@ const open = () => {
 
 
 const dropzones = ['content', 'scenes', 'options']
+
+
+const symbolReplaceFN = ref()
+const symbolReplaceNew = () => {
+  if(!symbolReplaceFN.value){ return false }
+  refData.value[symbolReplaceFN.value] = ''
+  symbolReplaceFN.value = null
+}
 
 </script>

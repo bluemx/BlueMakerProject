@@ -13,16 +13,16 @@ const contentModel = ref(builderstore.doc ? builderstore.doc.content : '')
   <div relative>
     <div sticky top-0 z-10 bg-slate-800>
       <BuilderDetailsBlocks></BuilderDetailsBlocks>
-
     </div>
 
-
+    <!-- version 1 -->
+    <!--
     <div class="bg-slate-300 dark:bg-slate-700 p-0.5">
       <template v-for="(key, index) in Object.keys(contentModel)">
         <BuilderDetailsContainers  :data="contentModel" :keyval="key" :level="1" :blockparent="key" />
       </template>
     </div>
-
+    -->
 
     <div bg-slate-100 dark:bg-slate-900>
 

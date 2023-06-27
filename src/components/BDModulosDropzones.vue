@@ -139,31 +139,6 @@ const open = (index, element) => {
 
 
 
-/*
-function clonedModule(i) {
-  const props = JSON.parse(JSON.stringify(i.schema.properties))
-  const item = {}
-  Object.keys(i.schema.properties).forEach(el => {
-    const prop = props[el]
-
-    if(prop.type=='string'){
-      item[el] = ""
-    }
-    if(prop.type=='boolean'){
-      item[el] = false
-    }
-    if(prop.type=='array'){
-      item[el] = []
-    }
-    if(prop.default){
-      item[el] = prop.default
-    }
-  });
-
-  item["block"] = i.name
-  item["name"] = getRandomCharacters()
-  //item["schema"] = props
-*/
 const syncblock = (index,element) => {
 
   if(element.symbol){
@@ -180,6 +155,7 @@ const syncblock = (index,element) => {
       if(prop.default){ element[el] = prop.default }
     }
   })
+  if(!element?.name){ element["name"] = getRandomCharacters() }
 }
 
 </script>
