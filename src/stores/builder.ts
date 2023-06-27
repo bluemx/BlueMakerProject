@@ -90,7 +90,7 @@ export const useBuilderStore = defineStore('builder', () => {
     doc.value.content.metadata[key] = val
   }
 
-  return { menu, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos }
+  return { menu, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos,metadata }
 })
 /*
 if (import.meta.hot)
