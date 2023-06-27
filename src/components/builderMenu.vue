@@ -32,8 +32,8 @@ function syncDoc () {
 }
 
 function downloadDoc(){
-  builderstore.downloadDoc()
-  saveToast.value.show('error', 'No funciona')
+  builderstore.download()
+
 }
 
 </script>

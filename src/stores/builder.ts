@@ -1,4 +1,7 @@
 import { defineStore } from 'pinia'
+import * as JSZip from 'jszip'
+import JSZipUtils from "jszip-utils";
+import { saveAs } from 'file-saver';
 
 export const useBuilderStore = defineStore('builder', () => {
   const router = useRouter()
@@ -93,8 +96,55 @@ export const useBuilderStore = defineStore('builder', () => {
     doc.value.content.metadata[key] = val
   }
 
-  return { menu, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos, metadata }
+
+  const urlToPromise = async (url) => {
+    return new Promise(function (resolve, reject) {
+      JSZipUtils.getBinaryContent(url, function (err, data) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(data);
+        }
+      });
+    });
+  };
+
+  const download = () => {
+    var zip = new JSZip();
+
+    let document = JSON.stringify(doc.value.content)
+
+    var mainfolder = zip.folder(dockey.value)
+
+    var filesfolder = mainfolder.folder("files");
+
+    files.value.forEach((file)=>{
+      document = document.replaceAll(file.url, 'files/'+file.name)
+
+      filesfolder.file(
+        file.name,
+        urlToPromise(file.url),
+        { binary: true }
+      );
+
+    })
+
+    mainfolder.file("oda.json", document);
+
+    //img.file("smile.gif", imgData, {base64: true});
+    zip.generateAsync({type:"blob"})
+    .then(function(content) {
+        // see FileSaver.js
+        saveAs(content, dockey.value+".zip");
+    });
+  }
+
+  return { menu, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos, metadata, download }
 })
+
+
+
+
 /*
 if (import.meta.hot)
   import.meta.hot.accept(acceptHMRUpdate(useUserStore as any, import.meta.hot))
