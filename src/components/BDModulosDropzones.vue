@@ -15,7 +15,7 @@
 
 
 
-        <div @click="open(index)" class="mb-0.5  handle flex gap-1 items-center justify-between grow px-1 cursor-grab p-1" >
+        <div @click="open(index, element)" class="mb-0.5  handle flex gap-1 items-center justify-between grow px-1 cursor-grab p-1" >
           <div flex items-center w-full grow>
             <div class="hasicon w-4 h-4 mr-1" v-if="builderstore?.modulosobj[element.block]?.icon" v-html="builderstore.modulosobj[element.block].icon"></div>
             <template v-if="element?.symbol">
@@ -130,9 +130,50 @@ const fnDelete= (el, index) => {
 
 
 const accordion = ref({})
-const open = (index) => {
+const open = (index, element) => {
+  syncblock(index, element)
   accordion.value[moduloName+index] = !accordion.value[moduloName+index]
 }
 
+
+
+/*
+function clonedModule(i) {
+  const props = JSON.parse(JSON.stringify(i.schema.properties))
+  const item = {}
+  Object.keys(i.schema.properties).forEach(el => {
+    const prop = props[el]
+
+    if(prop.type=='string'){
+      item[el] = ""
+    }
+    if(prop.type=='boolean'){
+      item[el] = false
+    }
+    if(prop.type=='array'){
+      item[el] = []
+    }
+    if(prop.default){
+      item[el] = prop.default
+    }
+  });
+
+  item["block"] = i.name
+  item["name"] = getRandomCharacters()
+  //item["schema"] = props
+*/
+const syncblock = (index,element) => {
+  const schema = builderstore.modulosobj[element.block]
+  Object.keys(schema.properties).forEach(el => {
+    if(!element.hasOwnProperty(el)){
+      console.log('adding:'+el)
+      const prop = schema.properties[el]
+      if(prop.type=='string'){ element[el] = "" }
+      if(prop.type=='boolean'){ element[el] = false }
+      if(prop.type=='array'){ element[el] = [] }
+      if(prop.default){ element[el] = prop.default }
+    }
+  })
+}
 
 </script>

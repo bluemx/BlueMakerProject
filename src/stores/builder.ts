@@ -66,6 +66,8 @@ export const useBuilderStore = defineStore('builder', () => {
     return modulos
   }
 
+
+
   const updateAssets = async () => {
     files.value = []
     const { data, error } = await supabase
@@ -83,6 +85,7 @@ export const useBuilderStore = defineStore('builder', () => {
   }
 
 
+
   const metadata = (key, val) => {
     if(!doc.value.content?.metadata){
       doc.value.content.metadata = {}
@@ -90,7 +93,7 @@ export const useBuilderStore = defineStore('builder', () => {
     doc.value.content.metadata[key] = val
   }
 
-  return { menu, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos,metadata }
+  return { menu, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos, metadata }
 })
 /*
 if (import.meta.hot)
