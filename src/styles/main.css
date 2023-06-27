@@ -50,3 +50,8 @@ html.dark {
   background: #ec4899;
   color: #fff;
 }
+
+
+.jsoneditor-vue{
+	height: 100%;
+}

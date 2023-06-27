@@ -19,8 +19,10 @@
           <div flex items-center w-full grow>
             <div class="hasicon w-4 h-4 mr-1" v-if="builderstore?.modulosobj[element.block]?.icon" v-html="builderstore.modulosobj[element.block].icon"></div>
             <template v-if="element?.symbol">
-              <div>symbol</div>
-              <div >{{ element.symbol }}</div>
+              <div flex items-center justify-between grow class="bg-gradient-to-r from-red-800 to-info items-center relative">
+                <div>symbol</div>
+                <div >{{ element.symbol }}</div>
+              </div>
             </template>
             <template v-else>
               <div flex items-center justify-between grow>
@@ -163,6 +165,10 @@ function clonedModule(i) {
   //item["schema"] = props
 */
 const syncblock = (index,element) => {
+
+  if(element.symbol){
+    return false
+  }
   const schema = builderstore.modulosobj[element.block]
   Object.keys(schema.properties).forEach(el => {
     if(!element.hasOwnProperty(el)){

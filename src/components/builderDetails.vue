@@ -8,7 +8,7 @@ const builderstore = useBuilderStore()
       {{ builderstore.menu.name }}
     </header>
 
-    <section bg-slate-800 overflow-x-hidden overflow-y-auto fle>
+    <section bg-slate-800 overflow-x-hidden overflow-y-auto flex flex-col grow>
       <BuilderDetailsModulos v-if="builderstore.menu.id == 'modulos'"  />
       <BuilderDetailsCodigo v-if="builderstore.menu.id == 'codigo'" />
       <BuilderDetailsPrompts v-if="builderstore.menu.id == 'prompts'" />
