@@ -9,6 +9,7 @@ export const useBuilderStore = defineStore('builder', () => {
   const menu = ref(null)
   const modulos = ref()
   const modulosobj = ref({})
+
   const newDoc = async (key, content) => {
     const { data, error } = await supabase
       .from('documents')
@@ -79,6 +80,14 @@ export const useBuilderStore = defineStore('builder', () => {
     data.forEach((itm)=>{
       files.value.push({name: itm.name, url: geturl(itm.name), mimetype:itm.metadata.mimetype})
     })
+  }
+
+
+  const metadata = (key, val) => {
+    if(!doc.value.content?.metadata){
+      doc.value.content.metadata = {}
+    }
+    doc.value.content.metadata[key] = val
   }
 
   return { menu, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos }

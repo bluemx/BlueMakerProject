@@ -23,11 +23,6 @@ const drag = ref(false)
 const modules = ref()
 
 async function loadModulos() {
-  /*
-  const { data: modulos, error } = await supabase
-    .from('modulos')
-    .select('*')
-    */
   modules.value = await builderstore.loadModulos()
 }
 const getRandomCharacters=_=>"xxxx".replace(/x/g,_=>"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"[Math.random()*62|0]);
@@ -37,8 +32,12 @@ function clonedModule(i) {
   const item = {}
   Object.keys(i.schema.properties).forEach(el => {
     const prop = props[el]
+
     if(prop.type=='string'){
       item[el] = ""
+    }
+    if(prop.type=='boolean'){
+      item[el] = false
     }
     if(prop.type=='array'){
       item[el] = []
@@ -47,9 +46,11 @@ function clonedModule(i) {
       item[el] = prop.default
     }
   });
+
   item["block"] = i.name
   item["name"] = getRandomCharacters()
   //item["schema"] = props
+
   return item
 }
 loadModulos()

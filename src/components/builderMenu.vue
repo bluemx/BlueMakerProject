@@ -26,7 +26,10 @@ async function saveDoc(){
 }
 
 
+function syncDoc () {
+  builderstore.metadata('sync', Math.random())
 
+}
 
 function downloadDoc(){
   builderstore.downloadDoc()
@@ -44,12 +47,10 @@ function downloadDoc(){
     </template>
     <UToast ref="saveToast" position="bottom" align="left" />
 
-    <div title="Sincronizar" class="mt-auto aspect-square flex cursor-pointer items-center justify-center bg-cyan-5 hover:bg-amber" @click="saveDoc()">
-      <div class="i-solar-refresh-circle-line-duotone" v-if="!saveLoading" />
-      <div class="i-solar-refresh-circle-line-duotone" v-if="saveLoading" />
+    <div title="Sincronizar" class="mt-auto aspect-square flex cursor-pointer items-center justify-center bg-stone-5 hover:bg-amber" @click="syncDoc()">
+      <div class="i-solar-refresh-circle-line-duotone"/>
     </div>
-
-    <div title="Guardar" class="mt-auto aspect-square flex cursor-pointer items-center justify-center bg-cyan-5 hover:bg-amber" @click="saveDoc()">
+    <div title="Guardar" class="aspect-square flex cursor-pointer items-center justify-center bg-cyan-5 hover:bg-amber" @click="saveDoc()">
       <div class="i-solar:diskette-broken" v-if="!saveLoading" />
       <div class="i-solar-diskette-bold animate-spin" v-if="saveLoading" />
     </div>

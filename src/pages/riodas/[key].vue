@@ -28,16 +28,25 @@ const sendData = () => {
 
 
 onMounted(() => {
+
   loading?.value?.showModal()
+
+
   watch((builderstore), (ncontent) => {
     if(ncontent.doc){
       sendData()
     }
   }, {deep: true})
-
   setTimeout(()=>{
     loadDoc()
   }, 200)
+
+
+  iframe.value.onload = () => {
+   sendData()
+   builderstore.iframe = iframe.value
+  }
+
 
 })
 
@@ -48,6 +57,9 @@ const restartoda = () => {
     sendData()
   }, 200)
 }
+
+
+
 </script>
 
 <template>
