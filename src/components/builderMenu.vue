@@ -33,7 +33,7 @@ function syncDoc () {
 
 function downloadDoc(){
   builderstore.download()
-
+  saveToast.value.show('success', 'Descargando...')
 }
 
 </script>
