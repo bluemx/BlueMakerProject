@@ -141,7 +141,7 @@ const open = (index, element) => {
 
 const syncblock = (index,element) => {
 
-  if(element.symbol){
+  if(element.symbol || !builderstore.modulosobj[element.block]){
     return false
   }
   const schema = builderstore.modulosobj[element.block]
