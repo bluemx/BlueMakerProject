@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import * as JSZip from 'jszip'
 import JSZipUtils from "jszip-utils";
-import { saveAs } from 'file-saver';
+import saveAs from 'file-saver';
 
 export const useBuilderStore = defineStore('builder', () => {
   const router = useRouter()

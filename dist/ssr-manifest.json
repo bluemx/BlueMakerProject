@@ -2,17 +2,26 @@
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/cross-fetch@3.1.6/node_modules/cross-fetch/dist/browser-ponyfill.js?commonjs-module": [
     "/assets/favicon-8ecc0abb.svg"
   ],
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/file-saver@2.0.5/node_modules/file-saver/dist/FileSaver.min.js?commonjs-module": [
+    "/assets/builder-289b4316.js"
+  ],
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/jszip@3.10.1/node_modules/jszip/dist/jszip.min.js?commonjs-module": [
+    "/assets/builder-289b4316.js"
+  ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js?commonjs-module": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/sortablejs@1.14.0/node_modules/sortablejs/modular/sortable.esm.js?commonjs-proxy": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js?commonjs-proxy": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/vuedraggable@4.1.0_vue@3.3.4/node_modules/vuedraggable/dist/vuedraggable.umd.js?commonjs-module": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
+  ],
+  "\u0000commonjs-dynamic-modules": [
+    "/assets/builder-289b4316.js"
   ],
   "\u0000commonjsHelpers.js": [
     "/assets/favicon-8ecc0abb.svg"
@@ -33,7 +42,7 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "/assets/virtual_pwa-register-4f0f1c6c.js"
+    "/assets/virtual_pwa-register-30c53960.js"
   ],
   "../../../../../@vite-plugin-vue-layouts/generated-layouts": [
     "/assets/favicon-8ecc0abb.svg"
@@ -299,8 +308,17 @@
   "node_modules/.pnpm/es5-ext@0.10.62/node_modules/es5-ext/global.js": [
     "/assets/favicon-8ecc0abb.svg"
   ],
+  "node_modules/.pnpm/file-saver@2.0.5/node_modules/file-saver/dist/FileSaver.min.js": [
+    "/assets/builder-289b4316.js"
+  ],
   "node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs": [
     "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/jszip-utils@0.1.0/node_modules/jszip-utils/lib/index.js": [
+    "/assets/builder-289b4316.js"
+  ],
+  "node_modules/.pnpm/jszip@3.10.1/node_modules/jszip/dist/jszip.min.js": [
+    "/assets/builder-289b4316.js"
   ],
   "node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js": [
     "/assets/favicon-8ecc0abb.svg"
@@ -309,7 +327,7 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/sortablejs@1.14.0/node_modules/sortablejs/modular/sortable.esm.js": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "node_modules/.pnpm/unhead@1.1.27/node_modules/unhead/dist/index.mjs": [
     "/assets/favicon-8ecc0abb.svg"
@@ -338,11 +356,14 @@
   "node_modules/.pnpm/vue-router@4.2.2_vue@3.3.4/node_modules/vue-router/dist/vue-router.mjs": [
     "/assets/favicon-8ecc0abb.svg"
   ],
+  "node_modules/.pnpm/vue3-json-editor@1.1.5/node_modules/vue3-json-editor/dist/vue3-json-editor.esm.prod.js": [
+    "/assets/builder-7c89e8b8.js"
+  ],
   "node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/vuedraggable@4.1.0_vue@3.3.4/node_modules/vuedraggable/dist/vuedraggable.umd.js": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "node_modules/.pnpm/websocket@1.0.34/node_modules/websocket/lib/browser.js": [
     "/assets/favicon-8ecc0abb.svg"
@@ -363,58 +384,52 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/components/AdminAuthorized.vue": [
-    "/assets/dashboard-e96bd8e3.js"
+    "/assets/dashboard-d2c4f9f0.js"
   ],
   "src/components/BDModulosDropzones.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/components/BDModulosInputs.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/components/BuilderDocManager.vue": [
-    "/assets/index-5a922382.js"
+    "/assets/index-f3f5752b.js"
   ],
   "src/components/UserAdmin.vue": [
-    "/assets/dashboard-e96bd8e3.js"
+    "/assets/dashboard-d2c4f9f0.js"
   ],
   "src/components/UserAuth.vue": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/components/UserLogout.vue": [
-    "/assets/dashboard-e96bd8e3.js"
+    "/assets/dashboard-d2c4f9f0.js"
   ],
   "src/components/builderDetails.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/components/builderDetailsAssets.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/components/builderDetailsAssetsList.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/components/builderDetailsAssetsUploader.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/components/builderDetailsBlocks.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/components/builderDetailsCodigo.vue": [
-    "/assets/builder-1f838f16.js"
-  ],
-  "src/components/builderDetailsContainers.vue": [
-    "/assets/builder-1f838f16.js"
-  ],
-  "src/components/builderDetailsContainersDraggable.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/components/builderDetailsModulos.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/components/builderDetailsPrompts.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/components/builderMenu.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/composables/dark.ts": [
     "/assets/favicon-8ecc0abb.svg"
@@ -423,19 +438,19 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/layouts/404.vue": [
-    "/assets/404-f9012ba5.js"
+    "/assets/404-57b3b177.js"
   ],
   "src/layouts/404.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/404-f9012ba5.js"
+    "/assets/404-57b3b177.js"
   ],
   "src/layouts/builder.vue": [
-    "/assets/builder-1f838f16.js"
+    "/assets/builder-7c89e8b8.js"
   ],
   "src/layouts/default.vue": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/layouts/home.vue": [
-    "/assets/home-23eae2e6.js"
+    "/assets/home-c2b2ca62.js"
   ],
   "src/main.ts": [
     "/assets/favicon-8ecc0abb.svg"
@@ -462,28 +477,28 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/pages/README.md": [
-    "/assets/README-6ec1d94d.js"
+    "/assets/README-2ede18df.js"
   ],
   "src/pages/[...all].vue": [
-    "/assets/_...all_-4449f333.js"
+    "/assets/_...all_-b183dd8c.js"
   ],
   "src/pages/[...all].vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/_...all_-4449f333.js"
+    "/assets/_...all_-b183dd8c.js"
   ],
   "src/pages/about.md": [
-    "/assets/about-12861fc8.js"
+    "/assets/about-3ae56b3c.js"
   ],
   "src/pages/dashboard.vue": [
-    "/assets/dashboard-e96bd8e3.js"
+    "/assets/dashboard-d2c4f9f0.js"
   ],
   "src/pages/dashboard.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/dashboard-e96bd8e3.js"
+    "/assets/dashboard-d2c4f9f0.js"
   ],
   "src/pages/hi/[name].vue": [
-    "/assets/_name_-3b7d13aa.js"
+    "/assets/_name_-96f24271.js"
   ],
   "src/pages/hi/[name].vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/_name_-3b7d13aa.js"
+    "/assets/_name_-96f24271.js"
   ],
   "src/pages/index.vue": [
     "/assets/favicon-8ecc0abb.svg"
@@ -492,13 +507,13 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/pages/riodas/[key].vue": [
-    "/assets/_key_-8bb0534a.js"
+    "/assets/_key_-b8f40580.js"
   ],
   "src/pages/riodas/index.vue": [
-    "/assets/index-5a922382.js"
+    "/assets/index-f3f5752b.js"
   ],
   "src/stores/builder.ts": [
-    "/assets/builder-e707af3d.js"
+    "/assets/builder-289b4316.js"
   ],
   "src/stores/user.ts": [
     "/assets/favicon-8ecc0abb.svg"
