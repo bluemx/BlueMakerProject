@@ -3,15 +3,15 @@
       :list="modules"
       :group="{ name: 'people', pull: 'clone', put: false }"
       item-key="id"
-      :class="['grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-0.5 p-0.5', drag?'bg-pink':'']"
+      :class="['grid grid-cols-4 md:grid-cols-7 lg:grid-cols-9 gap-0.5 p-0.5', drag?'bg-pink':'']"
       :sort="false" :clone="clonedModule"
       @start="drag = true"
       @end="drag = false"
     >
       <template #item="{ element }">
-        <div :title="element.name" flex flex-col cursor-grab items-center justify-center bg-white dark:bg-slate-8>
+        <div :title="element.name" flex flex-col cursor-grab items-center justify-center bg-white dark:bg-slate-8 >
           <div v-html="element.icon" />
-          <span class="text-[8px]">{{ element.name }}</span>
+          <div class="text-[6px] break-words">{{ element.name }}</div>
         </div>
       </template>
     </draggable>

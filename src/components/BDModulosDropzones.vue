@@ -9,9 +9,9 @@
   handle=".handle"
 >
   <template #item="{ element,index }">
-    <div :class="drag?'ring-1 ring-accent':''">
+    <div :class="[ drag?'ring-1 ring-accent':'',  element.hidden?'opacity-50':''] ">
 
-      <div class="flex gap-1 bg-gradient-to-r from-teal-800 to-info items-center relative" :class="element.hidden?'opacity-50':''">
+      <div class="flex gap-1 bg-gradient-to-r from-teal-800 to-info items-center relative">
 
 
 
@@ -164,6 +164,7 @@ const syncblock = (index,element) => {
       console.log('adding:'+el)
       const prop = schema.properties[el]
       if(prop.type=='string'){ element[el] = "" }
+      if(prop.type=='number'){ element[el] = 0 }
       if(prop.type=='boolean'){ element[el] = false }
       if(prop.type=='array'){ element[el] = [] }
       if(prop.default){ element[el] = prop.default }

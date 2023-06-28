@@ -2034,6 +2034,7 @@ const _sfc_main$d = {
           }
         }
       });
+      console.log(element)
     };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_UPopover = resolveComponent("UPopover");

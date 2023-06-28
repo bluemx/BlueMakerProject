@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import * as JSZip from 'jszip'
+//import * as JSZip from 'jszip'
 import JSZipUtils from "jszip-utils";
 import saveAs from 'file-saver';
 
@@ -12,6 +12,8 @@ export const useBuilderStore = defineStore('builder', () => {
   const menu = ref(null)
   const modulos = ref()
   const modulosobj = ref({})
+
+
 
   const newDoc = async (key, content) => {
     const { data, error } = await supabase
@@ -109,33 +111,31 @@ export const useBuilderStore = defineStore('builder', () => {
     });
   };
 
-  const download = () => {
-    var zip = new JSZip();
-
+  const download = async () => {
+    const JSZip = await import('jszip/dist/jszip');
+    console.trace('download()')
+    //var zip = new JSZip();
+    const zip = new JSZip.default();
+    console.trace('new JSZip')
     let document = JSON.stringify(doc.value.content)
-
     var mainfolder = zip.folder(dockey.value)
-
     var filesfolder = mainfolder.folder("files");
-
+    console.trace('document + folders')
     files.value.forEach((file)=>{
+      console.trace('files foreach', file.name)
       document = document.replaceAll(file.url, 'files/'+file.name)
-
       filesfolder.file(
         file.name,
         urlToPromise(file.url),
         { binary: true }
-      );
-
-    })
-
+        );
+      })
     mainfolder.file("oda.json", document);
-
-    //img.file("smile.gif", imgData, {base64: true});
+    console.trace('added document')
     zip.generateAsync({type:"blob"})
     .then(function(content) {
-        // see FileSaver.js
-        saveAs(content, dockey.value+".zip");
+      saveAs(content, dockey.value+".zip");
+      console.trace('saveAs')
     });
   }
 

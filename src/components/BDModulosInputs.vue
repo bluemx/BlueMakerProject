@@ -92,12 +92,15 @@ const propertiesInterval = setInterval(()=>{
 }, 500)
 
 const filesmap = computed(()=>{
-  return builderstore.files.map((item)=>{
+
+  let fm = builderstore.files.map((item)=>{
     return {
       label: item.name,
       value: item.url,
     }
   })
+  fm.unshift({label:' - ', value: ' '})
+  return fm
 })
 
 
