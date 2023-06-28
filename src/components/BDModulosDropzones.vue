@@ -11,12 +11,12 @@
   <template #item="{ element,index }">
     <div :class="drag?'ring-1 ring-accent':''">
 
-      <div class="flex gap-1 bg-gradient-to-r from-teal-800 to-info items-center relative">
+      <div class="flex gap-1 bg-gradient-to-r from-teal-800 to-info items-center relative" :class="element.hidden?'opacity-50':''">
 
 
 
-        <div @click="open(index, element)" class="mb-0.5  handle flex gap-1 items-center justify-between grow px-1 cursor-grab p-1" >
-          <div flex items-center w-full grow>
+        <div @click="open(index, element)" class="mb-0.5  handle flex gap-1 items-center justify-between grow px-1 cursor-grab p-1">
+          <div flex items-center w-full grow >
             <div class="hasicon w-4 h-4 mr-1" v-if="builderstore?.modulosobj[element.block]?.icon" v-html="builderstore.modulosobj[element.block].icon"></div>
             <template v-if="element?.symbol">
               <div flex items-center justify-between grow class="bg-gradient-to-r from-red-800 to-info items-center relative">
@@ -39,6 +39,11 @@
 
 
         <!-- ACTIONS -->
+        <UPopover trigger="hover">
+
+          <div  :class="[element.hidden?'i-solar-eye-closed-bold-duotone':'i-solar-eye-broken', 'cursor-pointer text-dark hover:text-white']" @click="fnHide(element)" />
+          <template #content><span dark:text-white text-xs p-1>Ocultar/Mostrar</span></template>
+        </UPopover>
         <UPopover trigger="hover">
           <div i-solar-copy-line-duotone class="cursor-pointer text-dark hover:text-white" @click="fnClone(element)" />
           <template #content><span dark:text-white text-xs p-1>Duplicar</span></template>
@@ -104,6 +109,15 @@ const noninput = ['block', 'name']
 
 
 const getRandomCharacters=_=>"xxxx".replace(/x/g,_=>"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"[Math.random()*62|0]);
+
+
+const fnHide = (element) => {
+  if(!element.hasOwnProperty('hidden')){
+    element['hidden'] = true
+  } else {
+    element['hidden'] = !element['hidden']
+  }
+}
 
 const fnClone = (el) => {
   const newel = JSON.parse(JSON.stringify(el))
