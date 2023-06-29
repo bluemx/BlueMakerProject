@@ -3,25 +3,25 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/file-saver@2.0.5/node_modules/file-saver/dist/FileSaver.min.js?commonjs-module": [
-    "/assets/builder-a6d2fcf9.js"
+    "/assets/builder-84dd1132.js"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/jszip@3.10.1/node_modules/jszip/dist/jszip.js?commonjs-module": [
-    "/assets/jszip-8dffc35f.js"
+    "/assets/jszip-c61eb4cc.js"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js?commonjs-module": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/sortablejs@1.14.0/node_modules/sortablejs/modular/sortable.esm.js?commonjs-proxy": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js?commonjs-proxy": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/vuedraggable@4.1.0_vue@3.3.4/node_modules/vuedraggable/dist/vuedraggable.umd.js?commonjs-module": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "\u0000commonjs-dynamic-modules": [
-    "/assets/jszip-8dffc35f.js"
+    "/assets/jszip-c61eb4cc.js"
   ],
   "\u0000commonjsHelpers.js": [
     "/assets/favicon-8ecc0abb.svg"
@@ -42,7 +42,7 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "/assets/virtual_pwa-register-bd0d8eb1.js"
+    "/assets/virtual_pwa-register-b84e6789.js"
   ],
   "../../../../../@vite-plugin-vue-layouts/generated-layouts": [
     "/assets/favicon-8ecc0abb.svg"
@@ -309,16 +309,16 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/file-saver@2.0.5/node_modules/file-saver/dist/FileSaver.min.js": [
-    "/assets/builder-a6d2fcf9.js"
+    "/assets/builder-84dd1132.js"
   ],
   "node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/jszip-utils@0.1.0/node_modules/jszip-utils/lib/index.js": [
-    "/assets/builder-a6d2fcf9.js"
+    "/assets/builder-84dd1132.js"
   ],
   "node_modules/.pnpm/jszip@3.10.1/node_modules/jszip/dist/jszip.js": [
-    "/assets/jszip-8dffc35f.js"
+    "/assets/jszip-c61eb4cc.js"
   ],
   "node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js": [
     "/assets/favicon-8ecc0abb.svg"
@@ -327,7 +327,7 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/sortablejs@1.14.0/node_modules/sortablejs/modular/sortable.esm.js": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "node_modules/.pnpm/unhead@1.1.27/node_modules/unhead/dist/index.mjs": [
     "/assets/favicon-8ecc0abb.svg"
@@ -357,13 +357,13 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/vue3-json-editor@1.1.5/node_modules/vue3-json-editor/dist/vue3-json-editor.esm.prod.js": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/vuedraggable@4.1.0_vue@3.3.4/node_modules/vuedraggable/dist/vuedraggable.umd.js": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "node_modules/.pnpm/websocket@1.0.34/node_modules/websocket/lib/browser.js": [
     "/assets/favicon-8ecc0abb.svg"
@@ -384,52 +384,52 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/components/AdminAuthorized.vue": [
-    "/assets/dashboard-c03dc388.js"
+    "/assets/dashboard-ff187aca.js"
   ],
   "src/components/BDModulosDropzones.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/components/BDModulosInputs.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/components/BuilderDocManager.vue": [
-    "/assets/index-0040c945.js"
+    "/assets/index-3e1cd33e.js"
   ],
   "src/components/UserAdmin.vue": [
-    "/assets/dashboard-c03dc388.js"
+    "/assets/dashboard-ff187aca.js"
   ],
   "src/components/UserAuth.vue": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/components/UserLogout.vue": [
-    "/assets/dashboard-c03dc388.js"
+    "/assets/dashboard-ff187aca.js"
   ],
   "src/components/builderDetails.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/components/builderDetailsAssets.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/components/builderDetailsAssetsList.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/components/builderDetailsAssetsUploader.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/components/builderDetailsBlocks.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/components/builderDetailsCodigo.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/components/builderDetailsModulos.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/components/builderDetailsPrompts.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/components/builderMenu.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/composables/dark.ts": [
     "/assets/favicon-8ecc0abb.svg"
@@ -438,19 +438,19 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/layouts/404.vue": [
-    "/assets/404-145586a7.js"
+    "/assets/404-e436fd53.js"
   ],
   "src/layouts/404.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/404-145586a7.js"
+    "/assets/404-e436fd53.js"
   ],
   "src/layouts/builder.vue": [
-    "/assets/builder-a70ead1a.js"
+    "/assets/builder-49e259a4.js"
   ],
   "src/layouts/default.vue": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/layouts/home.vue": [
-    "/assets/home-b30a09bd.js"
+    "/assets/home-7df2201b.js"
   ],
   "src/main.ts": [
     "/assets/favicon-8ecc0abb.svg"
@@ -477,28 +477,28 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/pages/README.md": [
-    "/assets/README-f05fb4c4.js"
+    "/assets/README-df32ff19.js"
   ],
   "src/pages/[...all].vue": [
-    "/assets/_...all_-42e6309b.js"
+    "/assets/_...all_-aad2b1c4.js"
   ],
   "src/pages/[...all].vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/_...all_-42e6309b.js"
+    "/assets/_...all_-aad2b1c4.js"
   ],
   "src/pages/about.md": [
-    "/assets/about-3cedf162.js"
+    "/assets/about-d54825bb.js"
   ],
   "src/pages/dashboard.vue": [
-    "/assets/dashboard-c03dc388.js"
+    "/assets/dashboard-ff187aca.js"
   ],
   "src/pages/dashboard.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/dashboard-c03dc388.js"
+    "/assets/dashboard-ff187aca.js"
   ],
   "src/pages/hi/[name].vue": [
-    "/assets/_name_-86fefbe4.js"
+    "/assets/_name_-55fe6eb6.js"
   ],
   "src/pages/hi/[name].vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/_name_-86fefbe4.js"
+    "/assets/_name_-55fe6eb6.js"
   ],
   "src/pages/index.vue": [
     "/assets/favicon-8ecc0abb.svg"
@@ -507,13 +507,13 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/pages/riodas/[key].vue": [
-    "/assets/_key_-b568e96f.js"
+    "/assets/_key_-d13997f7.js"
   ],
   "src/pages/riodas/index.vue": [
-    "/assets/index-0040c945.js"
+    "/assets/index-3e1cd33e.js"
   ],
   "src/stores/builder.ts": [
-    "/assets/builder-a6d2fcf9.js"
+    "/assets/builder-84dd1132.js"
   ],
   "src/stores/user.ts": [
     "/assets/favicon-8ecc0abb.svg"
