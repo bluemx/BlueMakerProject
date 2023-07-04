@@ -15,19 +15,19 @@
 
 
 
-        <div @click="open(index, element)" class="mb-0.5  handle flex gap-1 items-center justify-between grow px-1 cursor-grab p-1">
+        <div  class="mb-0.5  handle flex gap-1 items-center justify-between grow px-1 cursor-grab p-1">
           <div flex items-center w-full grow >
-            <div class="hasicon w-4 h-4 mr-1" v-if="builderstore?.modulosobj[element.block]?.icon" v-html="builderstore.modulosobj[element.block].icon"></div>
+            <div @click="open(index, element)" class="hasicon w-4 h-4 mr-1" v-if="builderstore?.modulosobj[element.block]?.icon" v-html="builderstore.modulosobj[element.block].icon"></div>
             <template v-if="element?.symbol">
               <div flex items-center justify-between grow class="bg-gradient-to-r from-red-800 to-info items-center relative">
-                <div>symbol</div>
-                <div >{{ element.symbol }}</div>
+                <div @click="open(index, element)">symbol</div>
+                <div @click="copytxt(element.name)" class="bg-dark/20 px-0.5 rounded hover:text-amber">{{ element.symbol }}</div>
               </div>
             </template>
             <template v-else>
               <div flex items-center justify-between grow>
-                <div >{{ element.block }} </div>
-                <div>{{ element.name }}</div>
+                <div @click="open(index, element)">{{ element.block }} </div>
+                <div @click="copytxt(element.name)"  class="bg-dark/20 px-0.5 rounded hover:text-amber active:text-lime">{{ element.name }}</div>
             </div>
             </template>
           </div>
@@ -86,11 +86,16 @@
 
   </template>
 </draggable>
-
+<UToast ref="copyToast" position="bottom" align="left" />
 </template>
 
 <script setup>
 import draggable from 'vuedraggable'
+import { useClipboard } from '@vueuse/core'
+
+const source = ref('Hello')
+const { text, copy, copied, isSupported } = useClipboard({ source })
+
 const builderstore = useBuilderStore()
 const props = defineProps({
   data: Object,
@@ -106,6 +111,11 @@ const moduloName = props.itemKey+'_'+props.level
 const dropzones = ['content', 'scenes', 'options']
 const noninput = ['block', 'name']
 
+const copyToast = ref()
+const copytxt = (txt) => {
+  copy(txt);
+  //copyToast.value.show('success', txt)
+}
 
 
 const getRandomCharacters=_=>"xxxx".replace(/x/g,_=>"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"[Math.random()*62|0]);
