@@ -1,19 +1,32 @@
 <template>
-  <div border-l-1 :class="['border-'+levelColor(), 'm-0.5']" text-xs  v-if="itemKey!='block'" :data-level="level">
+  <div border-l-1 :class="['mb-0.5 border-'+levelColor(), '']" text-xs  v-if="itemKey!='block'" :data-level="level">
 
       <!--STRING inputs-->
       <template v-if="typeof refData[itemKey] != 'object'">
         <div v-if="properties?.input" class="grid grid-cols-4 items-center p-1">
-          <!--{{itemKey}} PROPERTY #: {{ properties.input }}-->
           <!-- FILE -->
-          <template  v-if="typeof refData[itemKey] == 'string' ">
+          <template  v-if="typeof refData[itemKey] == 'string' && properties?.input == 'file'">
             <label>{{ itemKey }}</label>
             <div col-span-3>
               <USelect v-model="refData[itemKey]" :options="filesmap" />
             </div>
           </template>
+          <template  v-if="properties?.input == 'color'">
+            <label>{{ itemKey }}</label>
+            <div col-span-3>
+              <UInput v-model="refData[itemKey]" class="dark:text-neutral w-full" size="sm" type="color" />
+            </div>
+          </template>
         </div>
-         <!--NO INPUT DEFINED -->
+        <div v-else-if="properties?.enum" class="grid grid-cols-4 items-center p-1">
+          <label>{{ itemKey }}</label>
+          <div col-span-3 class="flex flex-wrap text-white gap-2">
+            <URadio v-for="(pItem, pIndex) in properties.enum" :key="pIndex" v-model="refData[itemKey]" :value="pItem" type="primary" class="bg-white px-1 rounded">
+              {{ pItem }}
+            </URadio>
+          </div>
+        </div>
+         <!--NO INPUT or ENUM DEFINED -->
         <div v-else class="grid grid-cols-4 items-center p-1">
           <!-- TEXT-->
           <template  v-if="typeof refData[itemKey] == 'string' ">
@@ -72,7 +85,8 @@ import { watchOnce } from '@vueuse/core'
 const props = defineProps({
   data: Object,
   itemKey: String,
-  level: Number
+  level: Number,
+  parentblock: String
 })
 const moduloName = props.itemKey+'_'+props.level+'_'+(Math.round(Math.random()*100))
 
@@ -105,18 +119,28 @@ const filesmap = computed(()=>{
 
 
 const levelColor = () => {
-  let col = ''
-  if(props.level==0){ col = 'accent-500'}
-  if(props.level==1){ col = 'accent-900'}
-  if(props.level==2){ col = 'success-500'}
-  if(props.level==3){ col = 'success-900'}
-  if(props.level==4){ col = 'warning-500'}
-  if(props.level==5){ col = 'warning-900'}
-  if(props.level==6){ col = 'info-500'}
-  if(props.level==7){ col = 'info-900'}
-  if(props.level==8){ col = 'primary-500'}
-  if(props.level==9){ col = 'primary-900'}
-  return col
+
+
+
+
+
+  if(props.parentblock){
+    return builderstore?.modulosobj[props.parentblock]?.color+'-500'
+
+  } else {
+    let col = ''
+    if(props.level==0){ col = 'accent-700'}
+    if(props.level==1){ col = 'accent-900'}
+    if(props.level==2){ col = 'success-700'}
+    if(props.level==3){ col = 'success-900'}
+    if(props.level==4){ col = 'warning-700'}
+    if(props.level==5){ col = 'warning-900'}
+    if(props.level==6){ col = 'info-700'}
+    if(props.level==7){ col = 'info-900'}
+    if(props.level==8){ col = 'primary-700'}
+    if(props.level==9){ col = 'primary-900'}
+    return col
+  }
 }
 
 const accordion = ref({})

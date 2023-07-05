@@ -3,49 +3,48 @@
   :list="thelist"
   :group="{ name: 'people', pull: true, put: true }"
   item-key="name"
-  :class="['min-h-[30px] ring-1 ring-slate-4 flex flex-col gap-0.5  ml-0.5 pl-1 pr-0.5 py-1']"
-  @start="drag = true"
-  @end="drag = false"
+  :class="['min-h-[30px] border-l-1 border-b-1 border-t-1 border-t-dashed border-b-dashed flex flex-col gap-0.5  pl-1 pr-0.5 py-1', 'border-'+builderstore?.modulosobj[parentblock]?.color+'-500', 'bg-'+builderstore?.modulosobj[parentblock]?.color+'-500/10']"
+  @start="onStart"
+  @end="onEnd"
   handle=".handle"
+  v-if="Object.keys(builderstore.modulosobj).length"
 >
   <template #item="{ element,index }">
-    <div :class="[ drag?'ring-1 ring-accent':'',  element.hidden?'opacity-50':''] ">
-
-      <div class="flex gap-1 bg-gradient-to-r from-teal-800 to-info items-center relative">
+    <div :class="['hover:ring-1', drag?'ring-1 ring-accent':'',  element.hidden?'opacity-50':''] ">
 
 
-
-        <div  class="mb-0.5  handle flex gap-1 items-center justify-between grow px-1 cursor-grab p-1">
-          <div flex items-center w-full grow >
-            <div @click="open(index, element)" class="hasicon w-4 h-4 mr-1" v-if="builderstore?.modulosobj[element.block]?.icon" v-html="builderstore.modulosobj[element.block].icon"></div>
+      <div class="flex gap-1 bg-gradient-to-r from-teal-800 to-info items-center relative" :class="['border-l-1 border-t-1', 'border-'+builderstore?.modulosobj[element.block]?.color+'-500'] " >
+        <div  class="handle flex gap-1 items-center justify-between grow px-1 cursor-grab p-0.5">
+          <div flex items-center w-full grow  @click="open(index, element)" >
+            <div :class="'text-'+builderstore?.modulosobj[element.block]?.color+'-500'">
+              <div class="hasicon w-4 h-4 mr-1" v-if="builderstore?.modulosobj[element.block]?.icon" v-html="builderstore.modulosobj[element.block].icon"></div>
+            </div>
             <template v-if="element?.symbol">
               <div flex items-center justify-between grow class="bg-gradient-to-r from-red-800 to-info items-center relative">
-                <div @click="open(index, element)">symbol</div>
-                <div @click="copytxt(element.name)" class="bg-dark/20 px-0.5 rounded hover:text-amber">{{ element.symbol }}</div>
+                <div >symbol</div>
+                <div>{{ element.symbol }}</div>
               </div>
             </template>
             <template v-else>
               <div flex items-center justify-between grow>
-                <div @click="open(index, element)">{{ element.block }} </div>
-                <div @click="copytxt(element.name)"  class="bg-dark/20 px-0.5 rounded hover:text-amber active:text-lime">{{ element.name }}</div>
-            </div>
+                <div >{{ element.block }} </div>
+
+              </div>
             </template>
           </div>
         </div>
 
-
-
-
-
-
         <!-- ACTIONS -->
-        <UPopover trigger="hover">
 
+        <div v-if="element?.name" @click="copytxt(element.name)"  class="cursor-pointer bg-dark/20 px-0.5 rounded hover:text-amber active:text-lime">{{ element.name }}</div>
+
+        <UPopover trigger="hover">
           <div  :class="[element.hidden?'i-solar-eye-closed-bold-duotone':'i-solar-eye-broken', 'cursor-pointer text-dark hover:text-white']" @click="fnHide(element)" />
           <template #content><span dark:text-white text-xs p-1>Ocultar/Mostrar</span></template>
         </UPopover>
+
         <UPopover trigger="hover">
-          <div i-solar-copy-line-duotone class="cursor-pointer text-dark hover:text-white" @click="fnClone(element)" />
+          <div i-solar-copy-line-duotone class="cursor-pointer text-dark hover:text-white" @click="fnClone(element, index)" />
           <template #content><span dark:text-white text-xs p-1>Duplicar</span></template>
         </UPopover>
         <UPopover trigger="hover">
@@ -64,24 +63,25 @@
 
 
       <template v-for="(itemNest, indexNest) in Object.keys(element)">
+
         <template  v-if="accordion[moduloName+index] && !dropzones.includes(itemNest) && !noninput.includes(itemNest)">
-
             <div>
-              <BDModulosInputs :data="element" :item-key="itemNest" :level="level+1"></BDModulosInputs>
+              <BDModulosInputs :data="element" :item-key="itemNest" :level="level+1" :parentblock="element.block"></BDModulosInputs>
             </div>
-
         </template>
+
       </template>
 
 
 
       <template v-for="(itemNest, indexNest) in Object.keys(element)" :key="indexNest">
         <template v-if="dropzones.includes(itemNest) && Array.isArray(element[itemNest])">
-
-          <BDModulosDropzones :data="element" :item-key="itemNest" :level="level+1"></BDModulosDropzones>
-
+          <div class="">
+            <BDModulosDropzones :data="element" :item-key="itemNest" :level="level+1" :parentblock="element.block"></BDModulosDropzones>
+          </div>
         </template>
       </template>
+
     </div>
 
   </template>
@@ -100,10 +100,24 @@ const builderstore = useBuilderStore()
 const props = defineProps({
   data: Object,
   itemKey: String,
-  level: Number
+  level: Number,
+  parentblock: String
 })
+
+
+
 const thelist = ref(props.data[props.itemKey])
 const drag = ref(false)
+
+const dragi = ref([])
+const onStart = (e) => {
+  console.log('start:', e)
+  e.item.classList.add('ring-2', 'ring-amber-3')
+}
+const onEnd= (e) => {
+  console.log('end:', e)
+  e.item.classList.remove('ring-2', 'ring-amber-3')
+}
 
 const moduloName = props.itemKey+'_'+props.level
 
@@ -129,12 +143,14 @@ const fnHide = (element) => {
   }
 }
 
-const fnClone = (el) => {
+const fnClone = (el, index) => {
   const newel = JSON.parse(JSON.stringify(el))
   if(!el?.symbol){
     newel['name'] = getRandomCharacters()
   }
-  thelist.value.push(newel)
+  //thelist.value.push(newel)
+
+  thelist.value.splice(index+1, 0, updateNamesWithRandomCharacters(newel));
 }
 const fnSymbol = (el, index) => {
   if(!el.name){el.name = getRandomCharacters()}
@@ -181,6 +197,20 @@ const syncblock = (index,element) => {
     }
   })
   if(!element?.name){ element["name"] = getRandomCharacters() }
+}
+
+
+
+const updateNamesWithRandomCharacters = (objitem) => {
+  const obj = objitem
+  for (const key in obj) {
+    if (typeof obj[key] === 'object') {
+      updateNamesWithRandomCharacters(obj[key]); // Recursively call the function for nested objects
+    } else if (key === 'name') {
+      obj[key] = getRandomCharacters(); // Update the value with random characters
+    }
+  }
+  return obj
 }
 
 </script>

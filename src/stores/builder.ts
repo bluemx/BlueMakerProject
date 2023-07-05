@@ -66,12 +66,19 @@ export const useBuilderStore = defineStore('builder', () => {
     modulos.value = modulos
 
     modulos?.forEach(i => {
-      modulosobj.value[i.name] = {...i.schema, icon: i.icon}
+      modulosobj.value[i.name] = {...i.schema, icon: i.icon, color: i.color}
     })
     return modulos
   }
 
 
+  const blockprops = (blockname) => {
+    //if(Object.keys(modulosobj.value)>0){
+      return modulosobj.value[blockname]
+    //} else {
+      //return 'nup'
+    //}
+  }
 
   const updateAssets = async () => {
     files.value = []
@@ -139,7 +146,7 @@ export const useBuilderStore = defineStore('builder', () => {
     });
   }
 
-  return { menu, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos, metadata, download }
+  return { menu, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos, metadata, download, blockprops }
 })
 
 

@@ -55,3 +55,20 @@ html.dark {
 .jsoneditor-vue{
 	height: 100%;
 }
+
+
+
+.v-enter-active,
+.v-leave-active {
+  transition: all .4s ease;
+  //transform: translateY(-20px);
+  max-height: 400px;
+  overflow:hidden;
+}
+
+
+
+.v-enter-from,
+.v-leave-to {
+  max-height: 0;
+}
