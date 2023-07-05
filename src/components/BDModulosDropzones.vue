@@ -46,10 +46,6 @@
           <div i-solar-copy-line-duotone class="cursor-pointer text-dark hover:text-white" @click="fnClone(element, index)" />
           <template #content><span dark:text-white text-xs p-1>Duplicar</span></template>
         </UPopover>
-        <UPopover trigger="hover">
-          <div i-solar-link-round-bold-duotone class="cursor-pointer text-dark hover:text-white"  @click="fnSymbol(element, index)"  />
-          <template #content><span dark:text-white text-xs p-1>A símbolo</span></template>
-        </UPopover>
 
         <UPopover trigger="click">
           <div i-solar-cloud-upload-line-duotone class="cursor-pointer text-dark  hover:text-white"   />
@@ -72,15 +68,25 @@
       </template>
 
 
-      <template v-for="(itemNest, indexNest) in Object.keys(element)">
+      <div v-if="accordion[moduloName+index]">
 
-        <template  v-if="accordion[moduloName+index] && !dropzones.includes(itemNest) && !noninput.includes(itemNest)">
-            <div>
-              <BDModulosInputs :data="element" :item-key="itemNest" :level="level+1" :parentblock="element.block"></BDModulosInputs>
-            </div>
+        <template v-for="(itemNest, indexNest) in Object.keys(element)">
+
+          <template  v-if="!dropzones.includes(itemNest) && !noninput.includes(itemNest)">
+              <div>
+                <BDModulosInputs :data="element" :item-key="itemNest" :level="level+1" :parentblock="element.block"></BDModulosInputs>
+              </div>
+          </template>
+
         </template>
 
-      </template>
+        <div class="p-1 text-right w-full flex justify-end" v-if="!element?.symbol">
+          <UButton size="xs" class="px-2" @click="fnSymbol(element,index)">Convertir en símbolo</UButton>
+        </div>
+      </div>
+
+
+
 
 
 
