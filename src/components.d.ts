@@ -12,6 +12,8 @@ declare module '@vue/runtime-core' {
     AdminAuthorized: typeof import('./components/AdminAuthorized.vue')['default']
     BDModulosDropzones: typeof import('./components/BDModulosDropzones.vue')['default']
     BDModulosInputs: typeof import('./components/BDModulosInputs.vue')['default']
+    BDModulosSaveTemplate: typeof import('./components/BDModulosSaveTemplate.vue')['default']
+    BDModulosTemplates: typeof import('./components/BDModulosTemplates.vue')['default']
     BuilderDetails: typeof import('./components/builderDetails.vue')['default']
     BuilderDetailsAssets: typeof import('./components/builderDetailsAssets.vue')['default']
     BuilderDetailsAssetsList: typeof import('./components/builderDetailsAssetsList.vue')['default']

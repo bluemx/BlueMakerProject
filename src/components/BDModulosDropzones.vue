@@ -28,7 +28,6 @@
             <template v-else>
               <div flex items-center justify-between grow>
                 <div >{{ element.block }} </div>
-
               </div>
             </template>
           </div>
@@ -51,6 +50,14 @@
           <div i-solar-link-round-bold-duotone class="cursor-pointer text-dark hover:text-white"  @click="fnSymbol(element, index)"  />
           <template #content><span dark:text-white text-xs p-1>A símbolo</span></template>
         </UPopover>
+
+        <UPopover trigger="click">
+          <div i-solar-cloud-upload-line-duotone class="cursor-pointer text-dark  hover:text-white"   />
+          <template #content>
+            <BDModulosSaveTemplate :data="element"></BDModulosSaveTemplate>
+          </template>
+        </UPopover>
+
         <UPopover trigger="click">
           <div i-solar-trash-bin-trash-linear class="cursor-pointer text-dark  hover:text-white"   />
           <template #content><UButton size="xs" class="mx-1 px-1" type="primary"  @click="fnDelete(element, index)">Eliminar bloque</UButton></template>
@@ -60,6 +67,9 @@
       </div>
 
 
+      <template v-if="accordion[moduloName+index] && element.block=='template'">
+        <BDModulosTemplates :data="element" @loadBlock="templateLoad(element, index, $event)"></BDModulosTemplates>
+      </template>
 
 
       <template v-for="(itemNest, indexNest) in Object.keys(element)">
@@ -104,6 +114,10 @@ const props = defineProps({
   parentblock: String
 })
 
+const templateLoad = (element, index, item) => {
+  thelist.value[index] = item
+  console.log('e', element, 'i', item)
+}
 
 
 const thelist = ref(props.data[props.itemKey])
@@ -169,6 +183,8 @@ const fnSymbol = (el, index) => {
 const fnDelete= (el, index) => {
   thelist.value.splice(index, 1)
 }
+
+
 
 
 const accordion = ref({})

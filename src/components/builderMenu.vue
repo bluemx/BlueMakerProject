@@ -47,15 +47,21 @@ function downloadDoc(){
     </template>
     <UToast ref="saveToast" position="bottom" align="left" />
 
-    <div title="Sincronizar" class="mt-auto aspect-square flex cursor-pointer items-center justify-center bg-stone-5 hover:bg-amber" @click="syncDoc()">
+    <router-link class="mt-auto" :to="'/'+builderstore.type">
+      <div title="Regresar" class="mt-auto aspect-square flex cursor-pointer items-center justify-center bg-neutral-900/30 hover:bg-amber">
+        <div class="i-solar-arrow-left-broken"/>
+      </div>
+    </router-link>
+    <div title="Sincronizar" class="aspect-square flex cursor-pointer items-center justify-center bg-stone-5/30 hover:bg-amber" @click="syncDoc()">
       <div class="i-solar-refresh-circle-line-duotone"/>
     </div>
-    <div title="Guardar" class="aspect-square flex cursor-pointer items-center justify-center bg-cyan-5 hover:bg-amber" @click="saveDoc()">
+    <div title="Guardar" class="aspect-square flex cursor-pointer items-center justify-center bg-cyan-5/30 hover:bg-amber" @click="saveDoc()">
       <div class="i-solar:diskette-broken" v-if="!saveLoading" />
       <div class="i-solar-diskette-bold animate-spin" v-if="saveLoading" />
     </div>
-    <div title="Descargar" class="aspect-square flex cursor-pointer items-center justify-center bg-emerald-5 hover:bg-amber" @click="downloadDoc()">
-      <div class="i-solar:cloud-check-linear" />
+    <div title="Descargar" class="aspect-square flex cursor-pointer items-center justify-center bg-emerald-5/30 hover:bg-amber" @click="downloadDoc()">
+      <div class="i-solar:cloud-download-line-duotone" />
+
     </div>
   </aside>
 </template>

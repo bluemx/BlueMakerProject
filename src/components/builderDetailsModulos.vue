@@ -24,6 +24,8 @@ const contentModel = ref(builderstore.doc ? builderstore.doc.content : '')
     </div>
     -->
 
+
+
     <div bg-slate-100 dark:bg-slate-900>
 
       <template v-for="(key, index) in Object.keys(contentModel)"  >

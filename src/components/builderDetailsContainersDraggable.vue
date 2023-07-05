@@ -63,6 +63,7 @@ const levelbg = () => {
       handle=".handle"
     >
       <template #item="{ element,index }">
+
         <div :class="['!aspect-auto rounded-sm bg-slate-600/10 ring-1 ring-slate-300 p-1 mb-0.5  transition-all', dinamodel[thisname+index]?'shadow !bg-slate-600/30 ring-primary ring-1 !my-2':'', drag?'ring-4':'']">
           <div flex gap-1 items-center justify-between  :class="[' p-1 rounded-sm', dinamodel[thisname+index]?'bg-slate-800/50 text-white':'bg-gradient-to-r from-teal-300 to-primary-300']">
             <div @click="open(thisname+index)" class="handle flex gap-1 items-center justify-between grow px-1 cursor-grab" >
@@ -89,9 +90,13 @@ const levelbg = () => {
             </UPopover>
           </div>
 
+
+
           <div v-if="dinamodel[thisname+index]"  >
-            <BuilderDetailsContainers text-dark v-for="(keyval2, index2) in Object.keys(element)" :key="index2" :data="element" :keyval="keyval2" :parent="keyval" :level="level + 1" :blockparent="blockparent" />
-        </div>
+              <BuilderDetailsContainers text-dark v-for="(keyval2, index2) in Object.keys(element)" :key="index2" :data="element" :keyval="keyval2" :parent="keyval" :level="level + 1" :blockparent="blockparent" />
+
+
+          </div>
         <!-- //FIXME: OPTIONS DESAPARECE -->
         <!--
           {{ Array.isArray(element.content) || Array.isArray(element.options) }}

@@ -12,8 +12,19 @@ export const useBuilderStore = defineStore('builder', () => {
   const menu = ref(null)
   const modulos = ref()
   const modulosobj = ref({})
+  const usertemplates = ref([])
+
+  const getUserTemplates = async () => {
+
+    const { data: usertemplates,  error } = await supabase
+      .from('usertemplates')
+      .select('*')
+      .eq('type', type.value)
 
 
+    usertemplates.value = usertemplates
+    return usertemplates
+  }
 
   const newDoc = async (key, content) => {
     const { data, error } = await supabase
@@ -146,7 +157,7 @@ export const useBuilderStore = defineStore('builder', () => {
     });
   }
 
-  return { menu, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos, metadata, download, blockprops }
+  return { menu, usertemplates, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos, metadata, download, blockprops, getUserTemplates }
 })
 
 
