@@ -25,6 +25,13 @@
                 <div>{{ element.symbol }}</div>
               </div>
             </template>
+
+            <template v-if="element.block=='separator'">
+              <div flex items-center justify-between grow class="bg-gradient-to-r from-red-800 to-info items-center relative" :style="'background:'+element.color+';'">
+                <div >{{element.text}}</div>
+              </div>
+            </template>
+
             <template v-else>
               <div flex items-center justify-between grow>
                 <div >{{ element.block }} </div>
