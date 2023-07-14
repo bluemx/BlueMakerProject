@@ -13,7 +13,7 @@
     <div :class="['hover:ring-1', drag?'ring-1 ring-accent':'',  element.hidden?'opacity-50':''] ">
 
 
-      <div class="flex gap-1 bg-gradient-to-r from-teal-800 to-info items-center relative" :class="['border-l-1 border-t-1', 'border-'+builderstore?.modulosobj[element.block]?.color+'-500'] " >
+      <div @mouseover="mouseoverFN(element)" class="flex gap-1 bg-gradient-to-r from-teal-800 to-info items-center relative" :class="['border-l-1 border-t-1', 'border-'+builderstore?.modulosobj[element.block]?.color+'-500'] " >
         <div  class="handle flex gap-1 items-center justify-between grow px-1 cursor-grab p-0.5">
           <div flex items-center w-full grow  @click="open(index, element)" >
             <div :class="'text-'+builderstore?.modulosobj[element.block]?.color+'-500'">
@@ -34,7 +34,12 @@
 
             <template v-else>
               <div flex items-center justify-between grow>
-                <div >{{ element.block }} </div>
+                <div class="flex gap-2 items-center">
+                  <div>{{ element.block }}</div>
+                  <div class="text-[10px] text-ellipsis leading-2 bg-red-900/50 p0.5" v-if="element.block=='text' && element.text">{{ element.text }}</div>
+                  <div class="text-[10px] text-ellipsis	leading-2 bg-blue-900/50 p0.5" v-if="element.block=='image' && element.file">{{ element.file.split('/').slice(-1)[0] }}</div>
+                  <div class="text-[10px] text-ellipsis	leading-2 bg-gray-900/50 p0.5" v-if="element.block=='icon' && element.icon">{{ element.icon}}</div>
+                </div>
               </div>
             </template>
           </div>
@@ -43,6 +48,23 @@
         <!-- ACTIONS -->
 
         <div v-if="element?.name" @click="copytxt(element.name)"  class="cursor-pointer bg-dark/20 px-0.5 rounded hover:text-amber active:text-lime">{{ element.name }}</div>
+
+        <div :class="collapsecontent[moduloName+index]?'bg-lime-300 rounded leading-2':''" v-if="element?.content">
+            <UPopover trigger="hover">
+            <div :class="['i-solar-list-down-minimalistic-line-duotone', 'cursor-pointer text-dark hover:text-white']" @click="collapseFN(index, element)" />
+            <template #content><span dark:text-white text-xs p-1>Vista de contenido</span></template>
+          </UPopover>
+
+        </div>
+
+        <UPopover trigger="hover">
+          <div  :class="['i-solar-arrow-to-top-left-bold-duotone', 'cursor-pointer text-dark hover:text-white']" @click="moveFN(-1, index)" />
+          <template #content><span dark:text-white text-xs p-1>Mover arriba</span></template>
+        </UPopover>
+        <UPopover trigger="hover">
+          <div  :class="['i-solar-arrow-to-down-left-bold-duotone', 'cursor-pointer text-dark hover:text-white']" @click="moveFN(+1, index)" />
+          <template #content><span dark:text-white text-xs p-1>Mover abajo</span></template>
+        </UPopover>
 
         <UPopover trigger="hover">
           <div  :class="[element.hidden?'i-solar-eye-closed-bold-duotone':'i-solar-eye-broken', 'cursor-pointer text-dark hover:text-white']" @click="fnHide(element)" />
@@ -94,10 +116,7 @@
 
 
 
-
-
-
-      <template v-for="(itemNest, indexNest) in Object.keys(element)" :key="indexNest">
+      <template v-for="(itemNest, indexNest) in Object.keys(element)" :key="indexNest" v-if="!collapsecontent[moduloName+index]">
         <template v-if="dropzones.includes(itemNest) && Array.isArray(element[itemNest])">
           <div class="">
             <BDModulosDropzones :data="element" :item-key="itemNest" :level="level+1" :parentblock="element.block"></BDModulosDropzones>
@@ -161,6 +180,13 @@ const copytxt = (txt) => {
 
 const getRandomCharacters=_=>"xxxx".replace(/x/g,_=>"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"[Math.random()*62|0]);
 
+const moveFN = (moveto, index) => {
+  if(moveto == -1 && index==0){ return false }
+
+  const element = thelist.value.splice(index, 1)[0]
+  thelist.value.splice(index+moveto, 0, element)
+
+}
 
 const fnHide = (element) => {
   if(!element.hasOwnProperty('hidden')){
@@ -199,12 +225,20 @@ const fnDelete= (el, index) => {
 
 
 
+const collapsecontent = ref({})
+const collapseFN = (index, element) => {
+  collapsecontent.value[moduloName+index] = !collapsecontent.value[moduloName+index]
+}
+
+
 
 const accordion = ref({})
+
 const open = (index, element) => {
   syncblock(index, element)
   accordion.value[moduloName+index] = !accordion.value[moduloName+index]
 }
+
 
 
 
@@ -240,6 +274,13 @@ const updateNamesWithRandomCharacters = (objitem) => {
     }
   }
   return obj
+}
+
+
+const mouseoverFN = (item) => {
+  if(item.name){
+    document.querySelector('iframe').contentWindow.postMessage(JSON.stringify({type: 'hover', name: item.name}), '*')
+  }
 }
 
 </script>
