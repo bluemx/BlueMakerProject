@@ -49,6 +49,7 @@ function clonedModule(i) {
 
   item["block"] = i.name
   item["name"] = getRandomCharacters()
+  item["id"] = getRandomCharacters()
   //item["schema"] = props
 
   return item

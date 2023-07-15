@@ -200,6 +200,7 @@ const fnClone = (el, index) => {
   const newel = JSON.parse(JSON.stringify(el))
   if(!el?.symbol){
     newel['name'] = getRandomCharacters()
+    newel['id'] = getRandomCharacters()
   }
   //thelist.value.push(newel)
 
@@ -271,6 +272,8 @@ const updateNamesWithRandomCharacters = (objitem) => {
       updateNamesWithRandomCharacters(obj[key]); // Recursively call the function for nested objects
     } else if (key === 'name') {
       obj[key] = getRandomCharacters(); // Update the value with random characters
+    } else if (key === 'id') {
+      obj[key] = obj[key] + getRandomCharacters(); // Update the value with random characters
     }
   }
   return obj
