@@ -1,14 +1,15 @@
 <template>
   <div
-    class="upload-area p-5 border-dashed border-4 border-slate-500 bg-white shadow m-2"
+    class="upload-area p-5 border-dashed border-4 border-white bg-slate-500 shadow m-2"
     @dragover.prevent
     @dragenter.prevent
     @drop.prevent="onDrop"
     @click="onClick"
-    cursor-pointer text-center text-xs text-slate-500 hover:border-slate-800
+    cursor-pointer text-center text-xs text-white hover:border-slate-800
   >
-    Soltar archivos o clic
-    <input type="file" ref="fileInput" @change="onFileChange" hidden />
+    <div class="mx-auto text-2xl mb-1" i-solar-upload-line-duotone></div>
+    <div>Arrastrar archivos o seleccionarlos dando click</div>
+    <input type="file" multiple ref="fileInput" @change="onFileChange" hidden />
   </div>
 </template>
 
@@ -18,16 +19,21 @@ const builderstore = useBuilderStore()
 const router = useRoute()
 const fileInput = ref(null)
 const onDrop = async (e) => {
-  await uploadFile(e.dataTransfer.files[0])
+  const files = e.dataTransfer.files;
+  for (let i = 0; i < files.length; i++) {
+    await uploadFile(files[i])
+  }
 }
 const onClick = () => {
   fileInput.value.click()
 }
 const onFileChange = async (e) => {
-  await uploadFile(e.target.files[0])
+  const files = e.target.files;
+  for (let i = 0; i < files.length; i++) {
+    await uploadFile(files[i])
+  }
 }
 const uploadFile = async (file) => {
-  console.log(file)
   const { data, error } = await supabase
     .storage
     .from(builderstore.type)
@@ -35,7 +41,7 @@ const uploadFile = async (file) => {
       cacheControl: '3600',
       upsert: false
     })
-  console.log(data,error)
+  //console.log(data,error)
   builderstore.updateAssets()
 }
 </script>

@@ -9,9 +9,9 @@ const builderstore = useBuilderStore()
     </header>
 
     <section bg-slate-800 overflow-x-hidden overflow-y-auto flex flex-col grow>
-      <BuilderDetailsModulos v-if="builderstore.menu.id == 'modulos'"  />
+      <BuilderDetailsModulos v-show="builderstore.menu.id == 'modulos'"  />
       <BuilderDetailsCodigo v-if="builderstore.menu.id == 'codigo'" />
-      <BuilderDetailsPrompts v-if="builderstore.menu.id == 'prompts'" />
+      <BuilderDetailsPrompts v-show="builderstore.menu.id == 'prompts'" />
       <BuilderDetailsAssets v-if="builderstore.menu.id == 'assets'" />
     </section>
   </aside>

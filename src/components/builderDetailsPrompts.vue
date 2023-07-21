@@ -38,12 +38,13 @@ const sending = async () => {
     //return JSON.parse(completion.data.choices[0].message?.content);
     const response = JSON.parse(content)
     pushToscene(response)
+    loading.value = false
   } catch (e) {
-    throw new Error('The json strucure generated from gpt is not a valid one, please try again');
+    loading.value = false
     alert('Error... intenta de nuevo o usa un prompt más corto')
+    throw new Error('The json strucure generated from gpt is not a valid one, please try again');
   }
 
-  loading.value = false
 }
 
 const pushToscene = (obj) => {
@@ -65,10 +66,10 @@ loading.value = true
 
 <template>
   <div class=" h-full bg-slate-800 flex flex-col ">
-    <textarea placeholder="PROMPT" id="" name=""  class=" h-full resize-none text-xs rounded m-2 text-neutral" v-model="theprompt" />
-    <div class="text-right p-5" v-if="theprompt">
+    <textarea placeholder="PROMPT" id="" name=""  class=" h-full resize-none text-xs rounded m-2 text-white bg-dark" v-model="theprompt" />
+    <div class="text-right p-5 flex gap-2" v-if="theprompt">
       <UButton v-if="!loading" @click="promptSend" class="ml-auto">Enviar prompt</UButton>
-      <div v-else> <div class="i-solar-refresh-circle-broken ml-auto" animate-spin></div> Cargando... </div>
+      <div v-else> <div class="i-solar-refresh-circle-broken ml-auto" animate-spin></div> Procesando... </div>
     </div>
   </div>
 </template>

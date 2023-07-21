@@ -48,10 +48,11 @@ function downloadDoc(){
     <UToast ref="saveToast" position="bottom" align="left" />
 
     <router-link class="mt-auto" :to="'/'+builderstore.type">
-      <div title="Regresar" class="mt-auto aspect-square flex cursor-pointer items-center justify-center bg-neutral-900/30 hover:bg-amber">
+      <div title="Regresar" class="mt-auto aspect-square flex cursor-pointer items-center justify-center bg-neutral-900/30 hover:bg-amber mb-20">
         <div class="i-solar-arrow-left-broken"/>
       </div>
     </router-link>
+
     <div title="Sincronizar" class="aspect-square flex cursor-pointer items-center justify-center bg-stone-5/30 hover:bg-amber" @click="syncDoc()">
       <div class="i-solar-refresh-circle-line-duotone"/>
     </div>

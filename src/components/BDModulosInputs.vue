@@ -8,15 +8,38 @@
           <template  v-if="typeof refData[itemKey] == 'string' && properties?.input == 'file'">
             <label>{{ itemKey }}</label>
             <div col-span-3>
-              <USelect v-model="refData[itemKey]" :options="filesmap" />
+              <USelect v-model="refData[itemKey]" :options="filesmap">
+                <template #option="{item}">
+                  <div class="flex gap-1">
+                    <div w-8 v-if="item?.mime && item.mime.includes('image')"> <img :src="item.value" w-8></div>
+                    <div w-8 text-center v-if="item?.mime && item.mime.includes('audio')"><div i-solar-play-linear  mx-auto></div></div>
+                    <div w-8 text-center v-if="item?.mime && item.mime.includes('video')"><div i-solar-video-frame-play-vertical-line-duotone mx-auto></div></div>
+                    <div v-if="item?.mime && item.mime.includes('video')"><img :src="item.value" w-8 ></div>
+                    <div>{{ item.label }}</div>
+                  </div>
+                </template>
+              </USelect>
             </div>
           </template>
+          <!--COLOR-->
           <template  v-if="properties?.input == 'color'">
             <label>{{ itemKey }}</label>
             <div col-span-3>
               <UInput v-model="refData[itemKey]" class="dark:text-neutral w-full" size="sm" type="color" />
             </div>
           </template>
+          <!--REPEAT-->
+          <template  v-if="properties?.input == 'repeat'">
+            <label>{{ itemKey }}</label>
+            <div col-span-3 mt-1>
+              <UInput v-model="repeater" class="dark:text-neutral w-full" size="sm">
+                <template #append>
+                  <div w-full px-2 cursor-pointer @click="repeaterNew">+</div>
+                </template>
+              </UInput>
+            </div>
+          </template>
+
         </div>
         <div v-else-if="properties?.enum" class="grid grid-cols-4 items-center p-1">
           <label>{{ itemKey }}</label>
@@ -32,11 +55,15 @@
 
 
          <!--NO INPUT or ENUM DEFINED -->
-        <div v-else class="grid grid-cols-4 items-center p-1">
+        <div v-else class="grid grid-cols-4 items-center px-1 py-0.5" :class="[itemKey == 'class'? 'bg-primary/30':'' , itemKey == 'id'? 'bg-secondary/30':'', itemKey == 'text'? 'bg-rose-600/30':'']">
           <!-- TEXT-->
           <template  v-if="typeof refData[itemKey] == 'string' ">
             <label>{{ itemKey }}</label>
-            <div col-span-3><UInput v-model="refData[itemKey]" class="dark:text-neutral w-full" size="sm" /></div>
+            <div col-span-3>
+              <textarea v-if="itemKey == 'class'" v-model="refData[itemKey]" class="dark:text-neutral w-full text-[12px] !p-0.5 textarea rounded border-1 border-primary leading-3 " size="sm"></textarea>
+              <UInput v-else v-model="refData[itemKey]" class="dark:text-neutral w-full !p-0.5 !text-[12px]" size="sm" />
+            </div>
+
           </template>
           <!-- NUMBER -->
           <template v-if="typeof refData[itemKey] == 'number'">
@@ -116,6 +143,7 @@ const filesmap = computed(()=>{
     return {
       label: item.name,
       value: item.url,
+      mime: item.mimetype
     }
   })
   fm.unshift({label:' - ', value: ' '})

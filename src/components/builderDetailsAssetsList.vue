@@ -19,7 +19,10 @@
       <template v-if="item.mimetype.includes('audio')">
         <div flex gap-2 items-center>
           <div i-solar-music-notes-line-duotone></div>
-          <div class="w-12 aspect-square bg-slate-1/10 rounded"></div>
+          <div class="w-12 aspect-square bg-slate-1/10 rounded flex justify-center text-3xl">
+            <audio :src="item.url" type="audio/mp3" w-full :id="'audio'+index"></audio>
+            <UButton class="i-solar-play-linear bg-white" @click="playudio(index)"></UButton>
+          </div>
         </div>
       </template>
 
@@ -59,6 +62,17 @@ const deleteAsset = async (item) => {
     .from(builderstore.type)
     .remove([builderstore.dockey+'/'+item.name])
   builderstore.updateAssets()
+}
+
+const cleanname = (name) => {
+  return name.replaceAll(' ', '_').replaceAll('ñ','n').toLowerCase().replaceAll('.','_')
+}
+
+const playudio = (index) => {
+  const theid = 'audio'+index
+  const player = document.getElementById(theid)
+  player.play()
+
 }
 
 </script>

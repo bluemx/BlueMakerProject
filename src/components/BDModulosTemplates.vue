@@ -19,7 +19,7 @@ const builderstore = useBuilderStore()
 const templates = ref([])
 const loadItems = async () => {
   templates.value = await builderstore.getUserTemplates()
-  console.log(templates.value)
+  //console.log(templates.value)
 }
 loadItems()
 
