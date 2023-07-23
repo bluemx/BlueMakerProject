@@ -1,27 +1,45 @@
 {
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/axios.js?commonjs-module": [
+    "/assets/builder-fbafaac1.js"
+  ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/cross-fetch@3.1.6/node_modules/cross-fetch/dist/browser-ponyfill.js?commonjs-module": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/file-saver@2.0.5/node_modules/file-saver/dist/FileSaver.min.js?commonjs-module": [
-    "/assets/builder-84dd1132.js"
+    "/assets/builder-a102cc51.js"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/jszip@3.10.1/node_modules/jszip/dist/jszip.js?commonjs-module": [
-    "/assets/jszip-c61eb4cc.js"
+    "/assets/jszip-91ed46b9.js"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js?commonjs-module": [
     "/assets/favicon-8ecc0abb.svg"
   ],
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/openai@3.3.0/node_modules/openai/dist/api.js?commonjs-exports": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/openai@3.3.0/node_modules/openai/dist/base.js?commonjs-exports": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/openai@3.3.0/node_modules/openai/dist/common.js?commonjs-exports": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/openai@3.3.0/node_modules/openai/dist/configuration.js?commonjs-exports": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/openai@3.3.0/node_modules/openai/dist/index.js?commonjs-exports": [
+    "/assets/builder-fbafaac1.js"
+  ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/sortablejs@1.14.0/node_modules/sortablejs/modular/sortable.esm.js?commonjs-proxy": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js?commonjs-proxy": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "\u0000/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/node_modules/.pnpm/vuedraggable@4.1.0_vue@3.3.4/node_modules/vuedraggable/dist/vuedraggable.umd.js?commonjs-module": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "\u0000commonjs-dynamic-modules": [
-    "/assets/jszip-c61eb4cc.js"
+    "/assets/jszip-91ed46b9.js"
   ],
   "\u0000commonjsHelpers.js": [
     "/assets/favicon-8ecc0abb.svg"
@@ -42,7 +60,7 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "/assets/virtual_pwa-register-b84e6789.js"
+    "/assets/virtual_pwa-register-2051fc53.js"
   ],
   "../../../../../@vite-plugin-vue-layouts/generated-layouts": [
     "/assets/favicon-8ecc0abb.svg"
@@ -302,6 +320,96 @@
   "node_modules/.pnpm/@vueuse+shared@10.1.2_vue@3.3.4/node_modules/@vueuse/shared/index.mjs": [
     "/assets/favicon-8ecc0abb.svg"
   ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/index.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/adapters/xhr.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/axios.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/cancel/Cancel.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/cancel/CancelToken.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/cancel/isCancel.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/core/Axios.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/core/InterceptorManager.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/core/buildFullPath.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/core/createError.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/core/dispatchRequest.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/core/enhanceError.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/core/mergeConfig.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/core/settle.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/core/transformData.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/defaults/index.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/defaults/transitional.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/env/data.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/helpers/bind.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/helpers/buildURL.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/helpers/combineURLs.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/helpers/cookies.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/helpers/isAbsoluteURL.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/helpers/isAxiosError.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/helpers/isURLSameOrigin.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/helpers/normalizeHeaderName.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/helpers/parseHeaders.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/helpers/spread.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/helpers/validator.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/axios@0.26.1/node_modules/axios/lib/utils.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
   "node_modules/.pnpm/cross-fetch@3.1.6/node_modules/cross-fetch/dist/browser-ponyfill.js": [
     "/assets/favicon-8ecc0abb.svg"
   ],
@@ -309,25 +417,46 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/file-saver@2.0.5/node_modules/file-saver/dist/FileSaver.min.js": [
-    "/assets/builder-84dd1132.js"
+    "/assets/builder-a102cc51.js"
+  ],
+  "node_modules/.pnpm/form-data@4.0.0/node_modules/form-data/lib/browser.js": [
+    "/assets/builder-fbafaac1.js"
   ],
   "node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/jszip-utils@0.1.0/node_modules/jszip-utils/lib/index.js": [
-    "/assets/builder-84dd1132.js"
+    "/assets/builder-a102cc51.js"
   ],
   "node_modules/.pnpm/jszip@3.10.1/node_modules/jszip/dist/jszip.js": [
-    "/assets/jszip-c61eb4cc.js"
+    "/assets/jszip-91ed46b9.js"
   ],
   "node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js": [
     "/assets/favicon-8ecc0abb.svg"
+  ],
+  "node_modules/.pnpm/openai@3.3.0/node_modules/openai/dist/api.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/openai@3.3.0/node_modules/openai/dist/base.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/openai@3.3.0/node_modules/openai/dist/common.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/openai@3.3.0/node_modules/openai/dist/configuration.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/openai@3.3.0/node_modules/openai/dist/index.js": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "node_modules/.pnpm/openai@3.3.0/node_modules/openai/package.json": [
+    "/assets/builder-fbafaac1.js"
   ],
   "node_modules/.pnpm/pinia@2.1.3_typescript@5.1.3_vue@3.3.4/node_modules/pinia/dist/pinia.mjs": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/sortablejs@1.14.0/node_modules/sortablejs/modular/sortable.esm.js": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "node_modules/.pnpm/unhead@1.1.27/node_modules/unhead/dist/index.mjs": [
     "/assets/favicon-8ecc0abb.svg"
@@ -357,13 +486,13 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/vue3-json-editor@1.1.5/node_modules/vue3-json-editor/dist/vue3-json-editor.esm.prod.js": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "node_modules/.pnpm/vuedraggable@4.1.0_vue@3.3.4/node_modules/vuedraggable/dist/vuedraggable.umd.js": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "node_modules/.pnpm/websocket@1.0.34/node_modules/websocket/lib/browser.js": [
     "/assets/favicon-8ecc0abb.svg"
@@ -384,52 +513,58 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/components/AdminAuthorized.vue": [
-    "/assets/dashboard-ff187aca.js"
+    "/assets/dashboard-403db83e.js"
   ],
   "src/components/BDModulosDropzones.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "src/components/BDModulosInputs.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
+  ],
+  "src/components/BDModulosSaveTemplate.vue": [
+    "/assets/builder-fbafaac1.js"
+  ],
+  "src/components/BDModulosTemplates.vue": [
+    "/assets/builder-fbafaac1.js"
   ],
   "src/components/BuilderDocManager.vue": [
-    "/assets/index-3e1cd33e.js"
+    "/assets/index-6dd51f0a.js"
   ],
   "src/components/UserAdmin.vue": [
-    "/assets/dashboard-ff187aca.js"
+    "/assets/dashboard-403db83e.js"
   ],
   "src/components/UserAuth.vue": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/components/UserLogout.vue": [
-    "/assets/dashboard-ff187aca.js"
+    "/assets/dashboard-403db83e.js"
   ],
   "src/components/builderDetails.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "src/components/builderDetailsAssets.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "src/components/builderDetailsAssetsList.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "src/components/builderDetailsAssetsUploader.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "src/components/builderDetailsBlocks.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "src/components/builderDetailsCodigo.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "src/components/builderDetailsModulos.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "src/components/builderDetailsPrompts.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "src/components/builderMenu.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "src/composables/dark.ts": [
     "/assets/favicon-8ecc0abb.svg"
@@ -438,19 +573,19 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/layouts/404.vue": [
-    "/assets/404-e436fd53.js"
+    "/assets/404-cf487ac2.js"
   ],
   "src/layouts/404.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/404-e436fd53.js"
+    "/assets/404-cf487ac2.js"
   ],
   "src/layouts/builder.vue": [
-    "/assets/builder-49e259a4.js"
+    "/assets/builder-fbafaac1.js"
   ],
   "src/layouts/default.vue": [
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/layouts/home.vue": [
-    "/assets/home-7df2201b.js"
+    "/assets/home-b1c6c3df.js"
   ],
   "src/main.ts": [
     "/assets/favicon-8ecc0abb.svg"
@@ -477,28 +612,28 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/pages/README.md": [
-    "/assets/README-df32ff19.js"
+    "/assets/README-6c5d7f28.js"
   ],
   "src/pages/[...all].vue": [
-    "/assets/_...all_-aad2b1c4.js"
+    "/assets/_...all_-43021ba1.js"
   ],
   "src/pages/[...all].vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/_...all_-aad2b1c4.js"
+    "/assets/_...all_-43021ba1.js"
   ],
   "src/pages/about.md": [
-    "/assets/about-d54825bb.js"
+    "/assets/about-5f6d5398.js"
   ],
   "src/pages/dashboard.vue": [
-    "/assets/dashboard-ff187aca.js"
+    "/assets/dashboard-403db83e.js"
   ],
   "src/pages/dashboard.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/dashboard-ff187aca.js"
+    "/assets/dashboard-403db83e.js"
   ],
   "src/pages/hi/[name].vue": [
-    "/assets/_name_-55fe6eb6.js"
+    "/assets/_name_-2cf770e9.js"
   ],
   "src/pages/hi/[name].vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/_name_-55fe6eb6.js"
+    "/assets/_name_-2cf770e9.js"
   ],
   "src/pages/index.vue": [
     "/assets/favicon-8ecc0abb.svg"
@@ -507,13 +642,13 @@
     "/assets/favicon-8ecc0abb.svg"
   ],
   "src/pages/riodas/[key].vue": [
-    "/assets/_key_-d13997f7.js"
+    "/assets/_key_-15bd3b51.js"
   ],
   "src/pages/riodas/index.vue": [
-    "/assets/index-3e1cd33e.js"
+    "/assets/index-6dd51f0a.js"
   ],
   "src/stores/builder.ts": [
-    "/assets/builder-84dd1132.js"
+    "/assets/builder-a102cc51.js"
   ],
   "src/stores/user.ts": [
     "/assets/favicon-8ecc0abb.svg"
