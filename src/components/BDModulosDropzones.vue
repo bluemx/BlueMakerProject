@@ -22,6 +22,7 @@
                 <img class="w-4 h-4 mr-1" :src="element.file">
               </template>
               <template v-else>
+                <div class="hasicon mr-1" v-if="element.marker" v-html="element.marker"></div>
                 <div class="hasicon w-4 h-4 mr-1" v-if="builderstore?.modulosobj[element.block]?.icon" v-html="builderstore.modulosobj[element.block].icon"></div>
               </template>
             </div>
