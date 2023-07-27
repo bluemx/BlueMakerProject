@@ -55,7 +55,7 @@
 
 
          <!--NO INPUT or ENUM DEFINED -->
-        <div v-else class="grid grid-cols-4 items-center px-1 py-0.5" :class="[itemKey == 'class'? 'bg-primary/30':'' , itemKey == 'id'? 'bg-secondary/30':'', itemKey == 'text'? 'bg-rose-600/30':'']">
+        <div v-else class="grid grid-cols-4 items-center px-1 py-0.5" :class="[itemKey == 'class'? 'bg-primary/70':'' , itemKey == 'id'? 'bg-secondary/30':'', itemKey == 'text'? 'bg-rose-600/30':'']">
           <!-- TEXT-->
           <template  v-if="typeof refData[itemKey] == 'string' ">
             <label>{{ itemKey }}</label>
