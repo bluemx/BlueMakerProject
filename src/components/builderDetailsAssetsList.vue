@@ -72,7 +72,6 @@ const playudio = (index) => {
   const theid = 'audio'+index
   const player = document.getElementById(theid)
   player.play()
-
 }
 
 </script>

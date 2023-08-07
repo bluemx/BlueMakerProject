@@ -13,6 +13,8 @@ const builderstore = useBuilderStore()
       <BuilderDetailsCodigo v-if="builderstore.menu.id == 'codigo'" />
       <BuilderDetailsPrompts v-show="builderstore.menu.id == 'prompts'" />
       <BuilderDetailsAssets v-if="builderstore.menu.id == 'assets'" />
+      <BuilderDetailsAudios v-show="builderstore.menu.id == 'audios'" />
+
     </section>
   </aside>
 </template>

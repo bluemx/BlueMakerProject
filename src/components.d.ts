@@ -10,6 +10,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AdminAuthorized: typeof import('./components/AdminAuthorized.vue')['default']
+    AudioToAssets: typeof import('./components/AudioToAssets.vue')['default']
     BDModulosDropzones: typeof import('./components/BDModulosDropzones.vue')['default']
     BDModulosInputs: typeof import('./components/BDModulosInputs.vue')['default']
     BDModulosSaveTemplate: typeof import('./components/BDModulosSaveTemplate.vue')['default']
@@ -18,6 +19,7 @@ declare module '@vue/runtime-core' {
     BuilderDetailsAssets: typeof import('./components/builderDetailsAssets.vue')['default']
     BuilderDetailsAssetsList: typeof import('./components/builderDetailsAssetsList.vue')['default']
     BuilderDetailsAssetsUploader: typeof import('./components/builderDetailsAssetsUploader.vue')['default']
+    BuilderDetailsAudios: typeof import('./components/builderDetailsAudios.vue')['default']
     BuilderDetailsBlocks: typeof import('./components/builderDetailsBlocks.vue')['default']
     BuilderDetailsCodigo: typeof import('./components/builderDetailsCodigo.vue')['default']
     BuilderDetailsContainers: typeof import('./components/builderDetailsContainers.vue')['default']

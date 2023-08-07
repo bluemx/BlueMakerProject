@@ -67,7 +67,7 @@ const restartoda = () => {
     Loading...
   </dialog>
   <section flex-grow bg-slate-100 p-1 dark:bg-slate-900 relative>
-    <iframe ref="iframe" :src="iframeurl" frameborder="0" class="w-full h-full" allow="camera;microphone;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true" ></iframe>
+    <iframe ref="iframe" :src="iframeurl" frameborder="0" class="w-full h-full" allow="camera;microphone;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true" ></iframe>
     <div absolute right-2 bottom-2>
       <UButton @click="restartoda" size="sm">Reset ODA</UButton>
     </div>
