@@ -37,7 +37,7 @@ const fetchFileFromURL = async (url, filename) => {
   }
   const blob = await response.blob();
   // Assign the provided filename or extract from URL if not provided.
-  blob.name = name.value;
+  blob.name = name.value+'.mp3';
   return blob;
 }
 
