@@ -13,7 +13,7 @@ import './styles/main.css'
 import 'uno.css'
 
 
-
+localStorage.theme = 'dark'
 
 const routes = setupLayouts(generatedRoutes)
 
