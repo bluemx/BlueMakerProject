@@ -14,6 +14,7 @@ import 'uno.css'
 
 
 localStorage.theme = 'dark'
+document.getElementsByTagName('html')[0].setAttribute('class', 'dark')
 
 const routes = setupLayouts(generatedRoutes)
 
