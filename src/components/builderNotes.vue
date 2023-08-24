@@ -21,8 +21,6 @@
 
 <script setup>
 
-import { useDraggable } from '@vueuse/core'
-
 import { UseDraggable as Draggable } from '@vueuse/components'
 
 const builderstore = useBuilderStore();

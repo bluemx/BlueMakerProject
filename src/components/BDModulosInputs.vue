@@ -112,7 +112,6 @@
   </div>
 </template>
 <script setup>
-import { watchOnce } from '@vueuse/core'
 
 const props = defineProps({
   data: Object,
