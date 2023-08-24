@@ -54,6 +54,8 @@ function downloadDoc(){
       </div>
     </router-link>
 
+    <BuilderNotes></BuilderNotes>
+
     <div title="Sincronizar" class="aspect-square flex cursor-pointer items-center justify-center bg-stone-5/30 hover:bg-amber" @click="syncDoc()">
       <div class="i-solar-refresh-circle-line-duotone"/>
     </div>

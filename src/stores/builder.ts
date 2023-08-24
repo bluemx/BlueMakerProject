@@ -60,11 +60,15 @@ export const useBuilderStore = defineStore('builder', () => {
     return data.publicUrl
   }
   const saveDoc = async () => {
+    console.log('guardando...', doc.value)
     const { data, error } = await supabase
       .from('documents')
       .update(doc.value)
       .eq('key', dockey.value)
   }
+
+
+
   const downloadDoc = () => {
 
   }

@@ -144,7 +144,7 @@ onMounted(() => {
     <div class="border-l-4 border-r-4 border-slate-500 p-2">
       <div class="grid grid-cols-2 items-center my-1 gap-1 justify-center">
           <div class="flex gap-1 items-center my-1">
-            <UButton size="xs" class="px-1" :type="voicesLanguageFilter==item?'primary':'default'" @click="voicesLanguageFilter=item"  v-for="(item, index) in ['en-US', 'en-CA', 'en-GB']" :key="index">
+            <UButton size="xs" class="px-1" :type="voicesLanguageFilter==item?'primary':'default'" @click="voicesLanguageFilter=item"  v-for="(item, index) in ['en-US', 'en-CA', 'en-GB', 'es-MX']" :key="index">
               {{ item }}
             </UButton>
           </div>
