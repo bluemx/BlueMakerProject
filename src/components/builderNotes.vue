@@ -9,7 +9,7 @@
     <header ref="handleWindow" class="bg-amber-500 text-slate-600 cursor-grab p-0.5 flex gap-2" @mousedown="startDragging">
       Notas
     </header>
-    <textarea v-model="note" class="dark:text-slate-900 h-60 w-full h-full flex-grow resize-none text-[12px] textarea rounded-0 leading-4  p-2 " @input="updateNote"></textarea>
+    <textarea v-model="note" class="dark:text-slate-900 h-60 w-full h-full flex-grow resize-none text-[12px] textarea rounded-0 leading-4  p-2" @input="updateNote"></textarea>
 
 
   </Draggable>

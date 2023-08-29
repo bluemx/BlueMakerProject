@@ -132,6 +132,10 @@ const stopaudio = (theid) => {
 }
 
 
+const conversationVoices = ref(null)
+const addToConversation = (item) => {
+  conversationVoices.value.add(item)
+}
 
 onMounted(() => {
   loadVoices()
@@ -160,12 +164,14 @@ onMounted(() => {
       <div class="border-4 border-slate-500 p-2" v-if="!loading">
         <div class="h-[180px] text-xs overflow-y-scroll">
           <div :class="['flex gap-1 w-full justify-between  mb-0.5 hover:bg-primary-700 cursor-pointer', item.value==voice.value?'bg-accent':'bg-slate-500']"  v-for="(item, index) in voicesFilter" :key="index" @click="voice=item">
+
             <div>
               <strong>{{ item.name }}</strong>
               <span v-if="item.isKid" class="text-amber inline-block ml-2">(Niño)</span>
               <span class="opacity-50 text-[8px] inline-block ml-2">{{ item.voiceType }}</span>
             </div>
             <div class="rounded flex justify-center gap-1">
+              <UButton size="xs" class="i-solar-user-plus-line-duotone bg-white" @click="addToConversation(item)"></UButton>
               <UButton size="xs" class="i-solar-play-linear bg-white" @click="playudio('a'+index)"></UButton>
               <UButton  size="xs" class="i-solar-stop-linear bg-white" @click="stopaudio()"></UButton>
               <audio :src="item.sample" type="audio/mp3" invisible w-0 :id="'a'+index"></audio>
@@ -209,6 +215,10 @@ onMounted(() => {
           </div>
       </div>
     </div>
+
+
+
+    <BDAudioConversation ref="conversationVoices"></BDAudioConversation>
 
 
 

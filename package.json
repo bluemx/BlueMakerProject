@@ -25,6 +25,8 @@
     "@vueuse/components": "^10.3.0",
     "@vueuse/core": "^10.1.2",
     "@vueuse/head": "^1.1.26",
+    "axios": "^1.5.0",
+    "crunker": "^2.1.0",
     "file-saver": "^2.0.5",
     "grapesjs": "^0.21.2",
     "grapesjs-preset-webpage": "^1.0.3",

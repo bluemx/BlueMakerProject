@@ -13,6 +13,7 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
+import axios from 'axios'
 
 // @ts-expect-error failed to resolve types
 import VueMacros from 'unplugin-vue-macros/vite'
@@ -50,6 +51,11 @@ export default defineConfig({
         'vue-i18n',
         '@vueuse/head',
         '@vueuse/core',
+        {
+          'axios':[
+            ['default', 'axios'],
+          ]
+        }
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: [

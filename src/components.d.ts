@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AdminAuthorized: typeof import('./components/AdminAuthorized.vue')['default']
     AudioToAssets: typeof import('./components/AudioToAssets.vue')['default']
+    BDAudioConversation: typeof import('./components/BDAudioConversation.vue')['default']
     BDModulosDropzones: typeof import('./components/BDModulosDropzones.vue')['default']
     BDModulosInputs: typeof import('./components/BDModulosInputs.vue')['default']
     BDModulosSaveTemplate: typeof import('./components/BDModulosSaveTemplate.vue')['default']
