@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "@antfu",
+    "@unocss"
+  ],
+  rules: {
+    'no-console': 'off',
+    'unused-imports': 'off',
+    'no-unused-vars': 'off',
+    'unused-imports/no-unused-vars': 'off',
+    'no-alert': 'off',
+    'vue/no-unused-vars': 'off'
+  }
+}

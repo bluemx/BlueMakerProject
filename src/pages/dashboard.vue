@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import favicon from '../favicon.svg'
+
 defineOptions({
   name: 'DashboardPage',
 })
@@ -31,7 +32,7 @@ const router = useRouter()
     <button aspect-square w-full bg-slate-1 dark:text-neutral />
   </div>
   <div mt-36>
-    <UserAdmin v-if="user?.profile?.role == 'admin'" />
+    <UserAdmin v-if="user?.profile?.role === 'admin'" />
     <UserLogout />
   </div>
 </template>

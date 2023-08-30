@@ -2,7 +2,7 @@
 const authorized = ref([])
 const newuser = ref()
 async function loadItems() {
-  const { data, error, status } = await supabase
+  const { data } = await supabase
     .from('authorized')
     .select()
   authorized.value = data
@@ -18,7 +18,7 @@ async function handleNew() {
     loadItems()
 }
 async function handleDelete(usr) {
-  const { error } = await supabase
+  const { _error } = await supabase
     .from('authorized')
     .delete()
     .eq('id', usr.id)

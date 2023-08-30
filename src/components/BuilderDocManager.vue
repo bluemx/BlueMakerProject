@@ -8,7 +8,9 @@ const dialog = ref()
 const filter = ref('')
 const docs = ref([])
 const docsFilter = computed(() => {
-  if (filter.value == '' || filter.value == null) { return docs.value }
+  if (filter.value === '' || filter.value === null) {
+    return docs.value
+  }
   else {
     return docs.value.filter((item) => {
       return item.key.toLowerCase().includes(filter.value.toLowerCase())
@@ -30,13 +32,13 @@ function onInput() {
 const canCreate = computed(() => {
   let res = false
   if (docsFilter.value && docsFilter.value.length) {
-    if (docsFilter.value[0].key == filter.value)
+    if (docsFilter.value[0].key === filter.value)
       res = true
   }
   return res
 })
 
-const builderNewDoc = ()  => {
+function builderNewDoc() {
   console.log(filter.value, props.defaultDoc)
   builderstore.newDoc(filter.value, props.defaultDoc)
 }
@@ -56,7 +58,7 @@ onMounted(() => {
       </button>
     </div>
     <div grid grid-cols-2 my-5 gap-1 md:grid-cols-6 dark:text-neutral>
-      <template v-for="(item, index) in docsFilter">
+      <template v-for="(item, _index) in docsFilter" :key="_index">
         <router-link :to="`/${builderstore.type}/${item.key}`" border-1 border-slate rounded p-1 text-center text-xs>
           <button>
             {{ item.key }}

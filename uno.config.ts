@@ -9,6 +9,7 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 import { presetUnocssUI } from 'unocss-ui'
+
 export default defineConfig({
   darkMode: 'class',
   shortcuts: [
@@ -57,5 +58,5 @@ export default defineConfig({
     ...['slate', 'gray', 'zinc', 'neutral', 'stone', 'red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'].flatMap(i => [`bg-${i}-700/10`]),
     ...['slate', 'gray', 'zinc', 'neutral', 'stone', 'red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'].flatMap(i => [`bg-${i}-900/10`]),
 
-  ]
+  ],
 })

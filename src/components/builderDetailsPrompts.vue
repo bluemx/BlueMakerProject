@@ -1,13 +1,12 @@
 <script setup>
-
 import { Configuration, OpenAIApi } from 'openai'
 
 const configuration = new Configuration({
-  apiKey: window.atob(import.meta.env.VITE_OPENAI_API_KEY)
-});
-delete configuration.baseOptions.headers['User-Agent'];
+  apiKey: window.atob(import.meta.env.VITE_OPENAI_API_KEY),
+})
+delete configuration.baseOptions.headers['User-Agent']
 
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAIApi(configuration)
 
 const promptSystemText = `You are a JSON coder that turns the prompt into json a object.The code you write will be compiler into ant html interactive learning activity. You can use three json blocks: "group", "text", "image".
 { "block": "group", "class": "", "content": [], "background": "", "id": "", "name": "YxOn" }
@@ -18,58 +17,55 @@ The class field uses classes from tailwind and daisyui. Only the group has "cont
 The name is a random 4 characters string.  The first groups name (the one the root), where all the items are, should be prefixed with "PT:"+[4 caracters]. Only one "PT:" per object. Is important that every "name" is unique through all the document.
 I will ask you for structures and you will write them using group, text, and image. I will give you specific instructions in spanish.
 If images are required use the ones from the "Pool of images" that have a closer name to the requirement. Put the name of the image from the pool on the "file" key.
-Do not include any explanations, only provide a RFC8259 compliant JSON response following this format without deviation.`;
+Do not include any explanations, only provide a RFC8259 compliant JSON response following this format without deviation.`
 
 const builderstore = useBuilderStore()
 const theprompt = ref()
 const imagespool = ref()
 const loading = ref(false)
-const sending = async () => {
-
+async function sending() {
   const completion = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
+    model: 'gpt-3.5-turbo',
     messages: [
-      {"role": "system", "content": promptSystemText + imagespool.value},
-      {role: "user", content: theprompt.value}
+      { role: 'system', content: promptSystemText + imagespool.value },
+      { role: 'user', content: theprompt.value },
     ],
-  });
+  })
   const content = completion.data.choices[0].message.content
   try {
-    //return JSON.parse(completion.data.choices[0].message?.content);
+    // return JSON.parse(completion.data.choices[0].message?.content);
     const response = JSON.parse(content)
     pushToscene(response)
     loading.value = false
-  } catch (e) {
+  }
+  catch (e) {
     loading.value = false
     alert('Error... intenta de nuevo o usa un prompt más corto')
-    throw new Error('The json strucure generated from gpt is not a valid one, please try again');
+    throw new Error('The json strucure generated from gpt is not a valid one, please try again')
   }
-
 }
 
-const pushToscene = (obj) => {
+function pushToscene(obj) {
   builderstore.doc.content.activity.scenes[0].content.push(obj)
-  imagespool.value = ' Pool of images:' + builderstore.files.map((i)=>i.url).toString()
-
+  imagespool.value = ` Pool of images:${builderstore.files.map(i => i.url).toString()}`
 }
 
-
-
-
-
-const promptSend = () => {
-loading.value = true
+function promptSend() {
+  loading.value = true
   sending()
 }
-
 </script>
 
 <template>
-  <div class=" h-full bg-slate-800 flex flex-col ">
-    <textarea placeholder="PROMPT" id="" name=""  class=" h-full resize-none text-xs rounded m-2 text-white bg-dark" v-model="theprompt" />
-    <div class="text-right p-5 flex gap-2" v-if="theprompt">
-      <UButton v-if="!loading" @click="promptSend" class="ml-auto">Enviar prompt</UButton>
-      <div v-else> <div class="i-solar-refresh-circle-broken ml-auto" animate-spin></div> Procesando... </div>
+  <div class="h-full flex flex-col bg-slate-800">
+    <textarea id="" v-model="theprompt" placeholder="PROMPT" name="" class="m-2 h-full resize-none rounded bg-dark text-xs text-white" />
+    <div v-if="theprompt" class="flex gap-2 p-5 text-right">
+      <UButton v-if="!loading" class="ml-auto" @click="promptSend">
+        Enviar prompt
+      </UButton>
+      <div v-else>
+        <div class="i-solar-refresh-circle-broken ml-auto" animate-spin /> Procesando...
+      </div>
     </div>
   </div>
 </template>

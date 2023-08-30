@@ -6,7 +6,7 @@ const builderstore = useBuilderStore()
 const { doc } = storeToRefs(builderstore)
 
 const loading = ref(true)
-//const code = ref({ ...builderstore.doc.content })
+// const code = ref({ ...builderstore.doc.content })
 
 function onJsonChange(value) {
   builderstore.doc.content = value
@@ -18,7 +18,7 @@ function onModeChange(value) {
 
 const contentModel = ref(builderstore.doc ? builderstore.doc.content : '')
 
-//const jsoncode = ref(JSON.stringify(contentModel.value, null, "\t"))
+// const jsoncode = ref(JSON.stringify(contentModel.value, null, "\t"))
 
 // Watch for changes in builderstore.doc.content and update contentModel
 watch(() => builderstore.doc.content, (newContent) => {
@@ -27,9 +27,7 @@ watch(() => builderstore.doc.content, (newContent) => {
 </script>
 
 <template>
-  <div relative bg-stone-6 h-full>
-    <Vue3JsonEditor mode="code" v-model="contentModel" class="bg-white h-full" @json-change="onJsonChange" @mode-change="onModeChange" />
-
+  <div relative h-full bg-stone-6>
+    <Vue3JsonEditor v-model="contentModel" mode="code" class="h-full bg-white" @json-change="onJsonChange" @mode-change="onModeChange" />
   </div>
-
 </template>

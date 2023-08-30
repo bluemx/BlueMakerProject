@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import favicon from '../favicon.svg'
+
 defineOptions({
   name: 'IndexPage',
 })

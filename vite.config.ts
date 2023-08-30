@@ -13,7 +13,6 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
-import axios from 'axios'
 
 // @ts-expect-error failed to resolve types
 import VueMacros from 'unplugin-vue-macros/vite'
@@ -23,6 +22,13 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
+    },
+  },
+  build: {
+    // ... other build options
+
+    rollupOptions: {
+      external: ['crunker'],
     },
   },
 
@@ -52,10 +58,10 @@ export default defineConfig({
         '@vueuse/head',
         '@vueuse/core',
         {
-          'axios':[
+          axios: [
             ['default', 'axios'],
-          ]
-        }
+          ],
+        },
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: [
@@ -156,6 +162,7 @@ export default defineConfig({
   },
 
   // https://github.com/antfu/vite-ssg
+
   ssgOptions: {
     script: 'async',
     formatting: 'minify',

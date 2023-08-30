@@ -1,18 +1,14 @@
 <script setup>
-import draggable from 'vuedraggable'
-
 const builderstore = useBuilderStore()
 const drag = ref(false)
 const modules = ref()
 const contentModel = ref(builderstore.doc ? builderstore.doc.content : '')
-
-
 </script>
 
 <template>
   <div relative>
     <div sticky top-0 z-10 bg-slate-800>
-      <BuilderDetailsBlocks></BuilderDetailsBlocks>
+      <BuilderDetailsBlocks />
     </div>
 
     <!-- version 1 -->
@@ -24,21 +20,10 @@ const contentModel = ref(builderstore.doc ? builderstore.doc.content : '')
     </div>
     -->
 
-
-
     <div bg-slate-100 dark:bg-slate-900>
-
-      <template v-for="(key, index) in Object.keys(contentModel)"  >
-        <BDModulosInputs :data="contentModel" :item-key="key" :level="0"></BDModulosInputs>
+      <template v-for="(key, index) in Object.keys(contentModel)" :key="index">
+        <BDModulosInputs :data="contentModel" :item-key="key" :level="0" />
       </template>
-
+    </div>
   </div>
-
-  </div>
-
-
-
-
-
-
 </template>

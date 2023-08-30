@@ -17,8 +17,8 @@ function onClick(item) {
 
 const saveToast = ref()
 const saveLoading = ref(false)
-async function saveDoc(){
-  if(saveLoading.value)
+async function saveDoc() {
+  if (saveLoading.value)
     return false
   saveLoading.value = true
   await builderstore.saveDoc()
@@ -26,46 +26,42 @@ async function saveDoc(){
   saveToast.value.show('success', 'Documento guardado')
 }
 
-
-function syncDoc () {
+function syncDoc() {
   builderstore.metadata('sync', Math.random())
-
 }
 
-function downloadDoc(){
+function downloadDoc() {
   builderstore.download()
   saveToast.value.show('success', 'Descargando...')
 }
-
 </script>
 
 <template>
   <aside w-10 flex flex-col gap-2 bg-slate-8 text-white>
-    <template v-for="(item, index) in buttons">
+    <template v-for="(item, index) in buttons" :key="index">
       <div :title="item.name" class="aspect-square flex cursor-pointer items-center justify-center hover:text-amber" :class="[currentbutton === item ? 'bg-slate-5' : '']" @click="onClick(item)">
         <div :class="item.icon" />
       </div>
     </template>
     <UToast ref="saveToast" position="bottom" align="left" />
 
-    <router-link class="mt-auto" :to="'/'+builderstore.type">
-      <div title="Regresar" class="mt-auto aspect-square flex cursor-pointer items-center justify-center bg-neutral-900/30 hover:bg-amber mb-20">
-        <div class="i-solar-arrow-left-broken"/>
+    <router-link class="mt-auto" :to="`/${builderstore.type}`">
+      <div title="Regresar" class="mb-20 mt-auto aspect-square flex cursor-pointer items-center justify-center bg-neutral-900/30 hover:bg-amber">
+        <div class="i-solar-arrow-left-broken" />
       </div>
     </router-link>
 
-    <BuilderNotes></BuilderNotes>
+    <BuilderNotes />
 
     <div title="Sincronizar" class="aspect-square flex cursor-pointer items-center justify-center bg-stone-5/30 hover:bg-amber" @click="syncDoc()">
-      <div class="i-solar-refresh-circle-line-duotone"/>
+      <div class="i-solar-refresh-circle-line-duotone" />
     </div>
     <div title="Guardar" class="aspect-square flex cursor-pointer items-center justify-center bg-cyan-5/30 hover:bg-amber" @click="saveDoc()">
-      <div class="i-solar:diskette-broken" v-if="!saveLoading" />
-      <div class="i-solar-diskette-bold animate-spin" v-if="saveLoading" />
+      <div v-if="!saveLoading" class="i-solar:diskette-broken" />
+      <div v-if="saveLoading" class="i-solar-diskette-bold animate-spin" />
     </div>
     <div title="Descargar" class="aspect-square flex cursor-pointer items-center justify-center bg-emerald-5/30 hover:bg-amber" @click="downloadDoc()">
       <div class="i-solar:cloud-download-line-duotone" />
-
     </div>
   </aside>
 </template>

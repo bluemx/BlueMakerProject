@@ -1,1 +1,0 @@
-import{d as o,a,o as n,c,t as l,f as r,g as _,X as e}from"./app-15fa318a.js";const s=o({__name:"[...all]",setup(f){const{t}=a();return(u,p)=>(n(),c("div",null,l(r(t)("not-found")),1))}});typeof e=="function"&&e(s);const m=_(s,[["__file","/Users/fldsmdfr/Documents/GitHub/BlueMakerProject/src/pages/[...all].vue"]]);export{m as default};

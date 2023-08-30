@@ -34,8 +34,8 @@ async function handleLogin() {
       const { error } = await supabase.auth.signInWithOtp({
         email: email.value,
         options: {
-          emailRedirectTo: window.location.origin
-        }
+          emailRedirectTo: window.location.origin,
+        },
       })
       if (error)
         throw error
@@ -55,7 +55,7 @@ async function handleLogin() {
 }
 
 supabase.auth.onAuthStateChange((_, _session) => {
-  if (_session && route.path == '/')
+  if (_session && route.path === '/')
     router.push('/dashboard')
 })
 router.push('/dashboard')
