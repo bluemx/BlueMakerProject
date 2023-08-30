@@ -41,9 +41,6 @@ dependencies:
   axios:
     specifier: ^1.5.0
     version: 1.5.0
-  crunker:
-    specifier: ^2.1.0
-    version: 2.1.0
   file-saver:
     specifier: ^2.0.5
     version: 2.0.5
@@ -4981,10 +4978,6 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
-
-  /crunker@2.1.0:
-    resolution: {integrity: sha512-yn2hd2Po8u7Bympg66ElL5MIQcQnSAaPh16h2i8rZwaArwlESZEf4m+9Z6Abu/HMr+YNvPrNgA7ioN0bKVQcAw==}
-    dev: false
 
   /crypto-random-string@2.0.0:
     resolution: {integrity: sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==}
