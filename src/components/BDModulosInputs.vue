@@ -86,7 +86,7 @@ function symbolReplaceNew() {
       <div v-if="properties?.input" class="grid grid-cols-4 items-center p-1">
         <!-- FILE -->
         <template v-if="typeof refData[itemKey] === 'string' && properties?.input === 'file'">
-          <label>{{ itemKey }}</label>
+          <label>{{ itemKey }}<BDMInputsDescription :properties="properties" /></label>
           <div col-span-3>
             <USelect v-model="refData[itemKey]" :options="filesmap">
               <template #option="{ item }">
@@ -111,14 +111,14 @@ function symbolReplaceNew() {
         </template>
         <!-- COLOR -->
         <template v-if="properties?.input === 'color'">
-          <label>{{ itemKey }}</label>
+          <label>{{ itemKey }}<BDMInputsDescription :properties="properties" /></label>
           <div col-span-3>
             <UInput v-model="refData[itemKey]" class="w-full dark:text-neutral" size="sm" type="color" />
           </div>
         </template>
         <!-- REPEAT -->
         <template v-if="properties?.input === 'repeat'">
-          <label>{{ itemKey }}</label>
+          <label>{{ itemKey }}<BDMInputsDescription :properties="properties" /></label>
           <div col-span-3 mt-1>
             <UInput v-model="repeater" class="w-full dark:text-neutral" size="sm">
               <template #append>
@@ -131,7 +131,8 @@ function symbolReplaceNew() {
         </template>
       </div>
       <div v-else-if="properties?.enum" class="grid grid-cols-4 items-center p-1">
-        <label>{{ itemKey }}</label>
+        <label>{{ itemKey }}<BDMInputsDescription :properties="properties" /></label>
+
         <div col-span-3 class="flex flex-wrap gap-2 text-white">
           <URadio v-for="(pItem, pIndex) in properties.enum" :key="pIndex" v-model="refData[itemKey]" :value="pItem" type="primary" class="rounded bg-white px-1">
             {{ pItem }}
@@ -143,7 +144,7 @@ function symbolReplaceNew() {
       <div v-else class="grid grid-cols-4 items-center px-1 py-0.5" :class="[itemKey === 'class' ? 'bg-primary/70' : '', itemKey === 'id' ? 'bg-secondary/30' : '', itemKey === 'text' ? 'bg-rose-600/30' : '']">
         <!-- TEXT -->
         <template v-if="typeof refData[itemKey] === 'string' ">
-          <label>{{ itemKey }}</label>
+          <label>{{ itemKey }}<BDMInputsDescription :properties="properties" /></label>
           <div col-span-3>
             <textarea v-if="itemKey === 'class'" v-model="refData[itemKey]" class="textarea w-full border-1 border-primary rounded text-[12px] leading-3 !p-0.5 dark:text-neutral" size="sm" />
             <UInput v-else v-model="refData[itemKey]" class="w-full !p-0.5 !text-[12px] dark:text-neutral" size="sm" />
@@ -151,14 +152,14 @@ function symbolReplaceNew() {
         </template>
         <!-- NUMBER -->
         <template v-if="typeof refData[itemKey] === 'number'">
-          <label>{{ itemKey }}</label>
+          <label>{{ itemKey }}<BDMInputsDescription :properties="properties" /></label>
           <div col-span-3>
             <UInput v-model="refData[itemKey]" class="w-full dark:text-neutral" size="sm" type="number" />
           </div>
         </template>
         <!-- boolean -->
         <template v-if="typeof refData[itemKey] === 'boolean'">
-          <label>{{ itemKey }}</label>
+          <label>{{ itemKey }}<BDMInputsDescription :properties="properties" /></label>
           <div col-span-3>
             <USwitch v-model="refData[itemKey]" size="sm" />
           </div>
@@ -182,7 +183,7 @@ function symbolReplaceNew() {
     <!-- OBJECT inputs -->
     <div v-else>
       <div :class="[`bg-${levelColor()}`]" cursor-pointer p-1 text-white @click="open()">
-        {{ itemKey }} {{ properties?.input }}
+        {{ itemKey }}<BDMInputsDescription :properties="properties" /> {{ properties?.input }}
         <!-- : {{ data[itemKey].block }} : {{ properties?.input }} -->
       </div>
       <template v-if="!dropzones.includes(itemKey)">
