@@ -52,7 +52,7 @@ onMounted(() => {
 <template>
   <dialog ref="dialog" class="flex flex-col gap-2 bg-slate-100">
     <div class="flex">
-      <input v-model="filter" required flex-grow rounded-tl p-2 text-center dark:text-neutral type="email" placeholder="ID" @input="onInput">
+      <input v-model="filter" required flex-grow rounded-tl p-2 text-center dark:text-neutral type="text" placeholder="ID" @input="onInput">
       <button :disabled="canCreate" border-1 rounded-tr bg-slate px-6 py-1 text-xs text-white disabled:bg-slate-1 @click="builderNewDoc">
         Nuevo
       </button>
