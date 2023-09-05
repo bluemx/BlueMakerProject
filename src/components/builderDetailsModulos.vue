@@ -2,7 +2,10 @@
 const builderstore = useBuilderStore()
 const drag = ref(false)
 const modules = ref()
-const contentModel = ref(builderstore.doc ? builderstore.doc.content : '')
+
+const contentModel = computed(() => {
+  return builderstore.doc ? builderstore.doc.content : ''
+})
 </script>
 
 <template>
@@ -18,11 +21,12 @@ const contentModel = ref(builderstore.doc ? builderstore.doc.content : '')
         <BuilderDetailsContainers  :data="contentModel" :keyval="key" :level="1" :blockparent="key" />
       </template>
     </div>
+    <BDAssistant />
     -->
 
     <div bg-slate-100 dark:bg-slate-900>
       <template v-for="(key, index) in Object.keys(contentModel)" :key="index">
-        <BDModulosInputs :data="contentModel" :item-key="key" :level="0" />
+        <BDModulosInputs v-if="contentModel" :data="contentModel" :item-key="key" :level="0" />
       </template>
     </div>
   </div>

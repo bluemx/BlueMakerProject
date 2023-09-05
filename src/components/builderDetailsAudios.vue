@@ -215,5 +215,6 @@ onMounted(() => {
     </div>
 
     <BDAudioConversation ref="conversationVoices" />
+    <BDAudioConversationManual />
   </div>
 </template>

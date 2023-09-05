@@ -101,6 +101,13 @@ export const useBuilderStore = defineStore('builder', () => {
     return modulos
   }
 
+  const updateDocScenes = (data) => {
+    doc.value.content.activity.scenes = false
+    setTimeout(() => {
+      doc.value.content.activity.scenes = data
+    }, 500)
+  }
+
   const blockprops = (blockname) => {
     // if(Object.keys(modulosobj.value)>0){
     return modulosobj.value[blockname]
@@ -155,7 +162,7 @@ export const useBuilderStore = defineStore('builder', () => {
       })
   }
 
-  return { menu, usertemplates, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos, metadata, download, blockprops, getUserTemplates }
+  return { menu, usertemplates, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos, metadata, download, blockprops, getUserTemplates, updateDocScenes }
 })
 
 /*

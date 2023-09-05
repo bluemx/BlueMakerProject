@@ -10,6 +10,10 @@ const moduloName = `${props.itemKey}_${props.level}_${Math.round(Math.random() *
 const builderstore = useBuilderStore()
 const refData = ref(props.data)
 
+watch(() => props.data, (nuevo, viejo) => {
+  refData.value = props.data
+}, { deep: true })
+
 const properties = ref(false)
 
 const propertiesInterval = setInterval(() => {
