@@ -11,6 +11,7 @@ const builderstore = useBuilderStore()
 const refData = ref(props.data)
 
 watch(() => props.data, (nuevo, viejo) => {
+  refData.value = false
   refData.value = props.data
 }, { deep: true })
 
@@ -186,7 +187,7 @@ function symbolReplaceNew() {
 
     <!-- OBJECT inputs -->
     <div v-else>
-      <div :class="[`bg-${levelColor()}`]" cursor-pointer p-1 text-white @click="open()">
+      <div :class="[, accordion[moduloName] ? `bg-dark !text-${levelColor()}` : `bg-${levelColor()}`]" cursor-pointer p-1 text-white @click="open()">
         {{ itemKey }}<BDMInputsDescription :properties="properties" /> {{ properties?.input }}
         <!-- : {{ data[itemKey].block }} : {{ properties?.input }} -->
       </div>

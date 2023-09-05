@@ -14,6 +14,7 @@ export const useBuilderStore = defineStore('builder', () => {
   const modulos = ref()
   const modulosobj = ref({})
   const usertemplates = ref([])
+  const loading = ref(false)
 
   const getUserTemplates = async () => {
     const { data: usertemplates, _error } = await supabase
@@ -102,9 +103,13 @@ export const useBuilderStore = defineStore('builder', () => {
   }
 
   const updateDocScenes = (data) => {
-    doc.value.content.activity.scenes = false
+    doc.value.content.activity.scenes = []
+    loading.value = true
     setTimeout(() => {
-      doc.value.content.activity.scenes = data
+      data.forEach((element) => {
+        doc.value.content.activity.scenes.push(element)
+      })
+      loading.value = false
     }, 500)
   }
 
@@ -162,7 +167,7 @@ export const useBuilderStore = defineStore('builder', () => {
       })
   }
 
-  return { menu, usertemplates, type, doc, dockey, files, modulos, modulosobj, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos, metadata, download, blockprops, getUserTemplates, updateDocScenes }
+  return { menu, usertemplates, type, doc, dockey, files, modulos, modulosobj, loading, newDoc, loadDoc, getContent, updateAssets, saveDoc, downloadDoc, loadModulos, metadata, download, blockprops, getUserTemplates, updateDocScenes }
 })
 
 /*

@@ -23,9 +23,48 @@ const scene = {
       },
     ],
   },
-  content: [
-
-  ],
+  content: [],
 }
 
-export default { scene }
+const buttonNext = {
+  class: 'text-center my-10',
+  content: [
+    {
+      to: '/activity/1',
+      class: '',
+      text: 'Next',
+      id: 'bgs2',
+      block: 'button',
+      name: 'xOfa',
+    },
+  ],
+  background: '',
+  id: 'GmYQ',
+  block: 'group',
+  name: 'GVsG',
+  marker: '',
+}
+
+const buttonFinalize = {
+  symbol: 'FinalizeGroup',
+}
+
+const sceneContent = {
+  marker: '📒',
+  class: 'bg-slate-100 rounded p-2 max-w-4xl text-center mx-auto',
+  content: [
+    {
+      text: 'Escena 1',
+      class: 'text-3xl',
+      id: 'QcuT',
+      block: 'text',
+      name: 'f9J2',
+    },
+  ],
+  background: '',
+  id: 'xLC6',
+  block: 'group',
+  name: 'Mv0A',
+}
+
+export default { scene, buttonNext, buttonFinalize, sceneContent }
