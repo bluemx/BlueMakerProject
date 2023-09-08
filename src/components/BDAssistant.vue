@@ -75,7 +75,6 @@ function generar() {
 onMounted(() => {
   scenes.value = []
   setTimeout(() => { sceneAdd() }, 200)
-  open()
 })
 </script>
 
