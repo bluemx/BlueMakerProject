@@ -15,6 +15,7 @@ declare module 'vue' {
     BDMInputsDescription: typeof import('./components/BDMInputsDescription.vue')['default']
     BDModulosDropzones: typeof import('./components/BDModulosDropzones.vue')['default']
     BDModulosInputs: typeof import('./components/BDModulosInputs.vue')['default']
+    BDModulosInputsRepeater: typeof import('./components/BDModulosInputsRepeater.vue')['default']
     BDModulosSaveTemplate: typeof import('./components/BDModulosSaveTemplate.vue')['default']
     BDModulosTemplates: typeof import('./components/BDModulosTemplates.vue')['default']
     BuilderDetails: typeof import('./components/builderDetails.vue')['default']

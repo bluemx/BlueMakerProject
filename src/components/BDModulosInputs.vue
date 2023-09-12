@@ -124,7 +124,16 @@ function symbolReplaceNew() {
         <!-- REPEAT -->
         <template v-if="properties?.input === 'repeat'">
           <label>{{ itemKey }}<BDMInputsDescription :properties="properties" /></label>
+
           <div col-span-3 mt-1>
+            <!--
+            <BDModulosInputsRepeater v-model="refData[itemKey]" />
+            {{ refData[itemKey] }}
+            -->
+            <div w-full cursor-pointer px-2 @click="refData[itemKey].push('')">
+              +
+            </div>
+            <!--
             <UInput v-model="repeater" class="w-full dark:text-neutral" size="sm">
               <template #append>
                 <div w-full cursor-pointer px-2 @click="repeaterNew">
@@ -132,6 +141,7 @@ function symbolReplaceNew() {
                 </div>
               </template>
             </UInput>
+            -->
           </div>
         </template>
       </div>
@@ -193,10 +203,18 @@ function symbolReplaceNew() {
       </div>
       <template v-if="!dropzones.includes(itemKey)">
         <template v-for="(keyNest, indexNested) in Object.keys(refData[itemKey])" :key="indexNested">
-          <div v-show="accordion[moduloName]">
-            <BDModulosInputs :data="refData[itemKey]" :item-key="keyNest" :level="level + 1" />
+          <div v-show="accordion[moduloName]" class="flex items-center">
+            <div v-if=" properties.input === 'repeat'" class="px-1">
+              <div i-solar-trash-bin-trash-linear class="cursor-pointer text-amber hover:text-white" @click="refData[itemKey].splice(indexNested, 1)" />
+            </div>
+            <div class="w-full">
+              <BDModulosInputs :data="refData[itemKey]" :item-key="keyNest" :level="level + 1" />
+            </div>
           </div>
         </template>
+        <div v-show="accordion[moduloName]" class="px-1">
+          <div i-solar-add-circle-line-duotone class="cursor-pointer text-amber hover:text-white" @click="refData[itemKey].push('')" />
+        </div>
       </template>
       <!-- dropzones -->
       <template v-else>
