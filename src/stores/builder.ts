@@ -68,7 +68,10 @@ export const useBuilderStore = defineStore('builder', () => {
       .select('*')
       .eq('key', key)
       .single()
-    doc.value = document
+    const thejson = document
+    if (!thejson.content.hasOwnProperty('attempts'))
+      thejson.content.attempts = 0
+    doc.value = thejson
     updateAssets()
     return true
   }
