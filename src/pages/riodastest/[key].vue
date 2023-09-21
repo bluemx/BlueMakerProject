@@ -19,7 +19,7 @@ const views = [
   { name: 'Vista de maestro', url: '/freeze/teacher' },
   { name: 'Cargar input de maestro', url: '/freeze/teacher' },
   { name: 'Maestro congelado', url: '/freeze/teacher/freeze' },
-  { name: 'Builder', url: '' },
+  { name: 'Builder', url: '/freeze/teacher' },
 ]
 
 function changeView(item, index) {
