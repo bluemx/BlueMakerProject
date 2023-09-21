@@ -5,16 +5,19 @@ import 'highlight.js/styles/github.css'
 import 'highlight.js/styles/stackoverflow-light.css'
 
 const code = ref('')
-
+const attempts = ref(1)
 onMounted(() => {
-  window.addEventListener('message', (event) => {
-    if (typeof event.data !== 'string')
-      return false
 
-    if (JSON.parse(event.data).datatype === 'student')
-      code.value = JSON.stringify(JSON.parse(event.data), null, '\t')
-  })
 })
+
+function sendinputs() {
+  const theiframe = document.querySelector('iframe')
+  const datos = {
+    type: 'attempts',
+    time: attempts.value,
+  }
+  theiframe.contentWindow.postMessage(JSON.stringify(datos), '*')
+}
 </script>
 
 <script>
@@ -28,8 +31,12 @@ export default {
 <template>
   <div class="bg-zinc-500 p-1">
     <div class="p-1 text-xs">
-      Datos recibidos
+      Intentos
     </div>
-    <Highlightjs language="json" :code="code" class="text-xs" />
+    <UInput v-model="attempts" type="number" text-dark />
+    <UButton @click="sendinputs()">
+      Enviar
+    </UButton>
+    <!-- <Highlightjs language="json" :code="code" class="text-xs" /> -->
   </div>
 </template>

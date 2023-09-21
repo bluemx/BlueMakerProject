@@ -4,7 +4,7 @@ const builderstore = useBuilderStore()
 const loading = ref()
 builderstore.type = 'riodas'
 
-const iframeurl = window.location.href.includes('localhost') ? 'https://localhost:5173/#MAKER' : 'https://odas.win/#MAKER'
+const iframeurl = window.location.href.includes('localhost') ? 'https://192.168.2.236:5173/#MAKER' : 'https://odas.win/#MAKER'
 
 async function loadDoc() {
   await builderstore.loadDoc(router.params.key)

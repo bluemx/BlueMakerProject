@@ -8,7 +8,7 @@ const iframe = ref()
 const currentviewID = ref(0)
 const currentviewURL = ref('')
 
-const url = window.location.href.includes('localhost') ? 'https://localhost:5173/#' : 'https://odas.win/#'
+const url = window.location.href.includes('localhost') ? 'https://192.168.2.236:5173/#' : 'https://odas.win/#'
 const iframeurl = ref(url + odaID)
 
 const views = [
@@ -19,6 +19,7 @@ const views = [
   { name: 'Vista de maestro', url: '/freeze/teacher' },
   { name: 'Cargar input de maestro', url: '/freeze/teacher' },
   { name: 'Maestro congelado', url: '/freeze/teacher/freeze' },
+  { name: 'Builder', url: '' },
 ]
 
 function changeView(item, index) {
@@ -45,8 +46,10 @@ onMounted(() => {
         </div>
       </div>
       <!-- interactions -->
-      <rt1 v-if="currentviewID == 0" />
-      <rt3 v-if="currentviewID == 2" />
+      <rt1 v-if="currentviewID === 0" />
+      <rt2 v-if="currentviewID === 1" />
+      <rt3 v-if="currentviewID === 2" />
+      <rt7 v-if="currentviewID === 7" />
     </div>
     <div class="h-full w-full flex flex-col bg-slate-700 p-1">
       <div v-if="iframeurl" class="p-1 text-xs">
