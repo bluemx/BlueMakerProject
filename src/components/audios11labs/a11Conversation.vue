@@ -1,6 +1,16 @@
 <script setup>
 import draggable from 'vuedraggable'
 
+const xiapikey = import.meta.env.VITE_11LABSAPIKEY
+
+const requestheader = {
+  headers: {
+    'Content-Type': 'application/json',
+    'accept': 'audio/mpeg',
+    'xi-api-key': xiapikey,
+  },
+}
+
 // import { Crunker } from 'crunker'
 
 // const props = defineProps()
@@ -10,6 +20,7 @@ const loading = ref(false)
 const getRandomCharacters = _ => 'xxxx'.replace(/x/g, _ => '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'[Math.random() * 62 | 0])
 
 const audiofiles = ref([])
+const generatedAudios = ref([])
 
 function add(item) {
   const theitem = { ...item, uid: getRandomCharacters() }
@@ -20,77 +31,42 @@ function fnClone(el) {
   const newel = JSON.parse(JSON.stringify(el))
   if (!el?.symbol)
     newel.uid = getRandomCharacters()
-
   voices.value.push(newel)
 }
 function fnDelete(el, index) {
   voices.value.splice(index, 1)
 }
 
-const playuid = import.meta.env.VITE_PLAY_USERID
-const playsk = import.meta.env.VITE_PLAY_SK
-const playOptions = {
-  headers: {
-    'accept': 'application/json',
-    'content-type': 'application/json',
-    'AUTHORIZATION': `Bearer ${playsk}`,
-    'X-USER-ID': playuid,
-  },
-}
+async function genAudios(voiceid, voicetext, filename) {
+  const res = await axios.request({
+    method: 'POST',
+    url: `https://api.elevenlabs.io/v1/text-to-speech/${voiceid}`,
+    headers: {
+      'accept': 'audio/mpeg',
+      'content-type': 'application/json',
+      'xi-api-key': xiapikey,
+    },
+    data: {
+      text: voicetext,
+    },
+    responseType: 'arraybuffer',
+  })
 
-function convertAndCheckStatus(convertOptions) {
-  console.log('convertAndCheckStatus()', convertOptions)
-  return axios.post('https://play.ht/api/v1/convert', convertOptions.body, { headers: convertOptions.headers })
-    .then(response => response.status === 201 ? response.data.transcriptionId : Promise.reject(new Error('Conversion request failed')))
-    .then((transcriptionId) => {
-      const articleStatusUrl = `https://play.ht/api/v1/articleStatus?transcriptionId=${transcriptionId}`
-      let convertedData = null
+  console.log(res)
+  const blob = new Blob([res.data], { type: 'audio/mpeg' })
+  const url = URL.createObjectURL(blob)
 
-      const intervalId = setInterval(() => {
-        axios.get(articleStatusUrl, { headers: convertOptions.headers })
-          .then(response => response.data)
-          .then((data) => {
-            if (data.converted) {
-              clearInterval(intervalId) // Stop polling
-              convertedData = data // Store the converted data
-            }
-          })
-          .catch((_error) => {
-            console.error('Error:', _error)
-            clearInterval(intervalId) // Stop polling on error
-          })
-      }, 1000) // Poll every second
-
-      return new Promise((resolve) => {
-        const checkInterval = setInterval(() => {
-          if (convertedData !== null) {
-            clearInterval(checkInterval)
-            resolve(convertedData)
-          }
-        }, 100) // Check every 100 milliseconds
-      })
-    })
-    .catch((_error) => {
-      console.error('Error:', error)
-    })
+  return url
+  // return res.data
 }
 
 async function generateDialog() {
   loading.value = true
 
   for (const [index, item] of voices.value.entries()) {
-    const options = {
-      ...playOptions,
-      body: JSON.stringify({
-        content: [item.content],
-        voice: item.value,
-        title: `dialog_${index}`,
-        trimSilence: true,
-      }),
-    }
-
     try {
-      const data = await convertAndCheckStatus(options)
+      // const data = await convertAndCheckStatus(options)
+      const data = await genAudios(item.value, item.content, `dialog_${index}`)
       if (data != null)
         voices.value[index].audiofile = data
     }
@@ -107,20 +83,27 @@ async function generateDialog() {
 function mergeAudios() {
   const crunker = new Crunker()
   const audios = []
+  let textscontent = ''
   voices.value.forEach((element) => {
-    audios.push(element.audiofile.audioUrl)
+    // audios.push(element.audiofile.audioUrl)
+    audios.push(element.audiofile)
+    textscontent += `${element.content} `
   })
+
   crunker
     .fetchAudio(...audios)
     .then((buffers) => {
       // => [AudioBuffer, AudioBuffer]
+      console.log('then1')
       return crunker.concatAudio(buffers)
     })
     .then((merged) => {
       // => AudioBuffer
+      console.log('thenMerged')
       return crunker.export(merged, 'audio/mp3')
     })
     .then((output) => {
+      console.log('thenOutpu')
       // => {blob, element, url}
       // SAVE MERGED AUDIO
 
@@ -128,14 +111,14 @@ function mergeAudios() {
         audioUrl: output.url,
         blob: output.blob,
         voice: `dialogo_${getRandomCharacters()}`,
-        content: '',
+        content: textscontent,
       }
       audiofiles.value.push(thefile)
       // crunker.download(output.blob);
     })
     .catch((_error) => {
+      console.error(_error)
       // => Error Message
-
     })
 }
 
@@ -221,7 +204,7 @@ defineExpose({ add })
     <!-- list of files -->
     <div class="mt-2 bg-slate-400 p-1">
       <div v-for="(item, index) in audiofiles" :key="index" class="mb-0.5 w-full bg-slate-700 p-1">
-        <div class="flex items-center gap-1 text-sm">
+        <div class="flex items-center gap-1 text-sm text-white">
           <div>
             <strong class="text-sm">{{ item.voice }}</strong>
             <span class="ml-1 inline-block text-[8px] leading-2">{{ item.content }}</span>

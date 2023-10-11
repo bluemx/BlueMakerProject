@@ -38,13 +38,12 @@ function playudio(index) {
           <div class="aspect-square w-12 rounded bg-slate-1/10" />
         </div>
       </template>
-
       <template v-if="item.mimetype.includes('audio')">
         <div flex items-center gap-2>
           <div i-solar-music-notes-line-duotone />
-          <div class="aspect-square w-12 flex justify-center rounded bg-slate-1/10 text-3xl">
+          <div class="aspect-square w-12 flex justify-center rounded bg-slate-1/10 text-3xl !text-black">
             <audio :id="`audio${index}`" :src="item.url" type="audio/mp3" w-full />
-            <UButton class="i-solar-play-linear bg-white" @click="playudio(index)" />
+            <UButton class="i-solar-play-linear bg-black" @click="playudio(index)" />
           </div>
         </div>
       </template>

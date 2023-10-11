@@ -7,6 +7,9 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    A11Conversation: typeof import('./components/audios11labs/a11Conversation.vue')['default']
+    A11FilterVoices: typeof import('./components/audios11labs/a11FilterVoices.vue')['default']
+    A11LoadVoices: typeof import('./components/audios11labs/a11LoadVoices.vue')['default']
     AdminAuthorized: typeof import('./components/AdminAuthorized.vue')['default']
     AudioToAssets: typeof import('./components/AudioToAssets.vue')['default']
     BDAssistant: typeof import('./components/BDAssistant.vue')['default']
@@ -23,6 +26,7 @@ declare module 'vue' {
     BuilderDetailsAssetsList: typeof import('./components/builderDetailsAssetsList.vue')['default']
     BuilderDetailsAssetsUploader: typeof import('./components/builderDetailsAssetsUploader.vue')['default']
     BuilderDetailsAudios: typeof import('./components/builderDetailsAudios.vue')['default']
+    BuilderDetailsAudiosEleven: typeof import('./components/builderDetailsAudiosEleven.vue')['default']
     BuilderDetailsBlocks: typeof import('./components/builderDetailsBlocks.vue')['default']
     BuilderDetailsCodigo: typeof import('./components/builderDetailsCodigo.vue')['default']
     BuilderDetailsContainers: typeof import('./components/builderDetailsContainers.vue')['default']
@@ -34,6 +38,7 @@ declare module 'vue' {
     BuilderMain: typeof import('./components/builderMain.vue')['default']
     BuilderMenu: typeof import('./components/builderMenu.vue')['default']
     BuilderNotes: typeof import('./components/builderNotes.vue')['default']
+    LoadVoices: typeof import('./components/audios11labs/loadVoices.vue')['default']
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

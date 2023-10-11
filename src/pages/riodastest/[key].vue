@@ -8,7 +8,7 @@ const iframe = ref()
 const currentviewID = ref(0)
 const currentviewURL = ref('')
 
-const url = window.location.href.includes('localhost') ? 'https://192.168.2.236:5173/#' : 'https://odas.win/#'
+const url = window.location.href.includes('localhost') ? 'https://localhost:5173/#' : 'https://recreaingles.s3.us-west-2.amazonaws.com/index.html#'
 const iframeurl = ref(url + odaID)
 
 const views = [
@@ -19,7 +19,7 @@ const views = [
   { name: 'Vista de maestro', url: '/freeze/teacher' },
   { name: 'Cargar input de maestro', url: '/freeze/teacher' },
   { name: 'Maestro congelado', url: '/freeze/teacher/freeze' },
-  { name: 'Builder', url: '/freeze/teacher' },
+  { name: 'Builder', url: '/freeze' },
 ]
 
 function changeView(item, index) {

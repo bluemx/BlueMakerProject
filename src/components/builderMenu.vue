@@ -6,7 +6,8 @@ const buttons = ref([
   { name: 'Código', id: 'codigo', icon: 'i-solar:code-2-bold-duotone' },
   { name: 'Prompts', id: 'prompts', icon: 'i-solar:chat-square-call-line-duotone' },
   { name: 'Assets', id: 'assets', icon: 'i-solar:file-smile-broken' },
-  { name: 'Audios', id: 'audios', icon: 'i-solar:translation-2-line-duotone' },
+  { name: 'Audios PlayHT', id: 'audios', icon: 'i-solar:translation-2-line-duotone' },
+  { name: 'Audios ElevenLabs', id: 'audiosv2', icon: 'i-solar:translation-2-broken' },
 ])
 const currentbutton = ref(buttons.value[0])
 builderstore.menu = currentbutton.value
