@@ -1,5 +1,6 @@
 <script setup>
 import draggable from 'vuedraggable'
+import { concatenateAudioBlobs } from './BDAudioConcatenator'
 
 // import { Crunker } from 'crunker'
 
@@ -104,12 +105,15 @@ async function generateDialog() {
   mergeAudios()
 }
 
-function mergeAudios() {
+async function mergeAudios() {
   const crunker = new Crunker()
   const audios = []
+  let textscontent = ''
   voices.value.forEach((element) => {
     audios.push(element.audiofile.audioUrl)
+    textscontent += `${element.content} `
   })
+
   crunker
     .fetchAudio(...audios)
     .then((buffers) => {
@@ -123,20 +127,34 @@ function mergeAudios() {
     .then((output) => {
       // => {blob, element, url}
       // SAVE MERGED AUDIO
-
+      convertMp3ToWavAndSave(output.blob, textscontent)
+      /*
       const thefile = {
         audioUrl: output.url,
         blob: output.blob,
         voice: `dialogo_${getRandomCharacters()}`,
         content: '',
       }
-      audiofiles.value.push(thefile)
+      */
+      // audiofiles.value.push(thefile)
       // crunker.download(output.blob);
     })
     .catch((_error) => {
       // => Error Message
 
     })
+}
+
+async function convertMp3ToWavAndSave(themp3, textscontent) {
+  const audioOutput = await concatenateAudioBlobs.init([themp3])
+  const thefile = {
+    audioUrl: URL.createObjectURL(audioOutput),
+    blob: audioOutput,
+    voice: `dialogo_${getRandomCharacters()}`,
+    content: textscontent,
+  }
+  audiofiles.value.push(thefile)
+  loading.value = false
 }
 
 function playudio(theid) {
@@ -232,6 +250,7 @@ defineExpose({ add })
             <audio :id="`b${index}`" :src="item.audioUrl" type="audio/mp3" invisible w-0 />
           </div>
 
+          <AudioToFile :fileurl="item.audioUrl" :filename="item.voice" />
           <div class="ml-2 flex justify-center text-right">
             <UPopover trigger="click" class="leading-2">
               <UButton size="sm" type="primary">

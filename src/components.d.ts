@@ -12,6 +12,7 @@ declare module 'vue' {
     A11LoadVoices: typeof import('./components/audios11labs/a11LoadVoices.vue')['default']
     AdminAuthorized: typeof import('./components/AdminAuthorized.vue')['default']
     AudioToAssets: typeof import('./components/AudioToAssets.vue')['default']
+    AudioToFile: typeof import('./components/AudioToFile.vue')['default']
     BDAssistant: typeof import('./components/BDAssistant.vue')['default']
     BDAudioConversation: typeof import('./components/BDAudioConversation.vue')['default']
     BDAudioConversationManual: typeof import('./components/BDAudioConversationManual.vue')['default']

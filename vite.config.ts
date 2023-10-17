@@ -19,6 +19,7 @@ import VueMacros from 'unplugin-vue-macros/vite'
 import WebfontDownload from 'vite-plugin-webfont-dl'
 
 export default defineConfig({
+
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -26,7 +27,6 @@ export default defineConfig({
   },
   build: {
     // ... other build options
-
     rollupOptions: {
       external: ['crunker'],
     },

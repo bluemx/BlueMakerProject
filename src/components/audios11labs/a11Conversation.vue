@@ -1,5 +1,6 @@
 <script setup>
 import draggable from 'vuedraggable'
+import { concatenateAudioBlobs } from '../BDAudioConcatenator'
 
 const xiapikey = import.meta.env.VITE_11LABSAPIKEY
 
@@ -52,11 +53,10 @@ async function genAudios(voiceid, voicetext, filename) {
     responseType: 'arraybuffer',
   })
 
-  console.log(res)
   const blob = new Blob([res.data], { type: 'audio/mpeg' })
   const url = URL.createObjectURL(blob)
 
-  return url
+  return blob
   // return res.data
 }
 
@@ -69,19 +69,19 @@ async function generateDialog() {
       const data = await genAudios(item.value, item.content, `dialog_${index}`)
       if (data != null)
         voices.value[index].audiofile = data
+      voices.value[index].fileurl = URL.createObjectURL(data)
     }
     catch (_error) {
       console.error('Error in conversion:', _error)
     }
   }
 
-  loading.value = false
   // console.log('READY TO MERGE AUDIOS!')
   mergeAudios()
 }
 
-function mergeAudios() {
-  const crunker = new Crunker()
+async function mergeAudios() {
+  // const crunker = new Crunker()
   const audios = []
   let textscontent = ''
   voices.value.forEach((element) => {
@@ -90,36 +90,15 @@ function mergeAudios() {
     textscontent += `${element.content} `
   })
 
-  crunker
-    .fetchAudio(...audios)
-    .then((buffers) => {
-      // => [AudioBuffer, AudioBuffer]
-      console.log('then1')
-      return crunker.concatAudio(buffers)
-    })
-    .then((merged) => {
-      // => AudioBuffer
-      console.log('thenMerged')
-      return crunker.export(merged, 'audio/mp3')
-    })
-    .then((output) => {
-      console.log('thenOutpu')
-      // => {blob, element, url}
-      // SAVE MERGED AUDIO
-
-      const thefile = {
-        audioUrl: output.url,
-        blob: output.blob,
-        voice: `dialogo_${getRandomCharacters()}`,
-        content: textscontent,
-      }
-      audiofiles.value.push(thefile)
-      // crunker.download(output.blob);
-    })
-    .catch((_error) => {
-      console.error(_error)
-      // => Error Message
-    })
+  const audioOutput = await concatenateAudioBlobs.init(audios)
+  const thefile = {
+    audioUrl: URL.createObjectURL(audioOutput),
+    blob: audioOutput,
+    voice: `dialogo_${getRandomCharacters()}`,
+    content: textscontent,
+  }
+  audiofiles.value.push(thefile)
+  loading.value = false
 }
 
 function playudio(theid) {
@@ -180,11 +159,9 @@ defineExpose({ add })
               <div class="flex justify-center gap-1 rounded">
                 <UButton size="xs" class="i-solar-play-linear bg-white" @click="playudio(`dial${index}`)" />
                 <UButton size="xs" class="i-solar-stop-linear bg-white" @click="stopaudio(index)" />
-                <audio :id="`dial${index}`" :src="element.audiofile.audioUrl" type="audio/mp3" invisible w-0 />
+                <audio :id="`dial${index}`" :src="element.fileurl" type="audio/mp3" invisible w-0 />
               </div>
-              <div class="text-[6px]">
-                {{ element.audiofile.audioUrl }}
-              </div>
+              <AudioToFile :fileurl="element.fileurl" :filename="`${element.content}.mp3`" />
             </div>
           </div>
         </div>
@@ -205,17 +182,17 @@ defineExpose({ add })
     <div class="mt-2 bg-slate-400 p-1">
       <div v-for="(item, index) in audiofiles" :key="index" class="mb-0.5 w-full bg-slate-700 p-1">
         <div class="flex items-center gap-1 text-sm text-white">
-          <div>
+          <div class="max-h-[80px] overflow-y-scroll">
             <strong class="text-sm">{{ item.voice }}</strong>
             <span class="ml-1 inline-block text-[8px] leading-2">{{ item.content }}</span>
           </div>
           <div class="ml-auto flex justify-center gap-1 rounded">
-            <UButton size="xs" class="i-solar-play-linear bg-white" @click="playudio(`b${index}`)" />
+            <UButton size="xs" class="i-solar-play-linear bg-white" @click="playudio(`a11b${index}`)" />
             <UButton size="xs" class="i-solar-stop-linear bg-white" @click="stopaudio(index)" />
-            <audio :id="`b${index}`" :src="item.audioUrl" type="audio/mp3" invisible w-0 />
+            <audio :id="`a11b${index}`" :src="item.audioUrl" type="audio/mp3" invisible w-0 />
           </div>
-
-          <div class="ml-2 flex justify-center text-right">
+          <AudioToFile :fileurl="item.audioUrl" :filename="item.voice" />
+          <div class="ml-0.5 flex justify-center text-right">
             <UPopover trigger="click" class="leading-2">
               <UButton size="sm" type="primary">
                 A assets
