@@ -8,8 +8,7 @@ const iframe = ref()
 const currentviewID = ref(0)
 const currentviewURL = ref('')
 
-const url = window.location.href.includes('localhost') ? 'https://localhost:5173/#' : 'https://recreaingles.s3.us-west-2.amazonaws.com/index.html#'
-const iframeurl = ref(url + odaID)
+const iframeurl = ref(builderstore.iframeurl)
 
 const views = [
   { name: 'Vista alumno', url: '' },

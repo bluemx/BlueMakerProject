@@ -4,13 +4,11 @@ const builderstore = useBuilderStore()
 const loading = ref()
 builderstore.type = 'riodas'
 
-const iframeurl = window.location.href.includes('localhost') ? 'https://localhost:5173/#MAKER' : 'https://odas.win/#MAKER'
-
 async function loadDoc() {
   await builderstore.loadDoc(router.params.key)
   sendData()
 }
-
+const iframeurl = ref(window.location.href.includes('localhost') ? 'https://localhost:5173/#MAKER' : 'https://odas.win/#MAKER')
 const iframe = ref()
 const iframeready = ref(false)
 
@@ -52,6 +50,7 @@ function restartoda() {
   <dialog v-if="!builderstore.doc" ref="loading">
     Loading...
   </dialog>
+
   <section relative flex-grow bg-slate-100 p-1 dark:bg-slate-900>
     <iframe ref="iframe" :src="iframeurl" frameborder="0" class="h-full w-full" allow="camera;microphone;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true" />
     <div absolute bottom-2 right-2>

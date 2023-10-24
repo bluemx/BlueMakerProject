@@ -32,5 +32,6 @@ const loadingDoc = computed(() => {
         <BDModulosInputs v-if="contentModel" :data="contentModel" :item-key="key" :level="0" />
       </template>
     </div>
+    <a class="p-1 text-[10px] text-accent-200 underline hover:text-sky-300" target="_blank" :href="builderstore.iframeurlProd">{{ builderstore.iframeurlProd }}</a>
   </div>
 </template>
