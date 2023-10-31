@@ -29,6 +29,16 @@ function sendstudentinputs() {
   }
   theiframe.contentWindow.postMessage(JSON.stringify(datos), '*')
 }
+
+const dataInputs = ref('')
+function builderInputs() {
+  const theiframe = document.querySelector('iframe')
+  const datos = {
+    type: 'builder',
+    inputs: JSON.parse(dataInputs.value),
+  }
+  theiframe.contentWindow.postMessage(JSON.stringify(datos), '*')
+}
 </script>
 
 <script>
@@ -41,6 +51,7 @@ export default {
 
 <template>
   <div class="bg-zinc-500 p-1">
+    BUILDER
     <div class="p-1 text-xs">
       dataODA:
     </div>
@@ -54,6 +65,14 @@ export default {
     </div>
     <textarea v-model="studentinputs" placeholder="Inputs" class="h-60 w-full text-xs text-dark" />
     <UButton @click="sendstudentinputs()">
+      Enviar
+    </UButton>
+
+    <div class="p-1 text-xs">
+      Cargar inputs para editar
+    </div>
+    <textarea v-model="dataInputs" placeholder="Inputs" class="h-60 w-full text-xs text-dark" />
+    <UButton @click="builderInputs()">
       Enviar
     </UButton>
     <!-- <Highlightjs language="json" :code="code" class="text-xs" /> -->

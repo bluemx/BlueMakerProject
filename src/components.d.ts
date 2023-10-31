@@ -46,6 +46,7 @@ declare module 'vue' {
     Rt1: typeof import('./components/riodastest/rt1.vue')['default']
     Rt2: typeof import('./components/riodastest/rt2.vue')['default']
     Rt3: typeof import('./components/riodastest/rt3.vue')['default']
+    Rt6: typeof import('./components/riodastest/rt6.vue')['default']
     Rt7: typeof import('./components/riodastest/rt7.vue')['default']
     TheCounter: typeof import('./components/TheCounter.vue')['default']
     TheFooter: typeof import('./components/TheFooter.vue')['default']

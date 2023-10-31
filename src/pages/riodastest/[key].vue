@@ -1,6 +1,7 @@
 <script setup>
 const router = useRouter()
 const route = useRoute()
+const builderstore = useBuilderStore()
 
 const odaID = route.params.key
 const loading = ref()
@@ -8,7 +9,8 @@ const iframe = ref()
 const currentviewID = ref(0)
 const currentviewURL = ref('')
 
-const iframeurl = ref(builderstore.iframeurl)
+// const iframeurl = ref(builderstore.iframeurl)
+const iframeurl = ref(window.location.href.includes('localhost') ? 'https://localhost:5173/#A1-2U2L2EB' : 'https://odas.win/#MAKER')
 
 const views = [
   { name: 'Vista alumno', url: '' },
@@ -24,9 +26,9 @@ const views = [
 function changeView(item, index) {
   currentviewID.value = index
   currentviewURL.value = item.url
-  iframeurl.value = false
+  // iframeurl.value = false
   setTimeout(() => {
-    iframeurl.value = url + odaID + item.url
+    // iframeurl.value = url + odaID + item.url
   }, 250)
 }
 
@@ -48,6 +50,7 @@ onMounted(() => {
       <rt1 v-if="currentviewID === 0" />
       <rt2 v-if="currentviewID === 1" />
       <rt3 v-if="currentviewID === 2" />
+      <rt6 v-if="currentviewID === 6" />
       <rt7 v-if="currentviewID === 7" />
     </div>
     <div class="h-full w-full flex flex-col bg-slate-700 p-1">
