@@ -12,8 +12,12 @@ const sceneBase = {
   text: '',
 }
 const scenes = ref([])
-function sceneAdd() { scenes.value.push({ ...sceneBase }) }
-function sceneDelete(index) { scenes.value.splice(index, 1) }
+function sceneAdd() {
+  scenes.value.push({ ...sceneBase })
+}
+function sceneDelete(index) {
+  scenes.value.splice(index, 1)
+}
 function open() {
   dialog.value.showModal()
 }
@@ -74,7 +78,9 @@ function generar() {
 
 onMounted(() => {
   scenes.value = []
-  setTimeout(() => { sceneAdd() }, 200)
+  setTimeout(() => {
+    sceneAdd()
+  }, 200)
 })
 </script>
 

@@ -12,9 +12,9 @@ async function authFn() {
 export const install: UserModule = ({ isClient, router }) => {
   if (isClient) {
     router.beforeEach(async (to, from, next) => {
-      const requiredAuth = to.meta.requiresAuth
-      const session = ref()
-      const user = useUserStore()
+      // const requiredAuth = to.meta.requiresAuth
+      // const session = ref()
+      // const user = useUserStore()
 
       await authFn()
       next()

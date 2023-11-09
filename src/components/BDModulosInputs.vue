@@ -222,9 +222,9 @@ const blobWindow = ref(false)
 
     <!-- OBJECT inputs -->
     <div v-else>
-      <div :class="[, accordion[moduloName] ? `bg-dark !text-${levelColor()}` : `bg-${levelColor()}`]" flex cursor-pointer p-1 text-white @click="open()">
+      <div :class="[accordion[moduloName] ? `bg-dark !text-${levelColor()}` : `bg-${levelColor()}`]" flex cursor-pointer p-1 text-white @click="open()">
         {{ itemKey }}<BDMInputsDescription :properties="properties" />
-        <template v-if="properties?.input == 'repeat'">
+        <template v-if="properties?.input === 'repeat'">
           <span><div i-solar-repeat-line-duotone class="text-amber" /></span>
         </template>
         <template v-else>

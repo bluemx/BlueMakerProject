@@ -27,9 +27,11 @@ function changeView(item, index) {
   currentviewID.value = index
   currentviewURL.value = item.url
   // iframeurl.value = false
+  /*
   setTimeout(() => {
     // iframeurl.value = url + odaID + item.url
   }, 250)
+  */
 }
 
 onMounted(() => {
@@ -42,7 +44,7 @@ onMounted(() => {
     <div class="w-2/5 bg-slate-700 text-white">
       <!-- menu -->
       <div class="flex flex-col gap-1 p-1 text-xs">
-        <div v-for="(item, index) in views" :key="index" class="cursor-pointer rounded p-1" :class="[currentviewID == index ? 'bg-primary' : 'bg-slate-900']" @click="changeView(item, index)">
+        <div v-for="(item, index) in views" :key="index" class="cursor-pointer rounded p-1" :class="[currentviewID === index ? 'bg-primary' : 'bg-slate-900']" @click="changeView(item, index)">
           {{ index + 1 }} {{ item.name }}
         </div>
       </div>

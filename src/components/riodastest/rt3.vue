@@ -1,6 +1,5 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import hljsVuePlugin from '@highlightjs/vue-plugin'
 import 'highlight.js/styles/github.css'
 import 'highlight.js/styles/stackoverflow-light.css'
 
@@ -26,7 +25,7 @@ function sendinputs() {
 <script>
 export default {
   components: {
-    Highlightjs: hljsVuePlugin.component,
+    // Highlightjs: hljsVuePlugin.component,
   },
 }
 </script>

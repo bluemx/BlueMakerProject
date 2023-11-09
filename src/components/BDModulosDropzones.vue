@@ -11,17 +11,16 @@ const props = defineProps({
 })
 const source = ref('Hello')
 const { text, copy, copied, isSupported } = useClipboard({ source })
-
 const builderstore = useBuilderStore()
+const thelist = ref(props.data[props.itemKey])
+const drag = ref(false)
+const dragi = ref([])
+
 function templateLoad(element, index, item) {
   thelist.value[index] = item
   // console.log('e', element, 'i', item)
 }
 
-const thelist = ref(props.data[props.itemKey])
-const drag = ref(false)
-
-const dragi = ref([])
 function onStart(e) {
   // console.log('start:', e)
   e.item.classList.add('ring-2', 'ring-amber-3')
@@ -55,7 +54,6 @@ function moveFN(moveto, index) {
 function fnHide(element) {
   if (!element.hasOwnProperty('hidden'))
     element.hidden = true
-
   else
     element.hidden = !element.hidden
 }
@@ -317,7 +315,7 @@ function handlegradient(element) {
         </template>
 
         <div v-if="accordion[moduloName + index]">
-          <template v-for="(itemNest, indexNest) in Object.keys(element)">
+          <template v-for="(itemNest, indexNest) in Object.keys(element)" :key="indexNest">
             <template v-if="!dropzones.includes(itemNest) && !noninput.includes(itemNest)">
               <div>
                 <BDModulosInputs :data="element" :item-key="itemNest" :level="level + 1" :parentblock="element.block" />
@@ -332,11 +330,13 @@ function handlegradient(element) {
           </div>
         </div>
 
-        <template v-for="(itemNest, indexNest) in Object.keys(element)" v-if="!collapsecontent[moduloName + index]" :key="indexNest">
-          <template v-if="dropzones.includes(itemNest) && Array.isArray(element[itemNest])">
-            <div class="">
-              <BDModulosDropzones :data="element" :item-key="itemNest" :level="level + 1" :parentblock="element.block" />
-            </div>
+        <template v-if="!collapsecontent[moduloName + index]">
+          <template v-for="(itemNest, indexNest) in Object.keys(element)" :key="indexNest">
+            <template v-if="dropzones.includes(itemNest) && Array.isArray(element[itemNest])">
+              <div class="">
+                <BDModulosDropzones :data="element" :item-key="itemNest" :level="level + 1" :parentblock="element.block" />
+              </div>
+            </template>
           </template>
         </template>
       </div>

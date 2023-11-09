@@ -19,7 +19,7 @@ export const useBuilderStore = defineStore('builder', () => {
   const iframeurlProd = ref(iframeurl)
 
   const getUserTemplates = async () => {
-    const { data: usertemplates, _error } = await supabase
+    const { data: usertemplates } = await supabase
       .from('usertemplates')
       .select('*')
       .eq('type', type.value)
@@ -29,7 +29,7 @@ export const useBuilderStore = defineStore('builder', () => {
   }
 
   const newDoc = async (key, content) => {
-    const { data, _error } = await supabase
+    const { data } = await supabase
       .from('documents')
       .insert([
         { key, content },
@@ -49,7 +49,7 @@ export const useBuilderStore = defineStore('builder', () => {
 
   const updateAssets = async () => {
     files.value = []
-    const { data, _error } = await supabase
+    const { data } = await supabase
       .storage
       .from(type.value)
       .list(dockey.value, {
@@ -65,7 +65,7 @@ export const useBuilderStore = defineStore('builder', () => {
 
   const loadDoc = async (key) => {
     dockey.value = key
-    const { data: document, _error } = await supabase
+    const { data: document } = await supabase
       .from('documents')
       .select('*')
       .eq('key', key)
@@ -85,7 +85,7 @@ export const useBuilderStore = defineStore('builder', () => {
 
   const saveDoc = async () => {
     // console.log('guardando...', doc.value)
-    const { data, _error } = await supabase
+    const { data } = await supabase
       .from('documents')
       .update(doc.value)
       .eq('key', dockey.value)
@@ -96,7 +96,7 @@ export const useBuilderStore = defineStore('builder', () => {
   }
 
   const loadModulos = async () => {
-    const { data: modulos, _error } = await supabase
+    const { data: modulos } = await supabase
       .from('modulos')
       .select('*')
       .eq('type', type.value)
