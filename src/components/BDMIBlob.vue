@@ -26,7 +26,7 @@ function sync_scroll(element) {
   highlighting.value.scrollTop = editing.value.scrollTop
   highlighting.value.scrollLeft = editing.value.scrollLeft
 }
-
+/*
 function wrapLines(content) {
   content = content.replace(/(^|\n\n)([^\n]+)/g, (match) => {
     return `${match.startsWith('\n\n') ? '\n\n' : ''}<span class="text-white ring ring-green-500 ring-offset-4 ring-offset-slate-50 dark:ring-offset-slate-900">${match.trim()}</span>`
@@ -34,6 +34,30 @@ function wrapLines(content) {
 
   content = content.replace(/([^\n]+)(?=(\n\n|$))/g, (match) => {
     return `<span class="ring ring-pink-500 ring-offset-4 ring-offset-slate-50 dark:ring-offset-slate-900">${match.trim()}</span>`
+  })
+
+  return content
+}
+*/
+function wrapLines(content) {
+  // Handle blocks of content that start with *
+  content = content.replace(/(^\*)([^\n]*)(\n)([^\n]*)(\n)/gm, (match, start, innerContent, end, afterBlock, endAfterBlock) => {
+    // Keep * and trim innerContent
+    innerContent = start + innerContent.trim()
+    // Trim afterBlock
+    afterBlock = afterBlock.trim()
+
+    // Wrap innerContent with span tag
+    return `<span class="bg-primary">${innerContent}</span>${end}<span class="text-white ring ring-green-500 ring-offset-2 ring-offset-slate-50 dark:ring-offset-slate-900">${afterBlock}</span>${endAfterBlock}`
+  })
+
+  // Handle lines outside of blocks
+  content = content.replace(/(^|\n\n)([^\n]+)/g, (match) => {
+    return `${match.startsWith('\n\n') ? '\n\n' : ''}<span class="text-white ring ring-green-500 ring-offset-2 ring-offset-slate-50 dark:ring-offset-slate-900">${match.trim()}</span>`
+  })
+
+  content = content.replace(/([^\n]+)(?=(\n\n|$))/g, (match) => {
+    return `<span class="ring ring-pink-500 ring-offset-2 ring-offset-slate-50 dark:ring-offset-slate-900">${match.trim()}</span>`
   })
 
   return content
