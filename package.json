@@ -41,6 +41,7 @@
     "pinia": "^2.1.6",
     "unocss-ui": "0.0.3-alpha.4",
     "vue": "^3.3.4",
+    "vue-contenteditable": "^4.1.0",
     "vue-demi": "^0.14.6",
     "vue-i18n": "^9.2.2",
     "vue-router": "^4.2.4",

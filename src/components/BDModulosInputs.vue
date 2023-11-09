@@ -82,6 +82,8 @@ function symbolReplaceNew() {
   refData.value[symbolReplaceFN.value] = ''
   symbolReplaceFN.value = null
 }
+
+const blobWindow = ref(false)
 </script>
 
 <template>
@@ -119,6 +121,29 @@ function symbolReplaceNew() {
           <label>{{ itemKey }}<BDMInputsDescription :properties="properties" /></label>
           <div col-span-3>
             <UInput v-model="refData[itemKey]" class="w-full dark:text-neutral" size="sm" type="color" />
+          </div>
+        </template>
+        <!-- NUMBER -->
+        <template v-if="properties?.input === 'number'">
+          <label>{{ itemKey }}<BDMInputsDescription :properties="properties" /></label>
+          <div col-span-3>
+            <UInput v-model="refData[itemKey]" class="w-full dark:text-neutral" size="sm" type="number" />
+          </div>
+        </template>
+        <!-- BLOB -->
+        <template v-if="properties?.input === 'blob'">
+          <label>{{ itemKey }}<BDMInputsDescription :properties="properties" /></label>
+          <div col-span-3 @click="blobWindow = true">
+            <UButton color="primary" class="gap-1 bg-green px-2 py-0.5">
+              <div i-solar-document-text-broken />
+              Editar
+            </UButton>
+          </div>
+          <div v-if="blobWindow" class="fixed left-10 top-2 z-10 h-full max-h-3xl w-1/3 flex flex-col border-2 border-white bg-slate-900 p-2 shadow-xl">
+            <div class="m-1 ml-auto cursor-pointer" @click="blobWindow = false">
+              <div><div i-solar-close-circle-bold class="text-xl text-white" /></div>
+            </div>
+            <BDMIBlob v-model="refData[itemKey]" />
           </div>
         </template>
         <!-- REPEAT -->
@@ -197,8 +222,14 @@ function symbolReplaceNew() {
 
     <!-- OBJECT inputs -->
     <div v-else>
-      <div :class="[, accordion[moduloName] ? `bg-dark !text-${levelColor()}` : `bg-${levelColor()}`]" cursor-pointer p-1 text-white @click="open()">
-        {{ itemKey }}<BDMInputsDescription :properties="properties" /> {{ properties?.input }}
+      <div :class="[, accordion[moduloName] ? `bg-dark !text-${levelColor()}` : `bg-${levelColor()}`]" flex cursor-pointer p-1 text-white @click="open()">
+        {{ itemKey }}<BDMInputsDescription :properties="properties" />
+        <template v-if="properties?.input == 'repeat'">
+          <span><div i-solar-repeat-line-duotone class="text-amber" /></span>
+        </template>
+        <template v-else>
+          {{ properties?.input }}
+        </template>
         <!-- : {{ data[itemKey].block }} : {{ properties?.input }} -->
       </div>
       <template v-if="!dropzones.includes(itemKey)">

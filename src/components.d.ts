@@ -16,6 +16,7 @@ declare module 'vue' {
     BDAssistant: typeof import('./components/BDAssistant.vue')['default']
     BDAudioConversation: typeof import('./components/BDAudioConversation.vue')['default']
     BDAudioConversationManual: typeof import('./components/BDAudioConversationManual.vue')['default']
+    BDMIBlob: typeof import('./components/BDMIBlob.vue')['default']
     BDMInputsDescription: typeof import('./components/BDMInputsDescription.vue')['default']
     BDModulosDropzones: typeof import('./components/BDModulosDropzones.vue')['default']
     BDModulosInputs: typeof import('./components/BDModulosInputs.vue')['default']
