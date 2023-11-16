@@ -33,5 +33,8 @@ const loadingDoc = computed(() => {
       </template>
     </div>
     <a class="p-1 text-[10px] text-accent-200 underline hover:text-sky-300" target="_blank" :href="builderstore.iframeurlProd">{{ builderstore.iframeurlProd }}</a>
+    <UButton v-if="!builderstore.doc.content.hasOwnProperty('elashexam')" size="xs" class="mt-2 px-2" @click="builderstore.doc.content.elashexam = true">
+      Elash exam
+    </UButton>
   </div>
 </template>
