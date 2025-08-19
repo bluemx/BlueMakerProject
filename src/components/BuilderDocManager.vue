@@ -23,6 +23,7 @@ async function loadItems() {
     .from('documents')
     .select('key')
   docs.value = documents
+  console.log(documents)
 }
 
 function onInput() {
