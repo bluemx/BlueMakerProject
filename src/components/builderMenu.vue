@@ -4,9 +4,9 @@ const builderstore = useBuilderStore()
 const buttons = ref([
   { name: 'Módulos', id: 'modulos', icon: 'i-solar:box-minimalistic-broken' },
   { name: 'Código', id: 'codigo', icon: 'i-solar:code-2-bold-duotone' },
-  { name: 'Prompts', id: 'prompts', icon: 'i-solar:chat-square-call-line-duotone' },
+  //{ name: 'Prompts', id: 'prompts', icon: 'i-solar:chat-square-call-line-duotone' },
   { name: 'Assets', id: 'assets', icon: 'i-solar:file-smile-broken' },
-  { name: 'Audios PlayHT', id: 'audios', icon: 'i-solar:translation-2-line-duotone' },
+  //{ name: 'Audios PlayHT', id: 'audios', icon: 'i-solar:translation-2-line-duotone' },
   { name: 'Audios ElevenLabs', id: 'audiosv2', icon: 'i-solar:translation-2-broken' },
 ])
 const currentbutton = ref(buttons.value[0])
@@ -18,6 +18,7 @@ function onClick(item) {
 
 const saveToast = ref()
 const saveLoading = ref(false)
+/*
 async function saveDoc() {
   if (saveLoading.value)
     return false
@@ -26,6 +27,13 @@ async function saveDoc() {
   saveLoading.value = false
   saveToast.value.show('success', 'Documento guardado')
 }
+*/
+
+
+const saveDoc = async () => {
+  saveLoading.value = true
+}
+
 
 function syncDoc() {
   builderstore.metadata('sync', Math.random())
@@ -46,6 +54,7 @@ function downloadDoc() {
     </template>
     <UToast ref="saveToast" position="bottom" align="left" />
 
+    <!--
     <router-link class="mt-auto" :to="`/${builderstore.type}`">
       <div title="Regresar" class="mb-20 mt-auto aspect-square flex cursor-pointer items-center justify-center bg-neutral-900/30 hover:bg-amber">
         <div class="i-solar-arrow-left-broken" />
@@ -54,15 +63,21 @@ function downloadDoc() {
 
     <BuilderNotes />
 
-    <div title="Sincronizar" class="aspect-square flex cursor-pointer items-center justify-center bg-stone-5/30 hover:bg-amber" @click="syncDoc()">
+    -->
+
+    <div title="Sincronizar" class="aspect-square flex cursor-pointer items-center justify-center bg-stone-5/30 hover:bg-amber mt-auto" @click="syncDoc()">
       <div class="i-solar-refresh-circle-line-duotone" />
     </div>
-    <div title="Guardar" class="aspect-square flex cursor-pointer items-center justify-center bg-cyan-5/30 hover:bg-amber" @click="saveDoc()">
-      <div v-if="!saveLoading" class="i-solar:diskette-broken" />
-      <div v-if="saveLoading" class="i-solar-diskette-bold animate-spin" />
-    </div>
+
+    
+    <!--
+      <div title="Guardar" class="aspect-square flex cursor-pointer items-center justify-center bg-cyan-5/30 hover:bg-amber" @click="saveDoc()">
+        <div v-if="!saveLoading" class="i-solar:diskette-broken" />
+        <div v-if="saveLoading" class="i-solar-diskette-bold animate-spin" />
+      </div>
     <div title="Descargar" class="aspect-square flex cursor-pointer items-center justify-center bg-emerald-5/30 hover:bg-amber" @click="downloadDoc()">
       <div class="i-solar:cloud-download-line-duotone" />
     </div>
+    -->
   </aside>
 </template>

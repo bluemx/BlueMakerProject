@@ -3,6 +3,9 @@
 </script>
 
 <template>
-  <BuilderDetailsAssetsUploader />
+  <!--
+    <BuilderDetailsAssetsUploader />
+  -->
+    
   <BuilderDetailsAssetsList />
 </template>

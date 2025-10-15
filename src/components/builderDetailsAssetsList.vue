@@ -1,7 +1,7 @@
 <script setup>
 const builderstore = useBuilderStore()
 const router = useRoute()
-builderstore.updateAssets()
+//builderstore.updateAssets()
 
 async function deleteAsset(item) {
   const { data, error } = await supabase
@@ -20,9 +20,11 @@ function playudio(index) {
   const player = document.getElementById(theid)
   player.play()
 }
+
 </script>
 
 <template>
+
   <template v-for="(item, index) in builderstore.files" :key="index">
     <div class="my-1 flex items-center justify-between gap-2 bg-slate-100 p-1 dark:bg-slate-700">
       <template v-if="item.mimetype.includes('image')">

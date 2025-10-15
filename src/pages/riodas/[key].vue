@@ -8,7 +8,7 @@ async function loadDoc() {
   await builderstore.loadDoc(router.params.key)
   sendData()
 }
-const iframeurl = ref(window.location.href.includes('localhost') ? 'https://localhost:5173/#MAKER' : 'https://odas.win/#MAKER')
+const iframeurl = ref(window.location.href.includes('localhost') ? 'https://localhost:3333/#MAKER' : 'https://odas.win/#MAKER')
 const iframe = ref()
 const iframeready = ref(false)
 

@@ -11,9 +11,9 @@ const builderstore = useBuilderStore()
     <section flex grow flex-col overflow-x-hidden overflow-y-auto bg-slate-800>
       <BuilderDetailsModulos v-show="builderstore.menu.id === 'modulos'" />
       <BuilderDetailsCodigo v-if="builderstore.menu.id === 'codigo'" />
-      <BuilderDetailsPrompts v-show="builderstore.menu.id === 'prompts'" />
+      <!--<BuilderDetailsPrompts v-show="builderstore.menu.id === 'prompts'" />-->
       <BuilderDetailsAssets v-if="builderstore.menu.id === 'assets'" />
-      <BuilderDetailsAudios v-show="builderstore.menu.id === 'audios'" />
+      <!--<BuilderDetailsAudios v-show="builderstore.menu.id === 'audios'" />-->
       <BuilderDetailsAudiosEleven v-show="builderstore.menu.id === 'audiosv2'" />
     </section>
   </aside>

@@ -10,7 +10,7 @@ const currentviewID = ref(0)
 const currentviewURL = ref('')
 
 // const iframeurl = ref(builderstore.iframeurl)
-const iframeurl = ref(window.location.href.includes('localhost') ? 'https://localhost:5173/#A1-2U2L2EB' : 'https://odas.win/#MAKER')
+const iframeurl = ref(window.location.href.includes('localhost') ? 'https://localhost:3333/#A1-2U2L2EB' : 'https://odas.win/#MAKER')
 
 const views = [
   { name: 'Vista alumno', url: '' },

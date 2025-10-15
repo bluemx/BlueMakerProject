@@ -27,6 +27,7 @@ const propertiesInterval = setInterval(() => {
 }, 500)
 
 const filesmap = computed(() => {
+  if(!builderstore.files) { return false }
   const fm = builderstore.files.map((item) => {
     return {
       label: item.name,

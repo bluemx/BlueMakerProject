@@ -4,6 +4,7 @@ import { defineStore } from 'pinia'
 import JSZipUtils from 'jszip-utils'
 import saveAs from 'file-saver'
 
+
 export const useBuilderStore = defineStore('builder', () => {
   const router = useRouter()
   const type = ref(null)
@@ -15,7 +16,7 @@ export const useBuilderStore = defineStore('builder', () => {
   const modulosobj = ref({})
   const usertemplates = ref([])
   const loading = ref(false)
-  const iframeurl = ref(window.location.href.includes('localhost') ? 'https://localhost:5173/#MAKER' : 'https://odas.win/#MAKER')
+  const iframeurl = ref(window.location.href.includes('localhost') ? 'https://localhost:3333/#MAKER' : 'https://odas.win/#MAKER')
   const iframeurlProd = ref(iframeurl)
 
   const getUserTemplates = async () => {
@@ -47,8 +48,18 @@ export const useBuilderStore = defineStore('builder', () => {
     return data.publicUrl
   }
 
-  const updateAssets = async () => {
+  const updateAssets = async (thefiles) => {
+
     files.value = []
+
+
+    thefiles.map((fil)=>{
+      if(fil.name!=='oda.json'){
+        files.value.push({ name: fil.name, url: fil.dataUrl, mimetype: fil.mimetype })
+      }
+    })
+
+/*
     const { data } = await supabase
       .storage
       .from(type.value)
@@ -61,21 +72,35 @@ export const useBuilderStore = defineStore('builder', () => {
     data.forEach((itm) => {
       files.value.push({ name: itm.name, url: geturl(itm.name), mimetype: itm.metadata.mimetype })
     })
+    
+    Object.keys(thefiles).forEach((itm) => {
+      files.value.push({ name: itm.name, url: itm.dataUrl, mimetype: itm.mimetype })
+    })
+    */
+
+
+
   }
 
-  const loadDoc = async (key) => {
+  const loadDoc = async (document, key, thefiles) => {
+
+    /*
     dockey.value = key
     const { data: document } = await supabase
       .from('documents')
       .select('*')
       .eq('key', key)
       .single()
+  */
+
+    if (!document){ return false }
+
     iframeurlProd.value = iframeurlProd.value.replace('MAKER', key)
-    const thejson = document
+    const thejson = JSON.parse(JSON.stringify(document))
     if (!thejson.content.hasOwnProperty('attempts'))
       thejson.content.attempts = 0
     doc.value = thejson
-    updateAssets()
+    updateAssets(thefiles)
     return true
   }
 

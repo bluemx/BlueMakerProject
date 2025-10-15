@@ -29,6 +29,11 @@ const router = useRouter()
     <button aspect-square w-full bg-slate-1 dark:text-neutral>
       SITIO
     </button>
+    <router-link to="/riodaslocal">
+      <button aspect-square w-full bg-rose>
+        RIODAS Local
+      </button>
+    </router-link>
     <button aspect-square w-full bg-slate-1 dark:text-neutral />
   </div>
   <div mt-36>
